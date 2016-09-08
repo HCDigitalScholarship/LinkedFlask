@@ -1,0 +1,5834 @@
+@prefix p: <localhost:3030/ds/person#> .
+@prefix t: <localhost:3030/ds/trip#> .
+@prefix d: <localhost:3030/ds/date#> .
+
+    p:i0
+           p:other_1 "Caroline Mary Cope:  1865-1953"; 
+           p:death "6 Jan 1953"; 
+           p:parent_1 p:i3 ;
+           p:labelname "Caroline Mary Cope"; 
+           p:parent_2 p:i22;
+           p:birth "31 Dec 1865".
+  
+    p:i1
+           p:other_1 "Elizabeth Stewardson Cope:  1848-1937"; 
+           p:death "31 Oct 1937"; 
+           p:parent_1 p:i3;
+           p:labelname "Elizabeth Stewardson Cope"; 
+           p:parent_2 p:i22;
+           p:birth "18 Oct 1848".
+    
+    p:i2
+    
+           p:other_1 "Thomas Pim Cope:  1852-1944"; 
+           p:death "25 Feb 1944"; 
+           p:parent_1 p:i3;
+           p:labelname "Thomas Pim Cope"; 
+           p:parent_2 p:i22;
+           p:birth "6 Oct 1852".
+    
+    p:i3
+           p:other_1 ""; 
+           p:death "6 Nov 1909"; 
+           p:parent_1 p:i7;
+           p:labelname "Francis Reeve Cope"; 
+           p:parent_2 p:i15;
+           p:birth "6 Jun 1821".
+  
+    p:i5
+     
+           p:other_1 "Francis Reeve Cope Jr.:  1878-1962"; 
+           p:death "6 Jul 1962"; 
+           p:parent_1 p:i48;
+           p:labelname "Francis Reeve Cope Jr."; 
+           p:parent_2 p:i1;
+           p:birth "9 Aug 1878".
+    
+    p:i7
+           p:other_1 ""; 
+           p:death "4 Sep 1865"; 
+           p:parent_1 p:i41;
+           p:labelname "Henry Cope"; 
+           p:parent_2 p:i173;
+           p:birth "8 Jun 1793".
+  
+    p:i9
+           p:other_1 "Ruth Anna Cope:  1834-1879"; 
+           p:death "19 Mar 1879"; 
+           p:parent_1 p:i7;
+           p:labelname "Ruth Anna Cope"; 
+           p:parent_2 p:i15;
+           p:birth "26 Feb 1834".
+  
+    p:i10
+           p:other_1 ""; 
+       
+           p:death "27 Feb 1903"; 
+           p:parent_1 p:i69;
+           p:labelname "Clementine Cope"; 
+           p:parent_2 p:i11;
+           p:birth "23 May 1835".
+    
+ 
+  
+    p:i11
+     
+    
+           p:other_1 "Susan Newbold:  1805-1872"; 
+       
+           p:death "21 Nov 1872"; 
+           p:labelname "Susan Newbold"; 
+           p:birth "26 Oct 1805".
+    
+    p:i13
+           p:other_1 ""; 
+           p:death "26 Mar 1911"; 
+           p:parent_1 p:i254;
+           p:labelname "Jonathan Evans"; 
+           p:parent_2 p:i281;
+           p:birth "16 Aug 1843".
+  
+    p:i15
+           p:other_1 "Rachel Reeve:  1794-1863"; 
+           p:death "18 Apr 1863"; 
+           p:labelname "Rachel Reeve"; 
+           p:birth "24 Dec 1794".
+  
+    p:i18
+           p:other_1 ""; 
+           p:death "6 Jun 1946"; 
+           p:parent_1 p:i13;
+           p:labelname "Francis Algernon Evans"; 
+           p:parent_2 p:i28;
+           p:birth "1 Aug 1878; Germantown PA".
+  
+    p:i20
+           p:other_1 "Elizabeth Waln Stokes:  1780-1852"; 
+           p:death "17 May 1852"; 
+           p:parent_1 p:i406;
+           p:labelname "Elizabeth Waln Stokes"; 
+           p:parent_2 p:i407;
+           p:birth "23 Oct 1780".
+  
+    p:i22
+     
+    
+           p:other_1 "Anna Stewardson Brown:  1822-1916"; 
+       
+           p:death "4 Jan 1916"; 
+           p:labelname "Anna Stewardson Brown"; 
+           p:birth "7 Feb 1822".
+    
+ 
+  
+    p:i26
+     
+    
+           p:other_1 ""; 
+       
+           p:death "2 Sep 1949"; 
+           p:labelname "William Draper Lewis"; 
+           p:birth "27 Apr 1867".
+    
+ 
+  
+    p:i28
+     
+    
+           p:other_1 "Rachel Reeve Cope:  1850-1939"; 
+       
+           p:death "4 Jan 1939"; 
+           p:parent_1 p:i3;
+           p:labelname "Rachel Reeve Cope"; 
+           p:parent_2 p:i22;
+           p:birth "23 Jul 1850".
+    
+ 
+  
+    p:i29
+     
+    
+           p:other_1 ""; 
+       
+           p:death "8 Jan 1916"; 
+           p:parent_1 p:i69;
+           p:labelname "Annette Cope"; 
+           p:parent_2 p:i11;
+           p:birth "2 May 1843".
+    
+ 
+  
+    p:i32
+     
+    
+           p:other_1 "Caroline Elizabeth Cope:  1840-1944"; 
+       
+           p:death "29 Jul 1944"; 
+           p:parent_1 p:i69;
+           p:labelname "Caroline Elizabeth Cope"; 
+           p:parent_2 p:i11;
+           p:birth "28 Jul 1840".
+    
+ 
+  
+    p:i41
+     
+    
+           p:other_1 "Thomas Pim Cope:  1768-1854"; 
+           p:death "22 Nov 1854"; 
+           p:parent_1 p:i233;
+           p:labelname "Thomas Pim Cope"; 
+           p:parent_2 p:i455;
+           p:birth "26 Aug 1768".
+    
+ 
+  
+    p:i46
+     
+    
+           p:other_1 ""; 
+       
+           p:death "4 Dec 1875"; 
+           p:parent_1 p:i41;
+           p:labelname "Alfred Cope"; 
+           p:parent_2 p:i173;
+           p:birth "13 Apr 1806".
+    
+ 
+  
+    p:i48
+     
+    
+           p:other_1 "Alexis Thomas Cope:  1850-1883"; 
+       
+           p:death "22 Sep 1883"; 
+           p:parent_1 p:i69;
+           p:labelname "Alexis Thomas Cope"; 
+           p:parent_2 p:i11;
+           p:birth "5 Jan 1850".
+    
+ 
+  
+    p:i57
+     
+    
+           p:other_1 ""; 
+       
+           p:death "10 Aug 1816"; 
+           p:parent_1 p:i41;
+           p:labelname "Francis Cope"; 
+           p:parent_2 p:i173;
+           p:birth "27 Oct 1794".
+    
+ 
+  
+    p:i66
+     
+    
+           p:other_1 "Mary Drinker Cope:  1819-1890"; 
+       
+           p:death "29 Jan 1890"; 
+           p:parent_1 p:i7;
+           p:labelname "Mary Drinker Cope"; 
+           p:parent_2 p:i15;
+           p:birth "4 Nov 1819".
+    
+ 
+  
+    p:i67
+     
+    
+           p:other_1 ""; 
+       
+           p:death "9 Jun 1895"; 
+           p:parent_1 p:i69;
+           p:labelname "Edgar Cope"; 
+           p:parent_2 p:i11;
+           p:birth "22 Feb 1838".
+    
+ 
+  
+    p:i69
+     
+    
+           p:other_1 "William Drinker Cope:  1798-1873"; 
+       
+           p:death "31 Jan 1873"; 
+           p:parent_1 p:i41;
+           p:labelname "William Drinker Cope"; 
+           p:parent_2 p:i173;
+           p:birth "31 May 1798".
+    
+ 
+  
+    p:i75
+     
+    
+           p:other_1 "Thomas Pim Cope Ii:  1823-1900"; 
+       
+           p:death "22 Oct 1900"; 
+           p:parent_1 p:i7;
+           p:labelname "Thomas Pim Cope Ii"; 
+           p:parent_2 p:i15;
+           p:birth "7 Feb 1823".
+    
+ 
+  
+    p:i77
+     
+    
+           p:other_1 ""; 
+       
+           p:death "29 Jan 1899"; 
+           p:parent_1 p:i48;
+           p:labelname "Agnes Cope"; 
+           p:parent_2 p:i1;
+           p:birth "17 Dec 1876".
+    
+ 
+  
+    p:i78
+     
+    
+           p:other_1 ""; 
+       
+           p:death "18 Jul 1967"; 
+           p:parent_1 p:i13;
+           p:labelname "Anna Cope Evans"; 
+           p:parent_2 p:i28;
+           p:birth "4 Apr 1875".
+    
+ 
+  
+    p:i80
+     
+    
+           p:other_1 "Amy Elizabeth Yarnall:  -"; 
+       
+           p:death ""; 
+           p:labelname "Amy Elizabeth Yarnall"; 
+           p:birth "".
+    
+ 
+  
+    p:i81
+     
+    
+           p:other_1 ""; 
+       
+           p:death "14 Jan 1897"; 
+           p:parent_1 p:i3;
+           p:labelname "Alfred Cope"; 
+           p:parent_2 p:i22;
+           p:birth "21 Jan 1857".
+    
+ 
+  
+    p:i82
+     
+    
+           p:other_1 ""; 
+       
+           p:death "7 Jan 1909"; 
+           p:parent_1 p:i3;
+           p:labelname "Francis Hazen Cope"; 
+           p:parent_2 p:i22;
+           p:birth "8 May 1859".
+    
+ 
+  
+    p:i83
+     
+    
+           p:other_1 "Eleanor Tyson Cope:  1879-1973"; 
+       
+           p:death "23 Mar 1973"; 
+           p:parent_1 p:i48;
+           p:labelname "Eleanor Tyson Cope"; 
+           p:parent_2 p:i1;
+           p:birth "9 Nov 1879".
+    
+ 
+  
+    p:i84
+     
+    
+           p:other_1 "Edward Drinker Cope:  1840-1897"; 
+       
+           p:death "12 Apr 1897"; 
+           p:parent_1 p:i46;
+           p:labelname "Edward Drinker Cope"; 
+           p:parent_2 p:i239;
+           p:birth "28 Jul 1840".
+    
+ 
+  
+    p:i85
+     
+    
+           p:other_1 "Gilbert Cope:  1840-"; 
+       
+           p:death ""; 
+           p:parent_1 p:i492;
+           p:labelname "Gilbert Cope"; 
+           p:parent_2 p:i493;
+           p:birth "17 Aug 1840; E. Bradford; PA".
+    
+ 
+  
+    p:i86
+     
+    
+           p:other_1 "John E. Carter:  -"; 
+           p:death ""; 
+           p:labelname "John E. Carter"; 
+           p:birth "".
+    
+ 
+  
+    p:i88
+     
+    
+           p:other_1 ""; 
+       
+           p:death "11 Aug 1948"; 
+           p:parent_1 p:i75;
+           p:labelname "Margaret Cope"; 
+           p:parent_2 p:i89;
+           p:birth "17 Jan 1856".
+    
+ 
+  
+    p:i89
+     
+    
+           p:other_1 "Elizabeth Waln Stokes:  1823-1902"; 
+       
+           p:death "1902"; 
+           p:labelname "Elizabeth Waln Stokes"; 
+           p:birth "1823".
+    
+ 
+  
+    p:i90
+     
+    
+           p:other_1 ""; 
+       
+           p:death "4 Jan 1888"; 
+           p:parent_1 p:i75;
+           p:labelname "Mary Stokes Cope"; 
+           p:parent_2 p:i89;
+           p:birth "13 Jul 1853".
+    
+ 
+  
+    p:i96
+     
+    
+           p:other_1 "Caroline Rachel Cope:  1802-1881"; 
+       
+           p:death "2 Apr 1881"; 
+           p:parent_1 p:i41;
+           p:labelname "Caroline Rachel Cope"; 
+           p:parent_2 p:i173;
+           p:birth "21 Oct 1802".
+    
+ 
+  
+    p:i116
+     
+    
+           p:other_1 ""; 
+       
+           p:death "3 Jan 1820"; 
+           p:parent_1 p:i361;
+           p:labelname "Nathan Cope"; 
+           p:parent_2 p:i383;
+           p:birth "7 Jul 1733".
+    
+ 
+  
+    p:i134
+     
+    
+           p:other_1 "Edward Wyatt Evans:  1882-1976"; 
+       
+           p:death "20 May 1976"; 
+           p:parent_1 p:i13;
+           p:labelname "Edward Wyatt Evans"; 
+           p:parent_2 p:i28;
+           p:birth "31 Jan 1882".
+    
+ 
+  
+    p:i144
+     
+    
+           p:other_1 "Alfred Garrett Scattergood:  1878-1954"; 
+       
+           p:death "10 Aug 1954; Long Lake; NY"; 
+           p:parent_1 p:i505;
+           p:labelname "Alfred Garrett Scattergood"; 
+           p:parent_2 p:i506;
+           p:birth "10 Sep 1878; Moorestown NJ".
+    
+ 
+  
+    p:i160
+     
+    
+           p:other_1 "Eleanor Tyson Stokes:  -"; 
+       
+           p:death ""; 
+           p:labelname "Eleanor Tyson Stokes"; 
+           p:birth "".
+    
+ 
+  
+    p:i172
+     
+    
+           p:other_1 "Mary Cope Emlen:  1878-1975"; 
+       
+           p:death "2 Apr 1975"; 
+           p:parent_1 p:i340;
+           p:labelname "Mary Cope Emlen"; 
+           p:parent_2 p:i341;
+           p:birth "3 Jul 1878".
+    
+ 
+  
+    p:i173
+     
+    
+           p:other_1 "Mary Drinker:  1766-1825"; 
+       
+           p:death "7 Dec 1825"; 
+           p:labelname "Mary Drinker"; 
+           p:birth "20 Dec 1766".
+    
+ 
+  
+    p:i175
+     
+    
+           p:other_1 "Samuel Emlen:  -"; 
+       
+           p:death ""; 
+           p:labelname "Samuel Emlen"; 
+           p:birth "".
+    
+ 
+  
+    p:i176
+     
+    
+           p:other_1 "Elizabeth Waln Cope:  1841-1931"; 
+       
+           p:death "15 Oct 1931"; 
+           p:parent_1 p:i46;
+           p:labelname "Elizabeth Waln Cope"; 
+           p:parent_2 p:i239;
+           p:birth "15 Nov 1841".
+    
+ 
+  
+    p:i180
+     
+    
+           p:other_1 ""; 
+       
+           p:death "26 Jul 1924"; 
+           p:parent_1 p:i75;
+           p:labelname "Henry Cope"; 
+           p:parent_2 p:i89;
+           p:birth "16 Sep 1850".
+    
+ 
+  
+    p:i190
+     
+    
+           p:other_1 ""; 
+       
+           p:death "27 Jun 1918"; 
+           p:parent_1 p:i344;
+           p:labelname "Francis Cope Haines"; 
+           p:parent_2 p:i66;
+           p:birth "8 May 1857".
+    
+ 
+  
+    p:i194
+     
+    
+           p:other_1 "Jacqueline Pascal Morris:  1886-1947"; 
+       
+           p:death "10 Mar 1947"; 
+           p:parent_1 p:i502;
+           p:labelname "Jacqueline Pascal Morris"; 
+           p:parent_2 p:i503;
+           p:birth "12 Apr 1886".
+    
+ 
+  
+    p:i212
+     
+    
+           p:other_1 "John Roberts Tyson:  1803-1858"; 
+       
+           p:death "27 Jun 1858"; 
+           p:labelname "John Roberts Tyson"; 
+           p:birth "8 Feb 1803".
+    
+ 
+  
+    p:i232
+     
+    
+           p:other_1 "Rebecca Biddle:  1812-1876"; 
+       
+           p:death "18 Feb 1876"; 
+           p:labelname "Rebecca Biddle"; 
+           p:birth "8 Jan 1812".
+    
+ 
+  
+    p:i233
+     
+    
+           p:other_1 ""; 
+       
+           p:death "30 May 1824"; 
+           p:parent_1 p:i361;
+           p:labelname "Caleb Cope"; 
+           p:parent_2 p:i383;
+           p:birth "4 Nov 1736".
+    
+ 
+  
+    p:i234
+     
+    
+           p:other_1 "Reuben Haines:  -"; 
+       
+           p:death "18 Feb 1920"; 
+           p:parent_1 p:i344;
+           p:labelname "Reuben Haines"; 
+           p:parent_2 p:i66;
+           p:birth "1 Nov 1851".
+    
+ 
+  
+    p:i235
+     
+    
+           p:other_1 "Evelyn Flower Morris:  1877-1947"; 
+       
+           p:death "22 Jul 1947"; 
+           p:parent_1 p:i502;
+           p:labelname "Evelyn Flower Morris"; 
+           p:parent_2 p:i503;
+           p:birth "20 Jun 1877".
+    
+ 
+  
+    p:i236
+     
+    
+           p:other_1 "James Biddle Cope:  1852-"; 
+       
+           p:death ""; 
+           p:parent_1 p:i46;
+           p:labelname "James Biddle Cope"; 
+           p:parent_2 p:i232;
+           p:birth "13 Aug 1852".
+    
+ 
+  
+    p:i238
+     
+    
+           p:other_1 "Margaret Cheston Tatnall:  -1928"; 
+           p:death "1928"; 
+           p:labelname "Margaret Cheston Tatnall"; 
+           p:birth "".
+    
+ 
+  
+    p:i239
+     
+    
+           p:other_1 "Hannah Edge:  1814-1843"; 
+       
+           p:death "12 Apr 1843"; 
+           p:labelname "Hannah Edge"; 
+           p:birth "7 Aug 1814".
+    
+ 
+  
+    p:i254
+     
+    
+           p:other_1 ""; 
+       
+           p:death "25 May 1868"; 
+           p:labelname "Thomas Evans"; 
+           p:birth "23 Feb 1798; Philadelphia; PA".
+    
+ 
+  
+    p:i263
+     
+    
+           p:other_1 "John Wistar Evans:  -"; 
+       
+           p:death ""; 
+           p:labelname "John Wistar Evans"; 
+           p:birth "".
+    
+ 
+  
+    p:i281
+     
+    
+           p:other_1 "Catharine Wistar:  1802-1871"; 
+       
+           p:death "5 Dec 1871"; 
+           p:labelname "Catharine Wistar"; 
+           p:birth "27 Nov 1802".
+    
+ 
+  
+    p:i311
+     
+    
+           p:other_1 ""; 
+       
+           p:death "13 Jan 1856"; 
+           p:parent_1 p:i233;
+           p:labelname "Jasper Cope"; 
+           p:parent_2 p:i455;
+           p:birth "1 Apr 1775".
+    
+ 
+  
+    p:i330
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1 Nov 1902"; 
+           p:parent_1 p:i75;
+           p:labelname "Walter Cope"; 
+           p:parent_2 p:i89;
+           p:birth "1 Oct 1861".
+    
+ 
+  
+    p:i331
+     
+    
+           p:other_1 ""; 
+       
+           p:death "14 Nov 1952"; 
+           p:labelname "Eliza Middleton Kane"; 
+           p:birth "8 Apr 1863".
+    
+ 
+  
+    p:i332
+     
+    
+           p:other_1 ""; 
+       
+           p:death "13 Oct 1937"; 
+           p:labelname "Theophilus B. Stork"; 
+           p:birth "5 Apr 1854".
+    
+ 
+  
+    p:i333
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Hannah Wharton"; 
+           p:birth "".
+    
+ 
+  
+    p:i334
+     
+    
+           p:other_1 ""; 
+       
+           p:death "15 Jul 1927"; 
+           p:labelname "Sophia Phelps Hartshorne"; 
+           p:birth "25 Jul 1852".
+    
+ 
+  
+    p:i335
+     
+    
+           p:other_1 ""; 
+       
+           p:death "4 May 1943"; 
+           p:parent_1 p:i3;
+           p:labelname "Anna Brown Cope"; 
+           p:parent_2 p:i22;
+           p:birth "26 Jul 1862".
+    
+ 
+  
+    p:i336
+     
+    
+           p:other_1 ""; 
+       
+           p:death "17 Dec 1915"; 
+           p:parent_1 p:i75;
+           p:labelname "John Stokes Cope"; 
+           p:parent_2 p:i89;
+           p:birth "20 Aug 1859".
+    
+ 
+  
+    p:i337
+     
+    
+           p:other_1 ""; 
+       
+           p:death "18 Jun 1919"; 
+           p:labelname "Elizabeth Hooten Savery"; 
+           p:birth "9 Jan 1875".
+    
+ 
+  
+    p:i338
+     
+    
+           p:other_1 ""; 
+       
+           p:death "13 Aug 1854"; 
+           p:parent_1 p:i75;
+           p:labelname "Francis Cope"; 
+           p:parent_2 p:i89;
+           p:birth "13 Jan 1852".
+    
+ 
+  
+    p:i339
+     
+    
+           p:other_1 ""; 
+       
+           p:death "15 Jan 1900"; 
+           p:parent_1 p:i344;
+           p:labelname "Henry Cope Haines"; 
+           p:parent_2 p:i66;
+           p:birth "7 Aug 1853".
+    
+ 
+  
+    p:i340
+     
+    
+           p:other_1 ""; 
+       
+           p:death "22 Feb 1938"; 
+           p:parent_1 p:i175;
+           p:labelname "George Williams Emlen"; 
+           p:parent_2 p:i435;
+           p:birth "4 May 1853".
+    
+ 
+  
+    p:i341
+     
+    
+           p:other_1 ""; 
+       
+           p:death "6 Jan 1920"; 
+           p:parent_1 p:i75;
+           p:labelname "Eleanor Cope"; 
+           p:parent_2 p:i89;
+           p:birth "15 Sep 1854".
+    
+ 
+  
+    p:i342
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Lilla B. Dimrock"; 
+           p:birth "".
+    
+ 
+  
+    p:i343
+     
+    
+           p:other_1 ""; 
+       
+           p:death "3 Apr 1881"; 
+           p:parent_1 p:i75;
+           p:labelname "Arthur Cope"; 
+           p:parent_2 p:i89;
+           p:birth "14 Aug 1858".
+    
+ 
+  
+    p:i344
+     
+    
+           p:other_1 ""; 
+       
+           p:death "4 Nov 1886"; 
+           p:parent_1 p:i234;
+           p:labelname "John Smith Haines"; 
+           p:parent_2 p:i370;
+           p:birth "4 Mar 1820".
+    
+ 
+  
+    p:i345
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i471;
+           p:labelname "Geoffrey Michael Bidlake"; 
+           p:parent_2 p:i472;
+           p:birth "3 Jun 1975".
+    
+ 
+  
+    p:i346
+     
+    
+           p:other_1 ""; 
+       
+           p:death "13 Jun 1803"; 
+           p:parent_1 p:i233;
+           p:labelname "John Cope"; 
+           p:parent_2 p:i455;
+           p:birth "14 Nov 1763".
+    
+ 
+  
+    p:i347
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary Updegraff"; 
+           p:birth "".
+    
+ 
+  
+    p:i348
+     
+    
+           p:other_1 ""; 
+       
+           p:death "9 Dec 1905"; 
+           p:parent_1 p:i351;
+           p:labelname "Philip Cresson Garrett"; 
+           p:parent_2 p:i485;
+           p:birth "1 Nov 1834".
+    
+ 
+  
+    p:i349
+     
+    
+           p:other_1 ""; 
+       
+           p:death "20 Apr 1936"; 
+           p:parent_1 p:i340;
+           p:labelname "Samuel Emlen"; 
+           p:parent_2 p:i341;
+           p:birth "27 Mar 1880".
+    
+ 
+  
+    p:i350
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i468;
+           p:labelname "Elizabeth Cope"; 
+           p:parent_2 p:i469;
+           p:birth "".
+    
+ 
+  
+    p:i351
+     
+    
+           p:other_1 "Thomas Garrett:  -"; 
+       
+           p:death "14 Jun 1989"; 
+           p:parent_1 p:i461;
+           p:labelname "Thomas Cresson Garrett"; 
+           p:parent_2 p:i462;
+           p:birth "16 Oct 1903".
+    
+ 
+  
+    p:i352
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Benjamin Taylor"; 
+           p:birth "".
+    
+ 
+  
+    p:i353
+     
+    
+           p:other_1 ""; 
+       
+           p:death "20 Aug 1789; E. Bradford; PA"; 
+           p:labelname "Sarah Nookes"; 
+           p:birth "".
+    
+ 
+  
+    p:i354
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "James Robert Boyd"; 
+           p:birth "".
+    
+ 
+  
+    p:i355
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i408;
+           p:labelname "Emily Cope Harrison"; 
+           p:parent_2 p:i409;
+           p:birth "24 Dec 1964".
+    
+ 
+  
+    p:i356
+     
+    
+           p:other_1 ""; 
+       
+           p:death "14 Apr 1932"; 
+           p:parent_1 p:i26;
+           p:labelname "Alfreda Cope Lewis"; 
+           p:parent_2 p:i0;
+           p:birth "8 Jan 1897".
+    
+ 
+  
+    p:i357
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i134;
+           p:labelname "Elisabeth Morris Evans"; 
+           p:parent_2 p:i194;
+           p:birth "1917".
+    
+ 
+  
+    p:i358
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i134;
+           p:labelname "Katherine Wistar Evans"; 
+           p:parent_2 p:i194;
+           p:birth "1916".
+    
+ 
+  
+    p:i359
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i136;
+           p:labelname "Sylvia H. Evans Jr."; 
+           p:parent_2 p:i360;
+           p:birth "1915".
+    
+ 
+  
+    p:i360
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Sylvia Hathaway"; 
+           p:birth "".
+    
+ 
+  
+    p:i361
+     
+    
+           p:other_1 ""; 
+       
+           p:death "14 Feb 1773"; 
+           p:parent_1 p:i468;
+           p:labelname "John Cope"; 
+           p:parent_2 p:i469;
+           p:birth "1691; Naamans Creek; DE".
+    
+ 
+  
+    p:i362
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Unknown"; 
+           p:birth "".
+    
+ 
+  
+    p:i363
+     
+    
+           p:other_1 ""; 
+       
+           p:death "26 Jul 1853"; 
+           p:labelname "Rebecca Shoemaker"; 
+           p:birth "23 Jul 1781".
+    
+ 
+  
+    p:i364
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John Cope"; 
+           p:birth "".
+    
+ 
+  
+    p:i365
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1670"; 
+           p:labelname "Margaret"; 
+           p:birth "".
+    
+ 
+  
+    p:i366
+     
+    
+           p:other_1 ""; 
+       
+           p:death "27 Mar 1914"; 
+           p:parent_1 p:i75;
+           p:labelname "Alban Cope"; 
+           p:parent_2 p:i89;
+           p:birth "7 Jan 1864".
+    
+ 
+  
+    p:i367
+     
+    
+           p:other_1 ""; 
+       
+           p:death "21 Jan 1976"; 
+           p:parent_1 p:i340;
+           p:labelname "George Williams Emlen Jr."; 
+           p:parent_2 p:i341;
+           p:birth "7 May 1887".
+    
+ 
+  
+    p:i368
+     
+    
+           p:other_1 ""; 
+       
+           p:death "11 Mar 1939"; 
+           p:parent_1 p:i498;
+           p:labelname "William Henry Collins"; 
+           p:birth "22 Oct 1859".
+    
+ 
+  
+    p:i369
+     
+    
+           p:other_1 ""; 
+       
+           p:death "20 Aug 1958"; 
+           p:parent_1 p:i84;
+           p:labelname "Julia Cope"; 
+           p:parent_2 p:i429;
+           p:birth "1866".
+    
+ 
+  
+    p:i370
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Jane"; 
+           p:birth "".
+    
+ 
+  
+    p:i371
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "J. Roberts Foulk"; 
+           p:birth "".
+    
+ 
+  
+    p:i372
+     
+    
+           p:other_1 ""; 
+       
+           p:death "7 Jun 1938"; 
+           p:parent_1 p:i348;
+           p:labelname "Frances Biddle Garrett"; 
+           p:parent_2 p:i176;
+           p:birth "14 Jul 1866".
+    
+ 
+  
+    p:i373
+     
+    
+           p:other_1 ""; 
+       
+           p:death "10 Sep 1977"; 
+           p:parent_1 p:i330;
+           p:labelname "Thomas Pym Cope Jr."; 
+           p:parent_2 p:i331;
+           p:birth "24 Jun 1897".
+    
+ 
+  
+    p:i374
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "James Miller"; 
+           p:birth "".
+    
+ 
+  
+    p:i375
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1812"; 
+           p:parent_1 p:i233;
+           p:labelname "Sarah Cope"; 
+           p:parent_2 p:i455;
+           p:birth "14 Oct 1761".
+    
+ 
+  
+    p:i376
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i361;
+           p:labelname "Joshua Cope"; 
+           p:parent_2 p:i383;
+           p:birth "4 Nov 1736".
+    
+ 
+  
+    p:i377
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1982"; 
+           p:labelname "Anna Rhoads Elkinton"; 
+           p:birth "1899".
+    
+ 
+  
+    p:i378
+     
+    
+           p:other_1 ""; 
+       
+           p:death "3 Aug 1855"; 
+           p:parent_1 p:i233;
+           p:labelname "Hannah Cope"; 
+           p:parent_2 p:i455;
+           p:birth "16 Jul 1778".
+    
+ 
+  
+    p:i379
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Simon Cranston"; 
+           p:birth "".
+    
+ 
+  
+    p:i380
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1968"; 
+           p:labelname "John Frederick Stanwell-Fletcher"; 
+           p:birth "31 Oct 1903".
+    
+ 
+  
+    p:i381
+     
+    
+           p:other_1 ""; 
+       
+           p:death "15 Jan 2000"; 
+           p:parent_1 p:i5;
+           p:labelname "Theodora Morris Cope"; 
+           p:parent_2 p:i235;
+           p:birth "4 Jan 1906".
+    
+ 
+  
+    p:i382
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John Evans"; 
+           p:birth "".
+    
+ 
+  
+    p:i383
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1747"; 
+           p:parent_1 p:i449;
+           p:labelname "Charity Jefferis"; 
+           p:parent_2 p:i450;
+           p:birth "11 Apr 1695".
+    
+ 
+  
+    p:i384
+     
+    
+           p:other_1 ""; 
+       
+           p:death "20 Dec 1879"; 
+           p:parent_1 p:i46;
+           p:labelname "Mary Anna Cope"; 
+           p:parent_2 p:i239;
+           p:birth "10 Apr 1843".
+    
+ 
+  
+    p:i385
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "E. Lowell Sumner"; 
+           p:birth "7 Dec 1907".
+    
+ 
+  
+    p:i386
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i415;
+           p:labelname "Hannah Graf- Evans"; 
+           p:parent_2 p:i416;
+           p:birth "".
+    
+ 
+  
+    p:i387
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i479;
+           p:labelname "Matthew Evans Trueblood"; 
+           p:parent_2 p:i480;
+           p:birth "".
+    
+ 
+  
+    p:i388
+     
+    
+           p:other_1 ""; 
+       
+           p:death "27 Jan 1833"; 
+           p:parent_1 p:i7;
+           p:labelname "Anna Cope"; 
+           p:parent_2 p:i15;
+           p:birth "8 Dec 1831".
+    
+ 
+  
+    p:i389
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i85;
+           p:labelname "David G. Cope"; 
+           p:parent_2 p:i402;
+           p:birth "18 Aug 1885".
+    
+ 
+  
+    p:i390
+     
+    
+           p:other_1 ""; 
+       
+           p:death "12 Jun 1959"; 
+           p:parent_1 p:i234;
+           p:labelname "Marion Hartshorne Haines"; 
+           p:parent_2 p:i334;
+           p:birth "16 Oct 1880".
+    
+ 
+  
+    p:i391
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i134;
+           p:labelname "Christopher Evans"; 
+           p:parent_2 p:i194;
+           p:birth "1919".
+    
+ 
+  
+    p:i392
+     
+    
+           p:other_1 ""; 
+       
+           p:death "15 Sep 1817"; 
+           p:parent_1 p:i361;
+           p:labelname "Samuel Cope"; 
+           p:parent_2 p:i383;
+           p:birth "10 Aug 1726".
+    
+ 
+  
+    p:i393
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Deborah Parke"; 
+           p:birth "".
+    
+ 
+  
+    p:i394
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i85;
+           p:labelname "Joseph Cope"; 
+           p:parent_2 p:i402;
+           p:birth "21 Nov 1886".
+    
+ 
+  
+    p:i395
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1 Sep 1847"; 
+           p:parent_1 p:i41;
+           p:labelname "Eleanor Cope"; 
+           p:parent_2 p:i173;
+           p:birth "10 Oct 1803".
+    
+ 
+  
+    p:i396
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i433;
+           p:labelname "Caleb Foote Iv"; 
+           p:parent_2 p:i83;
+           p:birth "26 Mar 1917".
+    
+ 
+  
+    p:i397
+     
+    
+           p:other_1 ""; 
+       
+           p:death "Oct 1649"; 
+           p:parent_1 p:i364;
+           p:labelname "John Cope"; 
+           p:parent_2 p:i365;
+           p:birth "".
+    
+ 
+  
+    p:i398
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Elizabeth"; 
+           p:birth "".
+    
+ 
+  
+    p:i399
+     
+    
+           p:other_1 ""; 
+       
+           p:death "5 Oct 1855"; 
+           p:parent_1 p:i233;
+           p:labelname "Israel Cope"; 
+           p:parent_2 p:i455;
+           p:birth "11 Nov 1770".
+    
+ 
+  
+    p:i400
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Sarah Buckely"; 
+           p:birth "".
+    
+ 
+  
+    p:i401
+     
+    
+           p:other_1 ""; 
+       
+           p:death "3 Aug 1977"; 
+           p:parent_1 p:i330;
+           p:labelname "Elizabeth Frances Cope"; 
+           p:parent_2 p:i331;
+           p:birth "26 Nov 1898".
+    
+ 
+  
+    p:i402
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Anna Garrett"; 
+           p:birth "7 Dec 1848; Birmingham; PA".
+    
+ 
+  
+    p:i403
+     
+    
+           p:other_1 ""; 
+       
+           p:death "7 Apr 1883"; 
+           p:parent_1 p:i234;
+           p:labelname "John Frederick Haines"; 
+           p:parent_2 p:i334;
+           p:birth "29 May 1882".
+    
+ 
+  
+    p:i404
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary Louise Saunders"; 
+           p:birth "".
+    
+ 
+  
+    p:i405
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i26;
+           p:labelname "Anna Lewis"; 
+           p:parent_2 p:i0;
+           p:birth "18 Aug 1898".
+    
+ 
+  
+    p:i406
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John Stokes"; 
+           p:birth "".
+    
+ 
+  
+    p:i407
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary Hatkinson"; 
+           p:birth "".
+    
+ 
+  
+    p:i408
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Timothy Stone Harrison"; 
+           p:birth "13 Jul 1927".
+    
+ 
+  
+    p:i409
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i465;
+           p:labelname "Eliza Middleton Cope"; 
+           p:parent_2 p:i466;
+           p:birth "8 Nov 1936".
+    
+ 
+  
+    p:i410
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Jeffrey Douglas Schroeder"; 
+           p:birth "26 Jun 1970".
+    
+ 
+  
+    p:i411
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i471;
+           p:labelname "Jennifer Anne Cope Bidlake"; 
+           p:parent_2 p:i472;
+           p:birth "17 Dec 1971".
+    
+ 
+  
+    p:i412
+     
+    
+           p:other_1 ""; 
+       
+           p:death "Mar 1802"; 
+           p:parent_1 p:i233;
+           p:labelname "William Cope"; 
+           p:parent_2 p:i455;
+           p:birth "3 Feb 1766".
+    
+ 
+  
+    p:i413
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Elizabeth Rohrer"; 
+           p:birth "".
+    
+ 
+  
+    p:i414
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i85;
+           p:labelname "Ellen Cope"; 
+           p:parent_2 p:i402;
+           p:birth "27 Feb 1884".
+    
+ 
+  
+    p:i415
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i475;
+           p:labelname "Jonathan Wood Evans"; 
+           p:parent_2 p:i476;
+           p:birth "".
+    
+ 
+  
+    p:i416
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Melissa Graf"; 
+           p:birth "".
+    
+ 
+  
+    p:i417
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i136;
+           p:labelname "Margaret Evans"; 
+           p:parent_2 p:i360;
+           p:birth "1916".
+    
+ 
+  
+    p:i418
+     
+    
+           p:other_1 ""; 
+       
+           p:death "6 Feb 1927"; 
+           p:parent_1 p:i340;
+           p:labelname "Esther Margaret Emlen"; 
+           p:parent_2 p:i341;
+           p:birth "27 Apr 1890".
+    
+ 
+  
+    p:i419
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i415;
+           p:labelname "Jeremy Graf- Evans"; 
+           p:parent_2 p:i416;
+           p:birth "".
+    
+ 
+  
+    p:i420
+     
+    
+           p:other_1 ""; 
+       
+           p:death "24 Mar 1969"; 
+           p:parent_1 p:i336;
+           p:labelname "Ernesta Cope"; 
+           p:parent_2 p:i337;
+           p:birth "13 Jun 1912".
+    
+ 
+  
+    p:i421
+     
+    
+           p:other_1 ""; 
+       
+           p:death "26 Feb 1986"; 
+           p:parent_1 p:i461;
+           p:labelname "Philip Cresson Garrett"; 
+           p:parent_2 p:i462;
+           p:birth "16 Oct 1903".
+    
+ 
+  
+    p:i422
+     
+    
+           p:other_1 ""; 
+       
+           p:death "5 Feb 1909"; 
+           p:parent_1 p:i461;
+           p:labelname "Alfred Cope Garrett Jr."; 
+           p:parent_2 p:i462;
+           p:birth "26 Oct 1908".
+    
+ 
+  
+    p:i423
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i408;
+           p:labelname "Abigail Denormandie Harrison"; 
+           p:parent_2 p:i409;
+           p:birth "31 Dec 1962".
+    
+ 
+  
+    p:i424
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i134;
+           p:labelname "Ernest Mervyn Evans"; 
+           p:parent_2 p:i194;
+           p:birth "1913".
+    
+ 
+  
+    p:i425
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Ronald Claude Schaaf"; 
+           p:birth "".
+    
+ 
+  
+    p:i426
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i475;
+           p:labelname "Deborah Susanne Evans"; 
+           p:parent_2 p:i476;
+           p:birth "".
+    
+ 
+  
+    p:i427
+     
+    
+           p:other_1 ""; 
+       
+           p:death "2002"; 
+           p:parent_1 p:i336;
+           p:labelname "Sophia Cope"; 
+           p:parent_2 p:i337;
+           p:birth "20 May 1914".
+    
+ 
+  
+    p:i428
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i85;
+           p:labelname "Herman Cope"; 
+           p:parent_2 p:i402;
+           p:birth "21 Nov 1880".
+    
+ 
+  
+    p:i429
+     
+    
+           p:other_1 ""; 
+       
+           p:death "16 Dec 1933"; 
+           p:parent_1 p:i482;
+           p:labelname "Anne Pim"; 
+           p:parent_2 p:i483;
+           p:birth "1840".
+    
+ 
+  
+    p:i430
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i18;
+           p:labelname "Joseph Morris Evans"; 
+           p:parent_2 p:i377;
+           p:birth "1921".
+    
+ 
+  
+    p:i431
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Anne Tall"; 
+           p:birth "".
+    
+ 
+  
+    p:i432
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i465;
+           p:labelname "Robert Denormandie Cope"; 
+           p:parent_2 p:i466;
+           p:birth "11 Feb 1935".
+    
+ 
+  
+    p:i433
+     
+    
+           p:other_1 ""; 
+       
+           p:death "27 Aug 1964"; 
+           p:labelname "Henry Wilder Foote Jr."; 
+           p:birth "2 Feb 1875".
+    
+ 
+  
+    p:i434
+     
+    
+           p:other_1 ""; 
+       
+           p:death "25 Jan 1941"; 
+           p:parent_1 p:i340;
+           p:labelname "Arthur Cope Emlen"; 
+           p:parent_2 p:i341;
+           p:birth "9 Apr 1882".
+    
+ 
+  
+    p:i435
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Sarah Williams"; 
+           p:birth "".
+    
+ 
+  
+    p:i436
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Joshua Dallas Marvil"; 
+           p:birth "".
+    
+ 
+  
+    p:i437
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i475;
+           p:labelname "Rebecca Evans"; 
+           p:parent_2 p:i476;
+           p:birth "".
+    
+ 
+  
+    p:i438
+     
+    
+           p:other_1 ""; 
+       
+           p:death "20 Jan 1999"; 
+           p:parent_1 p:i433;
+           p:labelname "Elizabeth Stewardson Foote"; 
+           p:parent_2 p:i83;
+           p:birth "5 Feb 1920".
+    
+ 
+  
+    p:i439
+     
+    
+           p:other_1 ""; 
+       
+           p:death "27 Jan 1961"; 
+           p:parent_1 p:i234;
+           p:labelname "Elizabeth Hartshorne Haines"; 
+           p:parent_2 p:i334;
+           p:birth "26 Aug 1884".
+    
+ 
+  
+    p:i440
+     
+    
+           p:other_1 ""; 
+       
+           p:death "31 Jul 1812"; 
+           p:parent_1 p:i361;
+           p:labelname "John Cope"; 
+           p:parent_2 p:i383;
+           p:birth "Jan 1729/30".
+    
+ 
+  
+    p:i441
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Grace Cloud"; 
+           p:birth "".
+    
+ 
+  
+    p:i442
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i468;
+           p:labelname "Ruth Cope"; 
+           p:parent_2 p:i469;
+           p:birth "".
+    
+ 
+  
+    p:i443
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i336;
+           p:labelname "William Savery Cope"; 
+           p:parent_2 p:i337;
+           p:birth "11 Feb 1911".
+    
+ 
+  
+    p:i444
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i436;
+           p:labelname "Cayla Evans Marvil"; 
+           p:parent_2 p:i437;
+           p:birth "".
+    
+ 
+  
+    p:i445
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i425;
+           p:labelname "Wilder Evans Schaaf"; 
+           p:parent_2 p:i426;
+           p:birth "".
+    
+ 
+  
+    p:i446
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i468;
+           p:labelname "William Cope"; 
+           p:parent_2 p:i469;
+           p:birth "".
+    
+ 
+  
+    p:i447
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i415;
+           p:labelname "Rachel Graf- Evans"; 
+           p:parent_2 p:i416;
+           p:birth "".
+    
+ 
+  
+    p:i448
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i425;
+           p:labelname "Eliza Evans Schaaf"; 
+           p:parent_2 p:i426;
+           p:birth "".
+    
+ 
+  
+    p:i449
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1738"; 
+           p:labelname "Robert Jefferis"; 
+           p:birth "".
+    
+ 
+  
+    p:i450
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Jane Chandler"; 
+           p:birth "1676".
+    
+ 
+  
+    p:i451
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i361;
+           p:labelname "Daughter Cope"; 
+           p:parent_2 p:i383;
+           p:birth "1722".
+    
+ 
+  
+    p:i452
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i18;
+           p:labelname "Arthur Evans"; 
+           p:parent_2 p:i377;
+           p:birth "1920".
+    
+ 
+  
+    p:i453
+     
+    
+           p:other_1 ""; 
+       
+           p:death "27 Oct 1817"; 
+           p:labelname "Margaret Cooper"; 
+           p:birth "14 Oct 1781".
+    
+ 
+  
+    p:i454
+     
+    
+           p:other_1 ""; 
+       
+           p:death "14 Feb 1975"; 
+           p:parent_1 p:i433;
+           p:labelname "Henry Wilder Foote Ii"; 
+           p:parent_2 p:i83;
+           p:birth "30 Aug 1905".
+    
+ 
+  
+    p:i455
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1 Jun 1809"; 
+           p:labelname "Mary Mendenhall"; 
+           p:birth "1738".
+    
+ 
+  
+    p:i456
+     
+    
+           p:other_1 ""; 
+       
+           p:death "26 Jan 1982"; 
+           p:parent_1 p:i330;
+           p:labelname "Anne Francis Cope"; 
+           p:parent_2 p:i331;
+           p:birth "14 Jul 1900".
+    
+ 
+  
+    p:i457
+     
+    
+           p:other_1 ""; 
+       
+           p:death "13 Jan 1959"; 
+           p:parent_1 p:i461;
+           p:labelname "Eleanor Wistar Garrett"; 
+           p:parent_2 p:i462;
+           p:birth "27 Aug 1898".
+    
+ 
+  
+    p:i458
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary Dickinson"; 
+           p:birth "".
+    
+ 
+  
+    p:i459
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Elizabeth Fisher"; 
+           p:birth "".
+    
+ 
+  
+    p:i460
+     
+    
+           p:other_1 ""; 
+       
+           p:death "Feb 1879"; 
+           p:parent_1 p:i48;
+           p:labelname "William Drinker Cope"; 
+           p:parent_2 p:i1;
+           p:birth "9 Aug 1878".
+    
+ 
+  
+    p:i461
+     
+    
+           p:other_1 ""; 
+       
+           p:death "28 Sep 1946"; 
+           p:parent_1 p:i348;
+           p:labelname "Alfred Cope Garrett"; 
+           p:parent_2 p:i176;
+           p:birth "3 Nov 1867".
+    
+ 
+  
+    p:i462
+     
+    
+           p:other_1 ""; 
+       
+           p:death "16 May 1953"; 
+           p:parent_1 p:i263;
+           p:labelname "Eleanor Tyson Evans"; 
+           p:parent_2 p:i160;
+           p:birth "2 Jan 1873".
+    
+ 
+  
+    p:i463
+     
+    
+           p:other_1 ""; 
+       
+           p:death "9 Dec 1999"; 
+           p:parent_1 p:i433;
+           p:labelname "Arthur Foote"; 
+           p:parent_2 p:i83;
+           p:birth "18 Jan 1911".
+    
+ 
+  
+    p:i464
+     
+    
+           p:other_1 ""; 
+       
+           p:death "8 Sep 1978"; 
+           p:labelname "Margaret Wysong"; 
+           p:birth "".
+    
+ 
+  
+    p:i465
+     
+    
+           p:other_1 ""; 
+       
+           p:death "30 Apr 1994"; 
+           p:parent_1 p:i330;
+           p:labelname "Oliver Cope"; 
+           p:parent_2 p:i331;
+           p:birth "15 Aug 1902".
+    
+ 
+  
+    p:i466
+     
+    
+           p:other_1 ""; 
+       
+           p:death "29 Apr 1994"; 
+           p:labelname "Alice Denormandie"; 
+           p:birth "25 Jul 1909".
+    
+ 
+  
+    p:i467
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1996"; 
+           p:parent_1 p:i433;
+           p:labelname "Agnes Cope Foote"; 
+           p:parent_2 p:i83;
+           p:birth "11 Mar 1907".
+    
+ 
+  
+    p:i468
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1697"; 
+           p:parent_1 p:i397;
+           p:labelname "Oliver Cope"; 
+           p:parent_2 p:i398;
+           p:birth "1647".
+    
+ 
+  
+    p:i469
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1723"; 
+           p:labelname "Rebecca"; 
+           p:birth "".
+    
+ 
+  
+    p:i470
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i136;
+           p:labelname "Nathaniel H. Evans"; 
+           p:parent_2 p:i360;
+           p:birth "1917".
+    
+ 
+  
+    p:i471
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Lawrence John Bidlake"; 
+           p:birth "9 Oct 1940".
+ 
+  
+    p:i472
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i380;
+           p:labelname "Patricia Cope Stanwell-Fletcher"; 
+           p:parent_2 p:i381;
+           p:birth "11 Oct 1939".
+  
+    p:i473
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1969"; 
+           p:parent_1 p:i18;
+           p:labelname "Jonathan Evans"; 
+           p:parent_2 p:i377;
+           p:birth "1916".
+    
+ 
+  
+    p:i474
+     
+    
+           p:other_1 ""; 
+       
+           p:death "6 Feb 1813"; 
+           p:parent_1 p:i361;
+           p:labelname "Mary Cope"; 
+           p:parent_2 p:i383;
+           p:birth "Feb 1727/8".
+    
+    p:i475
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i18;
+           p:labelname "William Elkinton Evans"; 
+           p:parent_2 p:i377;
+           p:birth "1916".
+  
+    p:i476
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Lucretia Way Wood"; 
+           p:birth "".
+  
+    p:i477
+           p:other_1 ""; 
+           p:death "Jan 1999"; 
+           p:parent_1 p:i26;
+           p:labelname "William Draper Lewis Jr."; 
+           p:parent_2 p:i0;
+           p:birth "25 Apr 1903".
+ 
+  
+    p:i478
+     
+           p:other_1 ""; 
+           p:death ""; 
+           p:parent_1 p:i134;
+           p:labelname "Francis Cope Evans"; 
+           p:parent_2 p:i194;
+           p:birth "1914".
+  
+    p:i479
+     
+           p:other_1 ""; 
+           p:death ""; 
+           p:labelname "Peter Martin Trueblood"; 
+           p:birth "".
+ 
+  
+    p:i480
+           p:other_1 ""; 
+           p:death ""; 
+           p:parent_1 p:i475;
+           p:labelname "Cynthia Evans"; 
+           p:parent_2 p:i476;
+           p:birth "".
+  
+    p:i481
+     
+           p:other_1 ""; 
+           p:death ""; 
+           p:parent_1 p:i136;
+           p:labelname "Faith Evans"; 
+           p:parent_2 p:i360;
+           p:birth "1921".
+  
+    p:i482
+           p:other_1 ""; 
+           p:death ""; 
+           p:labelname "Richard Pim"; 
+           p:birth "".
+  
+    p:i483
+     
+           p:other_1 "Mary E.:  -"; 
+           p:death ""; 
+           p:labelname "Mary E"; 
+           p:birth "".
+    
+ 
+    p:i484
+     
+           p:other_1 ""; 
+           p:death "10 Oct 1817"; 
+           p:parent_1 p:i361;
+           p:labelname "Hannah Cope"; 
+           p:parent_2 p:i383;
+           p:birth "25 Apr 1724".
+  
+    p:i485
+     
+           p:other_1 ""; 
+           p:death ""; 
+           p:labelname "Frances Biddle"; 
+           p:birth "".
+    
+ 
+  
+    p:i486
+    
+           p:other_1 ""; 
+           p:death "3 Jan 1821"; 
+           p:parent_1 p:i361;
+           p:labelname "Joseph Cope"; 
+           p:parent_2 p:i383;
+           p:birth "1 Aug 1740".
+ 
+  
+    p:i487
+     
+           p:other_1 ""; 
+           p:death "26 Feb 1803"; 
+           p:parent_1 p:i352;
+           p:labelname "Ann Taylor"; 
+           p:parent_2 p:i353;
+           p:birth "17 Oct 1749".
+  
+    p:i488
+     
+           p:other_1 ""; 
+           p:death ""; 
+           p:parent_1 p:i41;
+           p:labelname "Caroline Cope"; 
+           p:parent_2 p:i173;
+           p:birth "10 Jun 1796".
+    
+  
+    p:i489
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1991"; 
+           p:parent_1 p:i26;
+           p:labelname "Henry Lewis"; 
+           p:parent_2 p:i0;
+           p:birth "11 Sep 1893".
+    
+ 
+  
+    p:i490
+     
+           p:other_1 ""; 
+           p:death "18 Dec 1859"; 
+           p:labelname "Edward Yarnall"; 
+           p:birth "31 Jul 1799".
+  
+    p:i491
+     
+           p:other_1 ""; 
+           p:death "4 Dec 1978"; 
+           p:labelname "Philip Hayward Gray"; 
+           p:birth "6 Apr 1906".
+  
+    p:i492
+     
+           p:other_1 ""; 
+           p:death "4 Apr 1870"; 
+           p:parent_1 p:i486;
+           p:labelname "Joseph Cope"; 
+           p:parent_2 p:i487;
+           p:birth "27 Dec 1794".
+  
+    p:i493
+     
+           p:other_1 ""; 
+           p:death "18 May 1860"; 
+           p:labelname "Eliza Gilbert"; 
+           p:birth "4 Nov 1799; Sewickly Twp Westmoreland Co PA".
+ 
+  
+    p:i494
+     
+           p:other_1 ""; 
+           p:death ""; 
+           p:parent_1 p:i412;
+           p:labelname "Caleb Cope"; 
+           p:parent_2 p:i413;
+           p:birth "".
+  
+    p:i495
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i311;
+           p:labelname "Abbey Anne Cope"; 
+           p:parent_2 p:i363;
+           p:birth "".
+    
+ 
+  
+    p:i496
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i425;
+           p:labelname "Isaac Evans Schaaf"; 
+           p:parent_2 p:i426;
+           p:birth "".
+    
+ 
+  
+    p:i497
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Amy Bane"; 
+           p:birth "".
+    
+ 
+  
+    p:i498
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William B. Collins"; 
+           p:birth "".
+    
+ 
+  
+    p:i499
+     
+    
+           p:other_1 ""; 
+       
+           p:death "5 Sep 1862"; 
+           p:parent_1 p:i3;
+           p:labelname "Algernon Cope"; 
+           p:parent_2 p:i22;
+           p:birth "22 Nov 1860".
+    
+ 
+  
+    p:i500
+     
+    
+           p:other_1 ""; 
+       
+           p:death "25 Mar 1911"; 
+           p:labelname "Thomas Evans"; 
+           p:birth "16 Aug 1843".
+    
+ 
+  
+    p:i501
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Catharine Wistar"; 
+           p:birth "".
+    
+ 
+  
+    p:i502
+     
+    
+           p:other_1 ""; 
+       
+           p:death "13 Feb 1913"; 
+           p:labelname "Theodore Hollingsworth Morris"; 
+           p:birth "10 Oct 1840".
+    
+ 
+  
+    p:i503
+     
+    
+           p:other_1 ""; 
+       
+           p:death "20 Jul 1907"; 
+           p:labelname "Mary Lownes Paul"; 
+           p:birth "26 Nov 1843".
+    
+ 
+  
+    p:i504
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i515;
+           p:labelname "Sarah Scattergood"; 
+           p:birth "".
+    
+ 
+  
+    p:i505
+     
+    
+           p:other_1 "Thomas Scattergood:  -"; 
+       
+           p:death "18 Apr 1907"; 
+           p:labelname "Thomas Scattergood"; 
+           p:birth "1841".
+    
+ 
+  
+    p:i506
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Sarah Garrett"; 
+           p:birth "1840".
+    
+ 
+  
+    p:i507
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1996"; 
+           p:labelname "Henry Regnery"; 
+           p:birth "".
+    
+ 
+  
+    p:i508
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i144;
+           p:labelname "Eleanor Scattergood"; 
+           p:parent_2 p:i172;
+           p:birth "".
+    
+ 
+  
+    p:i509
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Maria Chase"; 
+           p:birth "".
+    
+ 
+  
+    p:i510
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i144;
+           p:labelname "Elizabeth Cope Scattergood"; 
+           p:parent_2 p:i172;
+           p:birth "5 Apr 1907".
+    
+ 
+  
+    p:i511
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i144;
+           p:labelname "Caroline Scattergood"; 
+           p:parent_2 p:i172;
+           p:birth "".
+    
+ 
+  
+    p:i512
+     
+    
+           p:other_1 ""; 
+       
+           p:death "22 Feb 2002"; 
+           p:parent_1 p:i144;
+           p:labelname "Roger Scattergood"; 
+           p:parent_2 p:i172;
+           p:birth "22 Aug 1912".
+    
+ 
+  
+    p:i513
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Betty"; 
+           p:birth "".
+    
+ 
+  
+    p:i514
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:parent_1 p:i515;
+           p:labelname "Anne Scattergood"; 
+           p:birth "".
+    
+ 
+  
+    p:i515
+     
+    
+           p:other_1 ""; 
+       
+           p:death "1995"; 
+           p:parent_1 p:i144;
+           p:labelname "Henry Scattergood"; 
+           p:parent_2 p:i172;
+           p:birth "".
+    
+ 
+  
+    p:i237
+     
+    
+           p:other_1 ""; 
+       
+           p:death "6 Feb 1860"; 
+           p:parent_1 p:i3;
+           p:labelname "William Brown Cope"; 
+           p:parent_2 p:i22;
+           p:birth "8 May 1854".
+    
+ 
+  
+    p:i136
+     
+    
+           p:other_1 ""; 
+       
+           p:death "27 Apr 1977"; 
+           p:parent_1 p:i13;
+           p:labelname "Harold Evans"; 
+           p:parent_2 p:i28;
+           p:birth "26 Oct 1886; Germantown PA".
+    
+ 
+  
+    p:i195
+     
+    
+           p:other_1 ""; 
+       
+           p:death "23 Apr 1860"; 
+           p:parent_1 p:i69;
+           p:labelname "Eleanor Cope"; 
+           p:parent_2 p:i11;
+           p:birth "17 Dec 1847".
+    
+ 
+  
+    p:i4
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Witmer Stone"; 
+           p:birth "".
+    
+ 
+  
+    p:i6
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Rachel Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i8
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Richard Randolf"; 
+           p:birth "".
+    
+ 
+  
+    p:i12
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "B.M. Snover"; 
+           p:birth "".
+    
+ 
+  
+    p:i14
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Eleanor Cope Tyson"; 
+           p:birth "".
+    
+ 
+  
+    p:i16
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Julia K. Reeve"; 
+           p:birth "".
+    
+ 
+  
+    p:i17
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Joe (Joseph Paul) Morris"; 
+           p:birth "".
+    
+ 
+  
+    p:i19
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary Stokes"; 
+           p:birth "".
+    
+ 
+  
+    p:i21
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Thomas S. Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i23
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William A.  Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i24
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Elizabeth H.  Farnum"; 
+           p:birth "".
+    
+ 
+  
+    p:i25
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John D.  Thomas"; 
+           p:birth "".
+    
+ 
+  
+    p:i27
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Joanna Sophia Buffum"; 
+           p:birth "".
+    
+ 
+  
+    p:i30
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "James E. (James Evans) Rhoads"; 
+           p:birth "".
+    
+ 
+  
+    p:i31
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Sibylla T. Morris"; 
+           p:birth "".
+    
+ 
+  
+    p:i33
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Anna B. Stork"; 
+           p:birth "".
+    
+ 
+  
+    p:i34
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Benjamin A. Cook"; 
+           p:birth "".
+    
+ 
+  
+    p:i35
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Jonathan E. (Jonathan Evans) Rhoads"; 
+           p:birth "".
+    
+ 
+  
+    p:i36
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William Pim"; 
+           p:birth "".
+    
+ 
+  
+    p:i37
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Thomas Pim"; 
+           p:birth "".
+    
+ 
+  
+    p:i38
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Sarah B. Corbit"; 
+           p:birth "".
+    
+ 
+  
+    p:i39
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Charles Taber"; 
+           p:birth "".
+    
+ 
+  
+    p:i40
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Joseph R. (Joseph Reed) Ingersoll"; 
+           p:birth "".
+    
+ 
+  
+    p:i42
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Susan S. Reeve"; 
+           p:birth "".
+    
+ 
+  
+    p:i43
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Martha Leeds"; 
+           p:birth "".
+    
+ 
+  
+    p:i44
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Emily Rose"; 
+           p:birth "".
+    
+ 
+  
+    p:i45
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Charles M. Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i47
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Sarah W. Rhoads"; 
+           p:birth "".
+    
+ 
+  
+    p:i49
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Samuel Morris"; 
+           p:birth "".
+    
+ 
+  
+    p:i50
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Elizabeth Sandwith Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i51
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary Sandwith"; 
+           p:birth "".
+    
+ 
+  
+    p:i52
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Joseph Simpson"; 
+           p:birth "".
+    
+ 
+  
+    p:i53
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William Rutty"; 
+           p:birth "".
+    
+ 
+  
+    p:i54
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Annie P. Newbold"; 
+           p:birth "".
+    
+ 
+  
+    p:i55
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Charles Pemberton Pleasants"; 
+           p:birth "".
+    
+ 
+  
+    p:i56
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Henry Sandwith Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i58
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Eli K. (Eli Kirk) Price"; 
+           p:birth "".
+    
+ 
+  
+    p:i59
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William Newbold"; 
+           p:birth "".
+    
+ 
+  
+    p:i60
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William Sansom"; 
+           p:birth "".
+    
+ 
+  
+    p:i61
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Thomas Stewardson"; 
+           p:birth "".
+    
+ 
+  
+    p:i62
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "H. Simpson"; 
+           p:birth "".
+    
+ 
+  
+    p:i63
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Henry W. (Henry Waln) Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i64
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John Sergeant"; 
+           p:birth "".
+    
+ 
+  
+    p:i65
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Anna S. Biddle"; 
+           p:birth "".
+    
+ 
+  
+    p:i68
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Rebecca Waln Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i70
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Katharine Wistar Evans Stokes"; 
+           p:birth "".
+    
+ 
+  
+    p:i71
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Hampton & Larzelere']"; 
+           p:birth "".
+    
+ 
+  
+    p:i72
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "George W. Beall"; 
+           p:birth "".
+    
+ 
+  
+    p:i73
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William H. Slater"; 
+           p:birth "".
+    
+ 
+  
+    p:i74
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Jonathan Pim"; 
+           p:birth "".
+    
+ 
+  
+    p:i76
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary Elizabeth Brown Hartshorne"; 
+           p:birth "".
+    
+ 
+  
+    p:i79
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Sarah Miller Walker"; 
+           p:birth "".
+    
+ 
+  
+    p:i87
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John E. Cope"; 
+           p:birth "".
+    
+ 
+  
+    p:i91
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John Inskeep"; 
+           p:birth "".
+    
+ 
+  
+    p:i92
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "[' Committee for introducing water into the City of Philadelphia']"; 
+           p:birth "".
+    
+ 
+  
+    p:i93
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William Forster"; 
+           p:birth "".
+    
+ 
+  
+    p:i94
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "James Cropper"; 
+           p:birth "".
+    
+ 
+  
+    p:i95
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Robert Benson"; 
+           p:birth "".
+    
+ 
+  
+    p:i97
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Dorothy Dolittle"; 
+           p:birth "".
+    
+ 
+  
+    p:i98
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Joel Baily"; 
+           p:birth "".
+    
+ 
+  
+    p:i99
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Eleanor Tyson Yarnall Alderson"; 
+           p:birth "".
+    
+ 
+  
+    p:i100
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Elizabeth Allen"; 
+           p:birth "".
+    
+ 
+  
+    p:i101
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "J.H. Bacon"; 
+           p:birth "".
+    
+ 
+  
+    p:i102
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary C. Beardsley"; 
+           p:birth "".
+    
+ 
+  
+    p:i103
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary Bettle"; 
+           p:birth "".
+    
+ 
+  
+    p:i104
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Anna S. Blair"; 
+           p:birth "".
+    
+ 
+  
+    p:i105
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "E. Broadhurst"; 
+           p:birth "".
+    
+ 
+  
+    p:i106
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Edward Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i107
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Moses Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i108
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "C.M.  Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i109
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Elizabeth S. Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i110
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i111
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Susanna Sansom Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i112
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary  Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i113
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William M. Collins"; 
+           p:birth "".
+    
+ 
+  
+    p:i114
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Jeremiah Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i115
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Elizabeth C.  Collins"; 
+           p:birth "".
+    
+ 
+  
+    p:i117
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary J.B. Chew"; 
+           p:birth "".
+    
+ 
+  
+    p:i118
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "David H. Burrell"; 
+           p:birth "".
+    
+ 
+  
+    p:i119
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Francis Joseph Stokes"; 
+           p:birth "".
+    
+ 
+  
+    p:i120
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Charles Reed Cary"; 
+           p:birth "".
+    
+ 
+  
+    p:i121
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Ellen Chase"; 
+           p:birth "".
+    
+ 
+  
+    p:i122
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Ida C. Clothier"; 
+           p:birth "".
+    
+ 
+  
+    p:i123
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary Coates"; 
+           p:birth "".
+    
+ 
+  
+    p:i124
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Elmer M. Compton"; 
+           p:birth "".
+    
+ 
+  
+    p:i125
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Laura P. Corse"; 
+           p:birth "".
+    
+ 
+  
+    p:i126
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Celia Creeth"; 
+           p:birth "".
+    
+ 
+  
+    p:i127
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Elizabeth Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i128
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "George Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i129
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Joseph D. Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i130
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Willis Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i131
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Edith May"; 
+           p:birth "".
+    
+ 
+  
+    p:i132
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Frances Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i133
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Davis H. (Davis Hoopes) Forsythe"; 
+           p:birth "".
+    
+ 
+  
+    p:i135
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Ernest Mervyn  Evans"; 
+           p:birth "".
+    
+ 
+  
+    p:i137
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Hannah Rhoads Haines Garrett"; 
+           p:birth "".
+    
+ 
+  
+    p:i138
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "M.H. Garrett"; 
+           p:birth "".
+    
+ 
+  
+    p:i139
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William C. Geddes"; 
+           p:birth "".
+    
+ 
+  
+    p:i140
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Phebe E.H. Haines"; 
+           p:birth "".
+    
+ 
+  
+    p:i141
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Anna C. (Anna Cope) Hartshorne"; 
+           p:birth "".
+    
+ 
+  
+    p:i142
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Charles Hartshorne"; 
+           p:birth "".
+    
+ 
+  
+    p:i143
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Charles James Rhoads"; 
+           p:birth "".
+    
+ 
+  
+    p:i145
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Catharine M. Shipley"; 
+           p:birth "".
+    
+ 
+  
+    p:i146
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "J. Henry (Joseph Henry) Scattergood"; 
+           p:birth "".
+    
+ 
+  
+    p:i147
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Hannah Evans Rhoads"; 
+           p:birth "".
+    
+ 
+  
+    p:i148
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John Stokes"; 
+           p:birth "".
+    
+ 
+  
+    p:i149
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Hannah Sansom Vaux"; 
+           p:birth "".
+    
+ 
+  
+    p:i150
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "George O. Walker"; 
+           p:birth "".
+    
+ 
+  
+    p:i151
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Anna Almy Jenkinsd. 1849"; 
+           p:birth "".
+    
+ 
+  
+    p:i152
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Anna Jelly"; 
+           p:birth "".
+    
+ 
+  
+    p:i153
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Francis Thompson King"; 
+           p:birth "".
+    
+ 
+  
+    p:i154
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Eliza Paul Gurney"; 
+           p:birth "".
+    
+ 
+  
+    p:i155
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Walter H. Magill"; 
+           p:birth "".
+    
+ 
+  
+    p:i156
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "I.M. Mintzer"; 
+           p:birth "".
+    
+ 
+  
+    p:i157
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "E.N. L'duvier"; 
+           p:birth "".
+    
+ 
+  
+    p:i158
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Nellie N. LaMotte"; 
+           p:birth "".
+    
+ 
+  
+    p:i159
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Sarah Emlen Moore"; 
+           p:birth "".
+    
+ 
+  
+    p:i161
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Hannah Bacon Evans"; 
+           p:birth "".
+    
+ 
+  
+    p:i162
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Haverford College']"; 
+           p:birth "".
+    
+ 
+  
+    p:i163
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Jonathan Evans"; 
+           p:birth "".
+    
+ 
+  
+    p:i164
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Josiah Forster"; 
+           p:birth "".
+    
+ 
+  
+    p:i165
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Rebecca Evans"; 
+           p:birth "".
+    
+ 
+  
+    p:i166
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Ridgely  Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i167
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Rachel Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i168
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Robert W.  Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i169
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Henry Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i170
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Robert Hutchinson  Rose"; 
+           p:birth "".
+    
+ 
+  
+    p:i171
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Rebecca Embree"; 
+           p:birth "".
+    
+ 
+  
+    p:i174
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Henry Hartshorne"; 
+           p:birth "".
+    
+ 
+  
+    p:i177
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Robert Earle"; 
+           p:birth "".
+    
+ 
+  
+    p:i178
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary Rhoads Haines"; 
+           p:birth "".
+    
+ 
+  
+    p:i179
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary Yarnall"; 
+           p:birth "".
+    
+ 
+  
+    p:i181
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John Newbold Hazard"; 
+           p:birth "".
+    
+ 
+  
+    p:i182
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Isabella Gottier"; 
+           p:birth "".
+    
+ 
+  
+    p:i183
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i184
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Rowland Gibson Hazard"; 
+           p:birth "".
+    
+ 
+  
+    p:i185
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Susan Hazard"; 
+           p:birth "".
+    
+ 
+  
+    p:i186
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Caroline Newbold  Hazard"; 
+           p:birth "".
+    
+ 
+  
+    p:i187
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Samuel R. Gummere"; 
+           p:birth "".
+    
+ 
+  
+    p:i188
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Julia Duprois"; 
+           p:birth "".
+    
+ 
+  
+    p:i189
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Stephen Grellet"; 
+           p:birth "".
+    
+ 
+  
+    p:i191
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Hannah Perot Morris"; 
+           p:birth "".
+    
+ 
+  
+    p:i192
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Caspar Morris"; 
+           p:birth "".
+    
+ 
+  
+    p:i193
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Anne Morris"; 
+           p:birth "".
+    
+ 
+  
+    p:i196
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Nancy Archibald"; 
+           p:birth "".
+    
+ 
+  
+    p:i197
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Amelia C. Smith"; 
+           p:birth "".
+    
+ 
+  
+    p:i198
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['unknown']"; 
+           p:birth "".
+    
+ 
+  
+    p:i199
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Hannah Pastorius"; 
+           p:birth "".
+    
+ 
+  
+    p:i200
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Charles Rhoads"; 
+           p:birth "".
+    
+ 
+  
+    p:i201
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John Reeve"; 
+           p:birth "".
+    
+ 
+  
+    p:i202
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Hannah Price"; 
+           p:birth "".
+    
+ 
+  
+    p:i203
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "David Jones  Davis"; 
+           p:birth "".
+    
+ 
+  
+    p:i204
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Margaret Shoemaker"; 
+           p:birth "".
+    
+ 
+  
+    p:i205
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Dr. Rhoads"; 
+           p:birth "".
+    
+ 
+  
+    p:i206
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Blakey Sharpless"; 
+           p:birth "".
+    
+ 
+  
+    p:i207
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Hannah Tatum"; 
+           p:birth "".
+    
+ 
+  
+    p:i208
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Hetty N. (Hetty Newlin) Stokes"; 
+           p:birth "".
+    
+ 
+  
+    p:i209
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "R. Simpson"; 
+           p:birth "".
+    
+ 
+  
+    p:i210
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Theodore Thomas"; 
+           p:birth "".
+    
+ 
+  
+    p:i211
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Jesse Tyson"; 
+           p:birth "".
+    
+ 
+  
+    p:i213
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Esther Morton Smith"; 
+           p:birth "".
+    
+ 
+  
+    p:i214
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "E.P. Smith"; 
+           p:birth "".
+    
+ 
+  
+    p:i215
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "M.N. W."; 
+           p:birth "".
+    
+ 
+  
+    p:i216
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "E.C. Vanuxem"; 
+           p:birth "".
+    
+ 
+  
+    p:i217
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "M.A. Vanuxem"; 
+           p:birth "".
+    
+ 
+  
+    p:i218
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Ellis H. Yarnall"; 
+           p:birth "".
+    
+ 
+  
+    p:i219
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Martha Pleasants"; 
+           p:birth "".
+    
+ 
+  
+    p:i220
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Hannah Warner"; 
+           p:birth "".
+    
+ 
+  
+    p:i221
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Yardley Warner"; 
+           p:birth "".
+    
+ 
+  
+    p:i222
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Ann Jones"; 
+           p:birth "".
+    
+ 
+  
+    p:i223
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Alexander C. Wood"; 
+           p:birth "".
+    
+ 
+  
+    p:i224
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i225
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Caroline C. Yarnall"; 
+           p:birth "".
+    
+ 
+  
+    p:i226
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John K. West"; 
+           p:birth "".
+    
+ 
+  
+    p:i227
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Elizabeth Waln Wistar"; 
+           p:birth "".
+    
+ 
+  
+    p:i228
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Mary Williams"; 
+           p:birth "".
+    
+ 
+  
+    p:i229
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Emma Cope Yarnall"; 
+           p:birth "".
+    
+ 
+  
+    p:i230
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Tyson'; ' Eleanor Cope'; ' '; ' ']"; 
+           p:birth "".
+    
+ 
+  
+    p:i231
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Caroline Rachel  Cope"; 
+           p:birth "".
+    
+ 
+  
+    p:i240
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Fox Fitch& Co. Real Estate Brokers"; 
+           p:birth "".
+    
+ 
+  
+    p:i241
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Robert R. Carson"; 
+           p:birth "".
+    
+ 
+  
+    p:i242
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "[\"Pennsylvania Freedmen's Relief Association\"]"; 
+           p:birth "".
+    
+ 
+  
+    p:i243
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Stephen Colwell"; 
+           p:birth "".
+    
+ 
+  
+    p:i244
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "James A.  Wright"; 
+           p:birth "".
+    
+ 
+  
+    p:i245
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William A. Ward"; 
+           p:birth "".
+    
+ 
+  
+    p:i246
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "J. Miller (James Miller) M'Kim"; 
+           p:birth "".
+    
+ 
+  
+    p:i247
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Hannah Simpson"; 
+           p:birth "".
+    
+ 
+  
+    p:i248
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "George J. Johnson"; 
+           p:birth "".
+    
+ 
+  
+    p:i249
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William Brown"; 
+           p:birth "".
+    
+ 
+  
+    p:i250
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Washington (D.C.)']"; 
+           p:birth "".
+    
+ 
+  
+    p:i251
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Elizabeth Dorsey Treas"; 
+           p:birth "".
+    
+ 
+  
+    p:i252
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Allen C. Clark"; 
+           p:birth "".
+    
+ 
+  
+    p:i253
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Annabella Cresson Wistar"; 
+           p:birth "".
+    
+ 
+  
+    p:i255
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Daniel B. Smith"; 
+           p:birth "".
+    
+ 
+  
+    p:i256
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Thomas Williamson"; 
+           p:birth "".
+    
+ 
+  
+    p:i257
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Bartholomew Wyatt  Wistar"; 
+           p:birth "".
+    
+ 
+  
+    p:i258
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Edward H. Bonsall"; 
+           p:birth "".
+    
+ 
+  
+    p:i259
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "[\"Friends' South-Western Burial Ground Committee\"]"; 
+           p:birth "".
+    
+ 
+  
+    p:i260
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Philadelphia (Pa.). Register of Wills']"; 
+           p:birth "".
+    
+ 
+  
+    p:i261
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Estate of Thomas Evans']"; 
+           p:birth "".
+    
+ 
+  
+    p:i262
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Internal revenue--United States']"; 
+           p:birth "".
+    
+ 
+  
+    p:i264
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "David Dean"; 
+           p:birth "".
+    
+ 
+  
+    p:i265
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "S.F. (Samuel F.) Balderston"; 
+           p:birth "".
+    
+ 
+  
+    p:i266
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Marcellus  Balderston"; 
+           p:birth "".
+    
+ 
+  
+    p:i267
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William B. Carlile"; 
+           p:birth "".
+    
+ 
+  
+    p:i268
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Maurice  Joy"; 
+           p:birth "".
+    
+ 
+  
+    p:i269
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "James W. Owens"; 
+           p:birth "".
+    
+ 
+  
+    p:i270
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Trustees of Thomas Evans Estate']"; 
+           p:birth "".
+    
+ 
+  
+    p:i271
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "J. Hamilton"; 
+           p:birth "".
+    
+ 
+  
+    p:i272
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Samuel Scheide"; 
+           p:birth "".
+    
+ 
+  
+    p:i273
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "George Hirst"; 
+           p:birth "".
+    
+ 
+  
+    p:i274
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Charles White"; 
+           p:birth "".
+    
+ 
+  
+    p:i275
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Jones & Cadbury Co. Cooper"; 
+           p:birth "".
+    
+ 
+  
+    p:i276
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "William H. Bacon"; 
+           p:birth "".
+    
+ 
+  
+    p:i277
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Francis Stokes"; 
+           p:birth "".
+    
+ 
+  
+    p:i278
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "J.L. (John Livingston) Ehringer"; 
+           p:birth "".
+    
+ 
+  
+    p:i279
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Whitall Tatum Company']"; 
+           p:birth "".
+    
+ 
+  
+    p:i280
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Lehigh Valley Railroad Company']"; 
+           p:birth "".
+    
+ 
+  
+    p:i282
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "George Hirst"; 
+           p:birth "".
+    
+ 
+  
+    p:i283
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Robert H. Beatty"; 
+           p:birth "".
+    
+ 
+  
+    p:i284
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Joseph Liddon  Pennock"; 
+           p:birth "".
+    
+ 
+  
+    p:i285
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Joseph D.  Folwell"; 
+           p:birth "".
+    
+ 
+  
+    p:i286
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Joseph  Walton"; 
+           p:birth "".
+    
+ 
+  
+    p:i287
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Phineas  Lownes"; 
+           p:birth "".
+    
+ 
+  
+    p:i288
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Lindley  Murray"; 
+           p:birth "".
+    
+ 
+  
+    p:i289
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Henry  Evernghim"; 
+           p:birth "".
+    
+ 
+  
+    p:i290
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John  Bowne"; 
+           p:birth "".
+    
+ 
+  
+    p:i291
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "David Colden  Murrayd. 1885"; 
+           p:birth "".
+    
+ 
+  
+    p:i292
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Charles William  Fisher"; 
+           p:birth "".
+    
+ 
+  
+    p:i293
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John Henry  Drinker"; 
+           p:birth "".
+    
+ 
+  
+    p:i294
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John G. (John Griscom)  Gummere"; 
+           p:birth "".
+    
+ 
+  
+    p:i295
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Charles  Osborne"; 
+           p:birth "".
+    
+ 
+  
+    p:i296
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Isaac Hicks  Clapp"; 
+           p:birth "".
+    
+ 
+  
+    p:i297
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "David Stroud  Burson"; 
+           p:birth "".
+    
+ 
+  
+    p:i298
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Lindley  Fisher"; 
+           p:birth "".
+    
+ 
+  
+    p:i299
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John D.  Richardson"; 
+           p:birth "".
+    
+ 
+  
+    p:i300
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "John  Elliott"; 
+           p:birth "".
+    
+ 
+  
+    p:i301
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Benjamin Vail  Marsh"; 
+           p:birth "".
+    
+ 
+  
+    p:i302
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Lloyd Pearsall  Smith"; 
+           p:birth "".
+    
+ 
+  
+    p:i303
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Jonathan  Fell"; 
+           p:birth "".
+    
+ 
+  
+    p:i304
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Samuel  Hulme"; 
+           p:birth "".
+    
+ 
+  
+    p:i305
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Joseph Potts Hornor  Coates"; 
+           p:birth "".
+    
+ 
+  
+    p:i306
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Henry  Cromwell"; 
+           p:birth "".
+    
+ 
+  
+    p:i307
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "James  Carey"; 
+           p:birth "".
+    
+ 
+  
+    p:i308
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "James Valentine  Emlen"; 
+           p:birth "".
+    
+ 
+  
+    p:i309
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Thomas Webb  Birdsall"; 
+           p:birth "".
+    
+ 
+  
+    p:i310
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Samuel Reeve"; 
+           p:birth "".
+    
+ 
+  
+    p:i312
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "P.H. Schrader"; 
+           p:birth "".
+    
+ 
+  
+    p:i313
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Farr & Brother']"; 
+           p:birth "".
+    
+ 
+  
+    p:i314
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Williams & Stokes']"; 
+           p:birth "".
+    
+ 
+  
+    p:i315
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Lloyd Chamberlain"; 
+           p:birth "".
+    
+ 
+  
+    p:i316
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Samuel Richards Shipley"; 
+           p:birth "".
+    
+ 
+  
+    p:i317
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "James M. Price"; 
+           p:birth "".
+    
+ 
+  
+    p:i318
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Lilly Wood"; 
+           p:birth "".
+    
+ 
+  
+    p:i319
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Amy Wills"; 
+           p:birth "".
+    
+ 
+  
+    p:i320
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Robinson & Thompson']"; 
+           p:birth "".
+  
+    p:i321
+     
+           p:other_1 ""; 
+           p:death ""; 
+           p:labelname "John Bright"; 
+           p:birth "".
+  
+    p:i322
+    
+           p:other_1 ""; 
+           p:death ""; 
+           p:labelname "Frederick Gutekunst"; 
+           p:birth "".
+  
+    p:i323
+     
+           p:other_1 ""; 
+           p:death ""; 
+           p:labelname "H.C. Phillips"; 
+           p:birth "".
+  
+    p:i324
+     
+           p:other_1 ""; 
+           p:death ""; 
+           p:labelname "Joseph Henry Wills"; 
+           p:birth "".
+  
+    p:i325
+     
+           p:other_1 ""; 
+           p:death ""; 
+           p:labelname "['J.C. Harmon & Co.']"; 
+           p:birth "".
+    
+    p:i326
+           p:other_1 ""; 
+           p:death ""; 
+           p:labelname "Ruth Reeve"; 
+           p:birth "".
+    
+    p:i327
+     
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "['Bagley & Hewett']"; 
+           p:birth "".
+    
+  
+    p:i328
+     
+    
+           p:other_1 ""; 
+       
+           p:death ""; 
+           p:labelname "Margaret C. Newbold"; 
+           p:birth "".
+    
+    p:i329
+    
+           p:other_1 ""; 
+           p:death ""; 
+           p:labelname "Francis Cope Yarnall"; 
+           p:birth "".
+    
