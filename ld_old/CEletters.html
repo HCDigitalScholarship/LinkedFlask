@@ -1,0 +1,43 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.ico">
+    <title>Linked Data</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/bootstrap/css/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/bootstrap/css/sticky-footer.css" rel="stylesheet">
+  </head>  
+  <body>
+  <div class="container">
+      <div class="page-header">
+        <h1>Linked Data</h1>
+      </div>  
+      <center>
+	<h1>Search for a certain author or recipient</h1>
+    	<form action="http://165.82.13.162/cgi-bin/CEletters.cgi" method="get">
+
+      		<p>Find info about correspondences between people in the Cope Evans Project </p>
+      		<p>
+        		<input type="text" name="name"/>
+        		<input type="submit" value="search"/>
+			<br>
+			<input type="checkbox" name="option1" value="aut"> Wrote<br>
+			<input type="checkbox" name="option2" value="recip" checked> Recieved<br>
+      		</p>
+
+    	</form> </center>
+     </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Haverford College</p>
+      </div>
+    </footer>
+</body></html>
