@@ -5,3 +5,18 @@
 {% else %}
   <h1>Hello, World! There seems to be an issue here but, it is just the beginning and there will be plently of time to fix this :^) </h1>
 {% endif %}
+{% if birth %}
+	{% if death %}
+	<p> {{birth}} - {{death}}</p>
+	{% else %}
+	<p> {{birth}}-unknown </p>
+	{% endif %}
+{% else %}
+	{% if death %}
+        <p> unknown - {{death}}</p>
+        {% else %}
+        <p> unkown-unknown </p>
+        {% endif %}
+{% endif %}
+
+
