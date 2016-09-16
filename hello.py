@@ -6,29 +6,16 @@ from flask import render_template
 @app.route('/person/')
 @app.route('/person/<name>')
 def hello(name=None, birth=None, death=None, par1=None, par2=None):
-
-	#name, birth, death, par1url, par1, par2url, par2  = id2name(name)    
-	row = id2name(name)    
+	id_name = "p:" + name
+	row = id2name(id_name)    
 	#name, birth, death, par1, par2 = id2name(name)    
-	#print "name", name
 	name, birth, death = row
 	print name, birth, death
 	return render_template('hello.html', name=name, birth=birth, death=death )
 
 
-
-
 graph = rdflib.Graph()
 graph.parse('CEpeople.ttl', format= 'turtle')
-
-#querynames = """
-#prefix p: <localhost:3030/ds/person#> 
-#SELECT ?name 
-#WHERE {
-#  REPLACEME p:labelname ?name .
-#}
-#"""
-
 
 @app.route('/')
 def hello_world():
@@ -49,17 +36,83 @@ def id2name(username):
 
 	querynames = querynames.replace("REPLACEME",username)
 	resultnames = graph.query(querynames)
-#	print 'User %s' % username
 	print querynames
 	for row in resultnames:
 		print "row", row
 		name, birth, death=  row
 		print name, birth, death
 		return row
-		#return name, birth, death, par1, par2
 
-#	return '??? %s' % username
 
+
+#def parents(username): should handle the issue of Nonetype result
+
+
+queryspouse = """
+prefix p: <localhost:3030/ds/person#> 
+prefix t: <localhost:3030/ds/trip#> 
+prefix d:<localhost:3030/ds/date#>
+prefix letter:<localhost:3030/ds/letter#>
+
+SELECT ?partners
+WHERE
+{
+REPLACEME p:labelname ?name .
+?x p:parent_1 ?m;
+   p:parent_1 ?person_id;
+   ?person_id p:labelame ?person ;
+   p:parent_2 ?partner_id;
+   ?partner_id p:labelname ?partners . 
+?y p:parent_2 ?m;
+    p:parent_2 ?person_id;
+    ?person_id p:labelname ?person ;
+    p:parent_1 ?partner_id;
+    ?partner_id p:labelname ?partners . 
+}
+"""
+
+
+querysib = """
+prefix p: <localhost:3030/ds/person#> 
+prefix t: <localhost:3030/ds/trip#> 
+prefix d:<localhost:3030/ds/date#>
+prefix letter:<localhost:3030/ds/letter#>
+prefix fhkb: <http://www.example.com/genealogy.owl#> 
+
+SELECT ?urlperson ?c
+WHERE
+{ 
+REPLACEME p:labelname ?name ;
+     p:parent_1 ?p1 ;
+     p:parent_2 ?p2 . 
+     ?p1 fhkb:hasChild ?that .
+     ?that p:Name ?c .
+     FILTER ( ?c != "REPLACEME" )
+     ?p2 fhkb:hasChild ?this .
+     ?this p:labelname ?c .
+     FILTER ( ?c != "REPLACEME" )
+BIND(REPLACE(?c, " ", "+", "i") AS ?urlperson)
+}
+"""
+
+
+
+
+querychild = """
+prefix p: <localhost:3030/ds/person#> 
+prefix t: <localhost:3030/ds/trip#> 
+prefix d:<localhost:3030/ds/date#>
+prefix letter:<localhost:3030/ds/letter#>
+prefix fhkb: <http://www.example.com/genealogy.owl#> 
+
+SELECT ?urlperson ?c 
+WHERE { 
+	REPLACEME p:labelname ?name ;
+	fhkb:hasChild ?this .
+        ?this p:labelname ?c .
+BIND(REPLACE(?c, " ", "+", "i") AS ?urlperson)
+ } 
+"""
 
 
 

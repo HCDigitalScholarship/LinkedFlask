@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en"><head> 
 <meta charset="utf-8"> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
@@ -17,13 +18,41 @@
 <body> <!-- Begin page content --> 
 <div class="container"> 
 	<div class="page-header"> 
-		<h1><a href="http://165.82.13.38/LinkedData.html">Linked Data</a></h1> 
+		<h1><a href="badlink/LinkedData.html">Linked Data</a></h1> 
 	</div>
 
 
-#something goes here// this is where the child template will fill
+<div class='container'> <!-- this was container info when we had side results too -->
+{% block content %}
+{% endblock %}
+
+{% block parents %}
+{% endblock %}
+
+{% block siblings %}
+{% endblock %}
+
+{% block spouse %}
+{% endblock %}
+
+{% block children %}
+{% endblock %}
+
+{% block letterswritten %}
+{% endblock %}
+
+{% block lettersrecieved %}
+{% endblock %}
+  
+{% block travels %}
+{% endblock %}
+
+</div>
+
+</div>
 
 
+</div>
 <footer class="footer"> 
 	<div class="container"> 
 		<p class="text-muted">Haverford College</p> 
