@@ -1,6 +1,6 @@
-@prefix p: <localhost:3030/ds/person#> .
-@prefix t: <localhost:3030/ds/trip#> .
-@prefix d: <localhost:3030/ds/date#> .
+@prefix p: <http://127.0.0.1:5000/person/> .
+@prefix t: <http://127.0.0.1:5000/trip/> .
+@prefix d: <http://127.0.0.1:5000/date/> .
 
     p:i0
            p:other_1 "Caroline Mary Cope:  1865-1953"; 

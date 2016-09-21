@@ -16,9 +16,14 @@
 	{% if death %}
         <p> unknown - {{death}}</p>
         {% else %}
-        <p> unkown-unknown </p>
+        <p> unknown-unknown </p>
         {% endif %}
 {% endif %}
 
+{% if par1 and par2 and p1url and p2url %}
+   <p> <b>Parents:</b> <a href="{{p1url}}">{{par1}}</a>, <a href="{{p2url}}">{{par2}}</a><p>
+{% else %}
+   <p> <b>Parents: </b>unknown</p>
+{% endif %}
 
 {% endblock %}
