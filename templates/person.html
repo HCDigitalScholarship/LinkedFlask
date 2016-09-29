@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block person %}
+</div>   
+
+        <center>
+ 	<h1>Search for a certain person</h1>
+
+    	<form action="http://165.82.13.162/cgi-bin/CEperson.cgi" method="get">
+
+      		<p>Find info about a person in the Cope Evans Project</p>
+      		<p>
+        	  <input type="text" name="name"/>
+        	  <input type="submit" value="search"/>
+      		</p>
+
+   	</form>
+        </center>
+     </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Haverford College</p>
+      </div>
+{% endblock %}

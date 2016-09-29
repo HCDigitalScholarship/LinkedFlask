@@ -4,6 +4,9 @@ import rdflib
 from flask import render_template
 
 @app.route('/person/')
+def person():
+	return render_template('person.html')
+
 @app.route('/person/<name>')
 def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p1url=None):
 	id_name = "p:" + name  #adds prefix for query
@@ -13,9 +16,14 @@ def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p
     	par1, p1url, par2, p2url = parrow
 	return render_template('hello.html', name=name, birth=birth, death=death, par1=par1, p1url=p1url, par2=par2, p2url=p2url )
 	
-
-
-
+@app.route('/travels/')
+def travel():
+	return render_template('travels.html')
+	
+@app.route('/letters/')
+def letters():
+	return render_template('letterswritten.html')
+	
 
 graph = rdflib.Graph()
 graph.parse('CEpeople.ttl', format= 'turtle')
