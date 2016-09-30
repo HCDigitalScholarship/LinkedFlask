@@ -5,13 +5,23 @@ from flask import render_template
 
 @app.route('/person/')
 @app.route('/person/<name>')
-def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p1url=None):
+def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p1url=None, sib=None):
 	id_name = "p:" + name  #adds prefix for query
 	row = id2name(id_name) # gets name and birth-death
 	name, birth, death = row 
 	parrow = parents(id_name) #gets parents names and links
     	par1, p1url, par2, p2url = parrow
-	return render_template('hello.html', name=name, birth=birth, death=death, par1=par1, p1url=p1url, par2=par2, p2url=p2url )
+#	sib = sib(id_name)
+#	print sib
+	return render_template('hello.html',
+				 name=name,
+				 birth=birth,
+				 death=death,
+				 par1=par1,
+				 p1url=p1url,
+				 par2=par2,
+				 p2url=p2url,
+				 sib=sib )
 	
 
 
@@ -19,6 +29,7 @@ def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p
 
 graph = rdflib.Graph()
 graph.parse('CEpeople.ttl', format= 'turtle')
+graph.parse('CEchild.ttl', format= 'turtle')
 
 @app.route('/')
 def hello_world():
@@ -110,40 +121,31 @@ def spouse(username): # THIS IS THE MOST DIFFICULT ONE SO I WILL DO IT LAST :^)
 
 
 
-def sib(username): 
-
+def sib(username): #this will create an array of [[sib_1,url1],[sib_2,url_2],...] and be traversed in the template with a for-loop 
 
 	querysib = """
-prefix p: <localhost:3030/ds/person#> 
-prefix t: <localhost:3030/ds/trip#> 
-prefix d:<localhost:3030/ds/date#>
-prefix letter:<localhost:3030/ds/letter#>
-prefix fhkb: <http://www.example.com/genealogy.owl#> 
+PREFIX p: <http://127.0.0.1:5000/person/> 
+PREFIX fhkb: <http://www.example.com/genealogy.owl/> 
 
-SELECT ?urlperson ?c
+SELECT  ?c ?that 
 WHERE
 { 
 REPLACEME p:labelname ?name ;
      p:parent_1 ?p1 ;
      p:parent_2 ?p2 . 
      ?p1 fhkb:hasChild ?that .
-     ?that p:Name ?c .
-     FILTER ( ?c != "REPLACEME" )
+     ?that p:labelname ?c .
      ?p2 fhkb:hasChild ?this .
      ?this p:labelname ?c .
-     FILTER ( ?c != "REPLACEME" )
-BIND(REPLACE(?c, " ", "+", "i") AS ?urlperson)
+     FILTER (?name != ?c)
 }
 """
 
-	queryparents = queryparents.replace("REPLACEME",username)
-        resultparents = graph.query(queryparents)
-         # this will assume that everyone has 2 or none parents
-
-        #print "len(resultparents)", len(resultparents)
-        if len(resultparents) == 0: #everything is blank
-                return [None,None,None,None]
-        for row in resultparents:
+	querysib = querysib.replace("REPLACEME",username)
+        resultsib = graph.query(querysib)
+        if len(resultsib) == 0: #everything is blank
+                return None
+        for row in resultsib:
                 if row != None: #this might be unnecessary 
                         return row
 
@@ -170,6 +172,13 @@ BIND(REPLACE(?c, " ", "+", "i") AS ?urlperson)
 
 
 
+	querysib = querysib.replace("REPLACEME",username)
+        resultsib = graph.query(querysib)
+        if len(resultsib) == 0: #everything is blank
+                return None
+        for row in resultsib:
+                if row != None: #this might be unnecessary 
+                        return row
 
 
 

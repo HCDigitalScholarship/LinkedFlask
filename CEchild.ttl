@@ -1,0 +1,667 @@
+@prefix p: <http://127.0.0.1:5000//person/> .
+@prefix fhkb: <http://www.example.com/genealogy.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+
+
+fhkb:hasChild rdf:type owl:ObjectProperty .
+
+fhkb:isChildOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf fhkb:hasChild .
+
+
+      p:i3 
+      fhkb:hasChild     p:i0.
+      p:i22 
+      fhkb:hasChild     p:i0.
+      p:i3 
+      fhkb:hasChild     p:i1.
+      p:i22 
+      fhkb:hasChild     p:i1.
+      p:i3 
+      fhkb:hasChild     p:i2.
+      p:i22 
+      fhkb:hasChild     p:i2.
+      p:i7 
+      fhkb:hasChild     p:i3.
+      p:i15 
+      fhkb:hasChild     p:i3.
+      p:i48 
+      fhkb:hasChild     p:i5.
+      p:i1 
+      fhkb:hasChild     p:i5.
+      p:i41 
+      fhkb:hasChild     p:i7.
+      p:i173 
+      fhkb:hasChild     p:i7.
+      p:i7 
+      fhkb:hasChild     p:i9.
+      p:i15 
+      fhkb:hasChild     p:i9.
+      p:i69 
+      fhkb:hasChild     p:i10.
+      p:i11 
+      fhkb:hasChild     p:i10.
+      p:i254 
+      fhkb:hasChild     p:i13.
+      p:i281 
+      fhkb:hasChild     p:i13.
+      p:i13 
+      fhkb:hasChild     p:i18.
+      p:i28 
+      fhkb:hasChild     p:i18.
+      p:i406 
+      fhkb:hasChild     p:i20.
+      p:i407 
+      fhkb:hasChild     p:i20.
+      p:i3 
+      fhkb:hasChild     p:i28.
+      p:i22 
+      fhkb:hasChild     p:i28.
+      p:i69 
+      fhkb:hasChild     p:i29  .
+      p:i11 
+      fhkb:hasChild     p:i29.
+      p:i69 
+      fhkb:hasChild     p:i32.
+      p:i11 
+      fhkb:hasChild     p:i32.
+      p:i233 
+      fhkb:hasChild     p:i41.
+      p:i455 
+      fhkb:hasChild     p:i41.
+      p:i41 
+      fhkb:hasChild     p:i46.
+      p:i173 
+      fhkb:hasChild     p:i46.
+      p:i69 
+      fhkb:hasChild     p:i48.
+      p:i11 
+      fhkb:hasChild     p:i48.
+      p:i41 
+      fhkb:hasChild     p:i57.
+      p:i173 
+      fhkb:hasChild     p:i57.
+      p:i7 
+      fhkb:hasChild     p:i66.
+      p:i15 
+      fhkb:hasChild     p:i66.
+      p:i69 
+      fhkb:hasChild     p:i67.
+      p:i11 
+      fhkb:hasChild     p:i67.
+      p:i41 
+      fhkb:hasChild     p:i69.
+      p:i173 
+      fhkb:hasChild     p:i69.
+      p:i7 
+      fhkb:hasChild     p:i75.
+      p:i15 
+      fhkb:hasChild     p:i75.
+      p:i48 
+      fhkb:hasChild     p:i77.
+      p:i1 
+      fhkb:hasChild     p:i77.
+      p:i13 
+      fhkb:hasChild     p:i78.
+      p:i28 
+      fhkb:hasChild     p:i78.
+      p:i3 
+      fhkb:hasChild     p:i81.
+      p:i22 
+      fhkb:hasChild     p:i81.
+      p:i3 
+      fhkb:hasChild     p:i82.
+      p:i22 
+      fhkb:hasChild     p:i82.
+      p:i48 
+      fhkb:hasChild     p:i83.
+      p:i1 
+      fhkb:hasChild     p:i83.
+      p:i46 
+      fhkb:hasChild     p:i84.
+      p:i239 
+      fhkb:hasChild     p:i84.
+      p:i492 
+      fhkb:hasChild     p:i85.
+      p:i493 
+      fhkb:hasChild     p:i85.
+      p:i75 
+      fhkb:hasChild     p:i88.
+      p:i89 
+      fhkb:hasChild     p:i88.
+      p:i75 
+      fhkb:hasChild     p:i90.
+      p:i89 
+      fhkb:hasChild     p:i90.
+      p:i41 
+      fhkb:hasChild     p:i96.
+      p:i173 
+      fhkb:hasChild     p:i96.
+      p:i361 
+      fhkb:hasChild     p:i116.
+      p:i383 
+      fhkb:hasChild     p:i116.
+      p:i13 
+      fhkb:hasChild     p:i134.
+      p:i28 
+      fhkb:hasChild     p:i134.
+      p:i13 
+      fhkb:hasChild     p:i136.
+      p:i28 
+      fhkb:hasChild     p:i136.
+      p:i505 
+      fhkb:hasChild     p:i144.
+      p:i506 
+      fhkb:hasChild     p:i144.
+      p:i340 
+      fhkb:hasChild     p:i172.
+      p:i341 
+      fhkb:hasChild     p:i172.
+      p:i46 
+      fhkb:hasChild     p:i176.
+      p:i239 
+      fhkb:hasChild     p:i176.
+      p:i75 
+      fhkb:hasChild     p:i180.
+      p:i89 
+      fhkb:hasChild     p:i180.
+      p:i344 
+      fhkb:hasChild     p:i190.
+      p:i66 
+      fhkb:hasChild     p:i190.
+      p:i502 
+      fhkb:hasChild     p:i194.
+      p:i503 
+      fhkb:hasChild     p:i194.
+      p:i69 
+      fhkb:hasChild     p:i195.
+      p:i11 
+      fhkb:hasChild     p:i195.
+      p:i361 
+      fhkb:hasChild     p:i233.
+      p:i383 
+      fhkb:hasChild     p:i233.
+      p:i344 
+      fhkb:hasChild     p:i234.
+      p:i66 
+      fhkb:hasChild     p:i234.
+      p:i502 
+      fhkb:hasChild     p:i235.
+      p:i503 
+      fhkb:hasChild     p:i235.
+      p:i46 
+      fhkb:hasChild     p:i236.
+      p:i232 
+      fhkb:hasChild     p:i236.
+      p:i3 
+      fhkb:hasChild     p:i237.
+      p:i22 
+      fhkb:hasChild     p:i237.
+      p:i233 
+      fhkb:hasChild     p:i311.
+      p:i455 
+      fhkb:hasChild     p:i311.
+      p:i75 
+      fhkb:hasChild     p:i330.
+      p:i89 
+      fhkb:hasChild     p:i330.
+      p:i3 
+      fhkb:hasChild     p:i335.
+      p:i22 
+      fhkb:hasChild     p:i335.
+      p:i75 
+      fhkb:hasChild     p:i336.
+      p:i89 
+      fhkb:hasChild     p:i336.
+      p:i75 
+      fhkb:hasChild     p:i338.
+      p:i89 
+      fhkb:hasChild     p:i338.
+      p:i344 
+      fhkb:hasChild     p:i339.
+      p:i66 
+      fhkb:hasChild     p:i339.
+      p:i175 
+      fhkb:hasChild     p:i340.
+      p:i435 
+      fhkb:hasChild     p:i340.
+      p:i75 
+      fhkb:hasChild     p:i341.
+      p:i89 
+      fhkb:hasChild     p:i341.
+      p:i75 
+      fhkb:hasChild     p:i343.
+      p:i89 
+      fhkb:hasChild     p:i343.
+      p:i234 
+      fhkb:hasChild     p:i344.
+      p:i370 
+      fhkb:hasChild     p:i344.
+      p:i471 
+      fhkb:hasChild     p:i345.
+      p:i472 
+      fhkb:hasChild     p:i345.
+      p:i233 
+      fhkb:hasChild     p:i346.
+      p:i455 
+      fhkb:hasChild     p:i346.
+      p:i351 
+      fhkb:hasChild     p:i348.
+      p:i485 
+      fhkb:hasChild     p:i348.
+      p:i340 
+      fhkb:hasChild     p:i349.
+      p:i341 
+      fhkb:hasChild     p:i349.
+      p:i468 
+      fhkb:hasChild     p:i350.
+      p:i469 
+      fhkb:hasChild     p:i350.
+      p:i461 
+      fhkb:hasChild     p:i351.
+      p:i462 
+      fhkb:hasChild     p:i351.
+      p:i408 
+      fhkb:hasChild     p:i355.
+      p:i409 
+      fhkb:hasChild     p:i355.
+      p:i26 
+      fhkb:hasChild     p:i356.
+      p:i0 
+      fhkb:hasChild     p:i356.
+      p:i134 
+      fhkb:hasChild     p:i357.
+      p:i194 
+      fhkb:hasChild     p:i357.
+      p:i134 
+      fhkb:hasChild     p:i358.
+      p:i194 
+      fhkb:hasChild     p:i358.
+      p:i136 
+      fhkb:hasChild     p:i359.
+      p:i360 
+      fhkb:hasChild     p:i359.
+      p:i468 
+      fhkb:hasChild     p:i361.
+      p:i469 
+      fhkb:hasChild     p:i361.
+      p:i75 
+      fhkb:hasChild     p:i366.
+      p:i89 
+      fhkb:hasChild     p:i366.
+      p:i340 
+      fhkb:hasChild     p:i367.
+      p:i341 
+      fhkb:hasChild     p:i367.
+      p:i498 
+      fhkb:hasChild     p:i368.
+      p:i84 
+      fhkb:hasChild     p:i369.
+      p:i429 
+      fhkb:hasChild     p:i369.
+      p:i348 
+      fhkb:hasChild     p:i372.
+      p:i176 
+      fhkb:hasChild     p:i372.
+      p:i330 
+      fhkb:hasChild     p:i373.
+      p:i331 
+      fhkb:hasChild     p:i373.
+      p:i233 
+      fhkb:hasChild     p:i375.
+      p:i455 
+      fhkb:hasChild     p:i375.
+      p:i361 
+      fhkb:hasChild     p:i376.
+      p:i383 
+      fhkb:hasChild     p:i376.
+      p:i233 
+      fhkb:hasChild     p:i378.
+      p:i455 
+      fhkb:hasChild     p:i378.
+      p:i5 
+      fhkb:hasChild     p:i381.
+      p:i235 
+      fhkb:hasChild     p:i381.
+      p:i449 
+      fhkb:hasChild     p:i383.
+      p:i450 
+      fhkb:hasChild     p:i383.
+      p:i46 
+      fhkb:hasChild     p:i384.
+      p:i239 
+      fhkb:hasChild     p:i384.
+      p:i415 
+      fhkb:hasChild     p:i386.
+      p:i416 
+      fhkb:hasChild     p:i386.
+      p:i479 
+      fhkb:hasChild     p:i387.
+      p:i480 
+      fhkb:hasChild     p:i387.
+      p:i7 
+      fhkb:hasChild     p:i388.
+      p:i15 
+      fhkb:hasChild     p:i388.
+      p:i85 
+      fhkb:hasChild     p:i389.
+      p:i402 
+      fhkb:hasChild     p:i389.
+      p:i234 
+      fhkb:hasChild     p:i390.
+      p:i334 
+      fhkb:hasChild     p:i390.
+      p:i134 
+      fhkb:hasChild     p:i391.
+      p:i194 
+      fhkb:hasChild     p:i391.
+      p:i361 
+      fhkb:hasChild     p:i392.
+      p:i383 
+      fhkb:hasChild     p:i392.
+      p:i85 
+      fhkb:hasChild     p:i394.
+      p:i402 
+      fhkb:hasChild     p:i394.
+      p:i41 
+      fhkb:hasChild     p:i395.
+      p:i173 
+      fhkb:hasChild     p:i395.
+      p:i433 
+      fhkb:hasChild     p:i396.
+      p:i83 
+      fhkb:hasChild     p:i396.
+      p:i364 
+      fhkb:hasChild     p:i397.
+      p:i365 
+      fhkb:hasChild     p:i397.
+      p:i233 
+      fhkb:hasChild     p:i399.
+      p:i455 
+      fhkb:hasChild     p:i399.
+      p:i330 
+      fhkb:hasChild     p:i401.
+      p:i331 
+      fhkb:hasChild     p:i401.
+      p:i234 
+      fhkb:hasChild     p:i403.
+      p:i334 
+      fhkb:hasChild     p:i403.
+      p:i26 
+      fhkb:hasChild     p:i405.
+      p:i0 
+      fhkb:hasChild     p:i405.
+      p:i465 
+      fhkb:hasChild     p:i409.
+      p:i466 
+      fhkb:hasChild     p:i409.
+      p:i471 
+      fhkb:hasChild     p:i411.
+      p:i472 
+      fhkb:hasChild     p:i411.
+      p:i233 
+      fhkb:hasChild     p:i412.
+      p:i455 
+      fhkb:hasChild     p:i412.
+      p:i85 
+      fhkb:hasChild     p:i414.
+      p:i402 
+      fhkb:hasChild     p:i414.
+      p:i475 
+      fhkb:hasChild     p:i415.
+      p:i476 
+      fhkb:hasChild     p:i415.
+      p:i136 
+      fhkb:hasChild     p:i417.
+      p:i360 
+      fhkb:hasChild     p:i417.
+      p:i340 
+      fhkb:hasChild     p:i418.
+      p:i341 
+      fhkb:hasChild     p:i418.
+      p:i415 
+      fhkb:hasChild     p:i419.
+      p:i416 
+      fhkb:hasChild     p:i419.
+      p:i336 
+      fhkb:hasChild     p:i420.
+      p:i337 
+      fhkb:hasChild     p:i420.
+      p:i461 
+      fhkb:hasChild     p:i421.
+      p:i462 
+      fhkb:hasChild     p:i421.
+      p:i461 
+      fhkb:hasChild     p:i422.
+      p:i462 
+      fhkb:hasChild     p:i422.
+      p:i408 
+      fhkb:hasChild     p:i423.
+      p:i409 
+      fhkb:hasChild     p:i423.
+      p:i134 
+      fhkb:hasChild     p:i424.
+      p:i194 
+      fhkb:hasChild     p:i424.
+      p:i475 
+      fhkb:hasChild     p:i426.
+      p:i476 
+      fhkb:hasChild     p:i426.
+      p:i336 
+      fhkb:hasChild     p:i427.
+      p:i337 
+      fhkb:hasChild     p:i427.
+      p:i85 
+      fhkb:hasChild     p:i428.
+      p:i402 
+      fhkb:hasChild     p:i428.
+      p:i482 
+      fhkb:hasChild     p:i429.
+      p:i483 
+      fhkb:hasChild     p:i429.
+      p:i18 
+      fhkb:hasChild     p:i430.
+      p:i377 
+      fhkb:hasChild     p:i430.
+      p:i465 
+      fhkb:hasChild     p:i432.
+      p:i466 
+      fhkb:hasChild     p:i432.
+      p:i340 
+      fhkb:hasChild     p:i434.
+      p:i341 
+      fhkb:hasChild     p:i434.
+      p:i475 
+      fhkb:hasChild     p:i437.
+      p:i476 
+      fhkb:hasChild     p:i437.
+      p:i433 
+      fhkb:hasChild     p:i438.
+      p:i83 
+      fhkb:hasChild     p:i438.
+      p:i234 
+      fhkb:hasChild     p:i439.
+      p:i334 
+      fhkb:hasChild     p:i439.
+      p:i361 
+      fhkb:hasChild     p:i440.
+      p:i383 
+      fhkb:hasChild     p:i440.
+      p:i468 
+      fhkb:hasChild     p:i442.
+      p:i469 
+      fhkb:hasChild     p:i442.
+      p:i336 
+      fhkb:hasChild     p:i443.
+      p:i337 
+      fhkb:hasChild     p:i443.
+      p:i436 
+      fhkb:hasChild     p:i444.
+      p:i437 
+      fhkb:hasChild     p:i444.
+      p:i425 
+      fhkb:hasChild     p:i445.
+      p:i426 
+      fhkb:hasChild     p:i445.
+      p:i468 
+      fhkb:hasChild     p:i446.
+      p:i469 
+      fhkb:hasChild     p:i446.
+      p:i415 
+      fhkb:hasChild     p:i447.
+      p:i416 
+      fhkb:hasChild     p:i447.
+      p:i425 
+      fhkb:hasChild     p:i448.
+      p:i426 
+      fhkb:hasChild     p:i448.
+      p:i361 
+      fhkb:hasChild     p:i451.
+      p:i383 
+      fhkb:hasChild     p:i451.
+      p:i18 
+      fhkb:hasChild     p:i452.
+      p:i377 
+      fhkb:hasChild     p:i452.
+      p:i433 
+      fhkb:hasChild     p:i454.
+      p:i83 
+      fhkb:hasChild     p:i454.
+      p:i330 
+      fhkb:hasChild     p:i456.
+      p:i331 
+      fhkb:hasChild     p:i456.
+      p:i461 
+      fhkb:hasChild     p:i457.
+      p:i462 
+      fhkb:hasChild     p:i457.
+      p:i48 
+      fhkb:hasChild     p:i460.
+      p:i1 
+      fhkb:hasChild     p:i460.
+      p:i348 
+      fhkb:hasChild     p:i461.
+      p:i176 
+      fhkb:hasChild     p:i461.
+      p:i263 
+      fhkb:hasChild     p:i462.
+      p:i160 
+      fhkb:hasChild     p:i462.
+      p:i433 
+      fhkb:hasChild     p:i463.
+      p:i83 
+      fhkb:hasChild     p:i463.
+      p:i330 
+      fhkb:hasChild     p:i465.
+      p:i331 
+      fhkb:hasChild     p:i465.
+      p:i433 
+      fhkb:hasChild     p:i467.
+      p:i83 
+      fhkb:hasChild     p:i467.
+      p:i397 
+      fhkb:hasChild     p:i468.
+      p:i398 
+      fhkb:hasChild     p:i468.
+      p:i136 
+      fhkb:hasChild     p:i470.
+      p:i360 
+      fhkb:hasChild     p:i470.
+      p:i380 
+      fhkb:hasChild     p:i472.
+      p:i381 
+      fhkb:hasChild     p:i472.
+      p:i18 
+      fhkb:hasChild     p:i473.
+      p:i377 
+      fhkb:hasChild     p:i473.
+      p:i361 
+      fhkb:hasChild     p:i474.
+      p:i383 
+      fhkb:hasChild     p:i474.
+      p:i18 
+      fhkb:hasChild     p:i475.
+      p:i377 
+      fhkb:hasChild     p:i475.
+      p:i26 
+      fhkb:hasChild     p:i477.
+      p:i0 
+      fhkb:hasChild     p:i477.
+      p:i134 
+      fhkb:hasChild     p:i478.
+      p:i194 
+      fhkb:hasChild     p:i478.
+      p:i475 
+      fhkb:hasChild     p:i480.
+      p:i476 
+      fhkb:hasChild     p:i480.
+      p:i136 
+      fhkb:hasChild     p:i481.
+      p:i360 
+      fhkb:hasChild     p:i481.
+      p:i361 
+      fhkb:hasChild     p:i484.
+      p:i383 
+      fhkb:hasChild     p:i484.
+      p:i361 
+      fhkb:hasChild     p:i486.
+      p:i383 
+      fhkb:hasChild     p:i486.
+      p:i352 
+      fhkb:hasChild     p:i487.
+      p:i353 
+      fhkb:hasChild     p:i487.
+      p:i41 
+      fhkb:hasChild     p:i488.
+      p:i173 
+      fhkb:hasChild     p:i488.
+      p:i26 
+      fhkb:hasChild     p:i489.
+      p:i0 
+      fhkb:hasChild     p:i489.
+      p:i486 
+      fhkb:hasChild     p:i492.
+      p:i487 
+      fhkb:hasChild     p:i492.
+      p:i412 
+      fhkb:hasChild     p:i494.
+      p:i413 
+      fhkb:hasChild     p:i494.
+      p:i311 
+      fhkb:hasChild     p:i495.
+      p:i363 
+      fhkb:hasChild     p:i495.
+      p:i425 
+      fhkb:hasChild     p:i496.
+      p:i426 
+      fhkb:hasChild     p:i496.
+      p:i3 
+      fhkb:hasChild     p:i499.
+      p:i22 
+      fhkb:hasChild     p:i499.
+      p:i515 
+      fhkb:hasChild     p:i504.
+      p:i144 
+      fhkb:hasChild     p:i508.
+      p:i172 
+      fhkb:hasChild     p:i508.
+      p:i144 
+      fhkb:hasChild     p:i510.
+      p:i172 
+      fhkb:hasChild     p:i510.
+      p:i144 
+      fhkb:hasChild     p:i511.
+      p:i172 
+      fhkb:hasChild     p:i511.
+      p:i144 
+      fhkb:hasChild     p:i512.
+      p:i172 
+      fhkb:hasChild     p:i512.
+      p:i515 
+      fhkb:hasChild     p:i514.
+      p:i144 
+      fhkb:hasChild     p:i515.
+      p:i172 
+      fhkb:hasChild     p:i515.
