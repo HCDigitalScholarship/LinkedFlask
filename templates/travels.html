@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block travels %}
+</div>  
+         <center>
+    	 <h1>Find common travels</h1>
+
+    	<form action="http://165.82.13.162/cgi-bin/CEtest.cgi" method="get">
+
+      <p>Enter a year and click "search" to list peoples travels in that year. For a range of dates, use the full years i.e. 1870-1880.</p>
+      <p>
+        <input type="text" name="yr"/>
+        <input type="submit" value="search"/>
+      </p>
+
+    	</form> 
+	<h1> OR</h1>
+        <form action="http://165.82.13.162/cgi-bin/CEtravbyperson.cgi" method="get">
+
+      <p>Enter a persons name and click "search" to list a persons travels.</p>
+      <p>
+        <input type="text" name="name"/>
+        <input type="submit" value="search"/>
+      </p>
+
+        </form>
+
+     </center>
+    </div>
+{% endblock %}

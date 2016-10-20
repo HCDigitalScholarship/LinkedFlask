@@ -8,12 +8,12 @@
 <meta name="author" content=""> 
 <link rel="icon" href="http://165.82.13.38/images/favicon.ico"> 
 <title>Linked Data</title> 
-<!-- Bootstrap core CSS --> <link href="http://165.82.13.37/css/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
-<link href="http://165.82.13.37/css/style.css" rel="stylesheet"> 
+<!-- Bootstrap core CSS --> <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"> 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <link href="http://165.82.13.38/css/bootstrap/css/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> 
-<!-- Custom styles for this template --> <link href="http://165.82.13.37/css/bootstrap/css/sticky-footer.css" rel="stylesheet"> 
+<!-- Custom styles for this template --> <link href="{{ url_for('static', filename='bootstrap/css/sticky-footer.css') }}" rel="stylesheet"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+ <script src="{{ url_for('static', filename = 'bootstrap/js/bootstrap.min.js') }}"></script> 
 </head> 
 <body> <!-- Begin page content --> 
 <div class="container"> 
@@ -35,10 +35,14 @@
 {% block travels %}
 {% endblock %}
 
+<<<<<<< HEAD
 {% block home %}
 {% endblock %}
 
 {% block search %}
+=======
+{% block person %}
+>>>>>>> 88e9e1afd934e2ca9900ffab78ab326a5fa9ad34
 {% endblock %}
 
 </div>

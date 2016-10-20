@@ -31,6 +31,9 @@ def search():
 
 
 @app.route('/person/')
+def person():
+	return render_template('person.html')
+
 @app.route('/person/<name>')
 def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p1url=None, sb=None,child=None, letwrote=None, letreceived=None, travels=None):
 	id_name = "p:" + name  #adds prefix for query
@@ -59,6 +62,18 @@ def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p
 				 letreceived=letreceived,
 				 travels=travels )
 	
+<<<<<<< HEAD
+=======
+@app.route('/travels/')
+def travel():
+	return render_template('travels.html')
+	
+@app.route('/letters/')
+def letters():
+	return render_template('letterswritten.html')
+	
+
+>>>>>>> 88e9e1afd934e2ca9900ffab78ab326a5fa9ad34
 graph = rdflib.Graph()
 graph.parse('CEpeople.ttl', format= 'turtle')
 graph.parse('CEchild.ttl', format= 'turtle')
