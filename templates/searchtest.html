@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<title>Hello from the Flask Link Data App</title>
+<p> Here are some similar people</p>
+{% if names %}
+	{% for name in names %}
+                <p><a href= "{{name[0]}}"> {{name[1]}}</a></p>
+        {% endfor %}
+{% else %}
+	<p> darn, no results. Maybe try a different search </p>
+{% endif %}
+{% endblock %}

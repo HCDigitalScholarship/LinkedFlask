@@ -1,18 +1,50 @@
 from flask import Flask
 app = Flask(__name__)
 import rdflib
-from flask import render_template
+from flask import redirect, url_for, render_template, request, flash
+from forms import SearchForm
+app.secret_key = 'development key'
+
+
+@app.route('/',methods = ['GET','POST'])
+def home():
+	return render_template('home.html')
+def search():
+        form = SearchForm()
+        if request.method == 'POST':
+                if form.validate() == False:
+                        flash('All fields are required.')
+                        return render_template('search.html', form = form)
+                else:
+#                       return render_template('success.html')
+
+#                       return temporary(form.name.data,None)
+                        #this should also change the url...
+                        return redirect(url_for('temporary',text=form.name.data,names=None))
+        elif request.method == 'GET':
+                return render_template('search.html', form = form)
+
+
+
+
+
+
 
 @app.route('/person/')
 @app.route('/person/<name>')
-def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p1url=None, sib=None):
+def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p1url=None, sb=None,child=None, letwrote=None, letreceived=None, travels=None):
 	id_name = "p:" + name  #adds prefix for query
 	row = id2name(id_name) # gets name and birth-death
 	name, birth, death = row 
 	parrow = parents(id_name) #gets parents names and links
     	par1, p1url, par2, p2url = parrow
-#	sib = sib(id_name)
-#	print sib
+	sb = sib(id_name)
+	print "yahhooo"
+#	print sb
+	letwrote = letterwritten(id_name)
+	letreceived = letterreceived(id_name)
+	child = children(id_name)
+	travels = travelsbyid(id_name)
 	return render_template('hello.html',
 				 name=name,
 				 birth=birth,
@@ -21,15 +53,17 @@ def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p
 				 p1url=p1url,
 				 par2=par2,
 				 p2url=p2url,
-				 sib=sib )
+				 sb=sb,
+				 child=child,
+				 letwrote=letwrote,
+				 letreceived=letreceived,
+				 travels=travels )
 	
-
-
-
-
 graph = rdflib.Graph()
 graph.parse('CEpeople.ttl', format= 'turtle')
 graph.parse('CEchild.ttl', format= 'turtle')
+graph.parse('CEletters.ttl', format= 'turtle')
+graph.parse('CEtravls.ttl', format= 'turtle')
 
 @app.route('/')
 def hello_world():
@@ -47,7 +81,6 @@ def id2name(username):
    		p:death ?death .
 	}	
 """
-
 	querynames = querynames.replace("REPLACEME",username)
 	resultnames = graph.query(querynames)
 	print querynames
@@ -73,7 +106,7 @@ def parents(username): #should handle the issue of Nonetype result
 	queryparents = queryparents.replace("REPLACEME",username)
 	resultparents = graph.query(queryparents)
 	 # this will assume that everyone has 2 or none parents
-	
+	print queryparents	
 	#print "len(resultparents)", len(resultparents)
 	if len(resultparents) == 0: #everything is blank
 		return [None,None,None,None]
@@ -125,7 +158,7 @@ def sib(username): #this will create an array of [[sib_1,url1],[sib_2,url_2],...
 
 	querysib = """
 PREFIX p: <http://127.0.0.1:5000/person/> 
-PREFIX fhkb: <http://www.example.com/genealogy.owl/> 
+PREFIX fhkb: <http://www.example.com/genealogy.owl#> 
 
 SELECT  ?c ?that 
 WHERE
@@ -140,14 +173,22 @@ REPLACEME p:labelname ?name ;
      FILTER (?name != ?c)
 }
 """
-
+	print "testing"
 	querysib = querysib.replace("REPLACEME",username)
         resultsib = graph.query(querysib)
+	print querysib
         if len(resultsib) == 0: #everything is blank
                 return None
+      #  return len(resultsib)
+        ans = []
         for row in resultsib:
-                if row != None: #this might be unnecessary 
-                        return row
+        #        if row != None: #this might be unnecessary 
+                ans.append(row)
+        return ans	
+	#for row in resultsib:
+         #       if row != None: #this might be unnecessary 
+	#		print "test", row
+         #               return row
 
 
 
@@ -155,32 +196,202 @@ REPLACEME p:labelname ?name ;
 def children(username):
 
 	querychild = """
-prefix p: <localhost:3030/ds/person#> 
+prefix p: <http://127.0.0.1:5000/person/> 
+prefix fhkb: <http://www.example.com/genealogy.owl#> 
+
+ SELECT ?urlperson ?c 
+WHERE { 
+        REPLACEME  fhkb:hasChild ?urlperson .
+        ?urlperson p:labelname ?c .
+} 
+"""
+
+	querychild = querychild.replace("REPLACEME",username)
+        resultchild = graph.query(querychild)
+        if len(resultchild) == 0: #everything is blank
+                return None
+#       	return resultsib #unkown len
+	ans = []
+	for row in resultchild:
+        #        if row != None: #this might be unnecessary 
+		ans.append(row)
+	return ans
+
+
+
+def letterwritten(username):
+	querywrote = """
+prefix p: <http://127.0.0.1:5000/person/> 
 prefix t: <localhost:3030/ds/trip#> 
 prefix d:<localhost:3030/ds/date#>
 prefix letter:<localhost:3030/ds/letter#>
-prefix fhkb: <http://www.example.com/genealogy.owl#> 
 
-SELECT ?urlperson ?c 
-WHERE { 
-	REPLACEME p:labelname ?name ;
-	fhkb:hasChild ?this .
-        ?this p:labelname ?c .
-BIND(REPLACE(?c, " ", "+", "i") AS ?urlperson)
- } 
+SELECT  ?url ?title ?urlrecip ?recipient ?subj
+WHERE {
+?m letter:Creator_ID REPLACEME ;
+      letter:Title ?title ;
+      letter:Subject ?subj ;
+      letter:Reference_URL ?url ;
+      letter:Recipient_ID ?rt .
+     ?rt p:labelname ?recipient .
+}
+"""
+	querywrote = querywrote.replace("REPLACEME",username)
+        resultwrote = graph.query(querywrote)
+
+        if len(resultwrote) == 0: #everything is blank
+                return None
+#               return resultsib #unkown len
+        ans = []
+        for row in resultwrote:
+        #        if row != None: #this might be unnecessary 
+                ans.append(row)
+        return ans
+
+
+
+
+def letterreceived(username):
+
+	queryreceived = """
+prefix p: <http://127.0.0.1:5000/person/> 
+prefix t: <localhost:3030/ds/trip#> 
+prefix d:<localhost:3030/ds/date#>
+prefix letter:<localhost:3030/ds/letter#>
+
+SELECT  ?url ?title ?urlrecip ?recipient ?subj
+WHERE {
+?m letter:Recipient_ID REPLACEME ;
+      letter:Title ?title ;
+      letter:Subject ?subj ;
+      letter:Reference_URL ?url ;
+      letter:Creator_ID ?rt .
+     ?rt p:labelname ?recipient .
+}
+"""
+
+        queryreceived = queryreceived.replace("REPLACEME",username)
+        resultreceived = graph.query(queryreceived)
+
+        if len(resultreceived) == 0: #everything is blank
+                return None
+#               return resultsib #unkown len
+        ans = []
+        for row in resultreceived:
+        #        if row != None: #this might be unnecessary 
+                ans.append(row)
+        return ans
+
+
+
+def travelsbyid(username):
+
+	querytravel = """
+prefix p: <http://127.0.0.1:5000/person/> 
+prefix t: <localhost:3030/ds/trip#> 
+prefix d:<localhost:3030/ds/date#>
+
+SELECT ?loc ?month ?year 
+WHERE
+{ ?m p:Name "REPLACEME" ;
+	p:trip  ?thetrip .
+?thetrip t:location ?loc ;
+	d:date_m ?month ;
+	d:date_y ?year .
+}
+
+
 """
 
 
 
-	querysib = querysib.replace("REPLACEME",username)
-        resultsib = graph.query(querysib)
-        if len(resultsib) == 0: #everything is blank
+
+        querytravel = querytravel.replace("REPLACEME",username)
+        resulttravel = graph.query(querytravel)
+
+        if len(resulttravel) == 0: #everything is blank
                 return None
-        for row in resultsib:
-                if row != None: #this might be unnecessary 
-                        return row
+#               return resultsib #unkown len
+        ans = []
+        for row in resulttravel:
+        #        if row != None: #this might be unnecessary 
+                ans.append(row)
+        return ans
 
 
+#@app.route('/search/')
+#@app.route('/search/<text>')
+#def temporary(text=None,names=None):
+#	names = regexnames(text)
+#	print "this", names[0]
+	#names = text
+#	if len(names) == 1: #then just go to that!
+#		st = names[0][0].split('/')[-1:][0]
+		#print "!!!!", st
+#		return redirect(url_for('hello',name=st))
+#	return render_template('searchtest.html',names=names)
+
+
+#############################################################################							
+#############################################################################							
+#############################################################################							
+#############################################################################							
+
+@app.route('/search', methods = ['GET', 'POST'])
+#@app.route('/contact/<text>')
+def search():
+	form = SearchForm()
+	if request.method == 'POST':
+		if form.validate() == False:
+			flash('All fields are required.')
+			return render_template('search.html', form = form)
+		else:
+#			return render_template('success.html')
+		
+#			return temporary(form.name.data,None)
+			#this should also change the url...
+			return redirect(url_for('temporary',text=form.name.data,names=None))
+	elif request.method == 'GET':
+		return render_template('search.html', form = form)
+
+
+
+@app.route('/search/<text>')
+
+def temporary(text=None,names=None):
+        names = regexnames(text)
+        print "this", names[0]
+        #names = text
+        if len(names) == 1: #then just go to that!
+                st = names[0][0].split('/')[-1:][0]
+                #print "!!!!", st
+                return redirect(url_for('hello',name=st))
+        return render_template('searchtest.html',names=names)
+
+
+def regexnames(text):
+
+        querynames= """
+PREFIX p: <http://127.0.0.1:5000/person/> 
+PREFIX fhkb: <http://www.example.com/genealogy.owl#> 
+
+SELECT ?url ?name 
+WHERE {
+  ?id p:labelname ?name .
+  FILTER (REGEX(?name, "REPLACEME", "i")) .
+  ?url p:labelname ?name .
+
+}
+"""
+        querynames = querynames.replace("REPLACEME",text)
+        resultnames = graph.query(querynames)
+        if len(resultnames) == 0: #everything is blank
+                return None
+        ans = []
+        for row in resultnames:
+        #        if row != None: #this might be unnecessary 
+                ans.append(row)
+        return ans
 
 
 

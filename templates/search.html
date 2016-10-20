@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block search %}
+      <h2 style = "text-align: center;">Search Form</h2>
+		
+      {% for message in form.name.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+      
+      
+      <form action = "http://127.0.0.1:5000/search" method = post>
+         <fieldset>
+            <legend>Search Form</legend>
+            {{ form.hidden_tag() }}
+            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.name.label }}<br>
+               {{ form.name }}
+               <br>
+               
+               <br>
+               {{ form.submit }}
+            </div>
+            
+         </fieldset>
+      </form>
+      
+{% endblock %}

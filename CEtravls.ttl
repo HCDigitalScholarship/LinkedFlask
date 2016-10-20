@@ -1,0 +1,382 @@
+
+
+#whats the difference between caroline e cope and caroline cope?
+#i assumed that they are the same person
+
+@prefix p: <http://127.0.0.1:5000/person/> .
+@prefix t: <localhost:3030/ds/trip#> .
+@prefix d: <localhost:3030/ds/date#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+p:i3	p:Name	"Francis Reeve Cope" ; 
+	p:trip	t:trip0 ;
+	p:trip	t:trip1 ;
+	p:trip	t:trip2 ;
+	p:trip	t:trip3 ;
+	p:trip	t:trip4 ;
+	p:trip	t:trip5 ;
+	p:trip	t:trip6 ;
+	p:trip	t:trip7 ;
+	p:trip	t:trip8 ;
+	p:trip	t:trip9 ;
+	p:trip	t:trip10 ;
+	p:trip	t:trip11 ;
+	p:trip	t:trip12 ;
+	p:trip	t:trip13 .
+
+p:i350	p:Name	"Elizabeth S. Cope" ; 
+	p:trip	t:trip14 ;
+	p:trip	t:trip15 ;
+	p:trip	t:trip16 ;
+	p:trip	t:trip17 ;
+	p:trip	t:trip25 ;
+	p:trip	t:trip18 .
+		
+
+p:i13	p:Name	"Jonathan Evans" ; 
+	p:trip	t:trip19 ;
+	p:trip	t:trip20 ;
+	p:trip	t:trip21 ;
+	p:trip	t:trip22 ;
+	p:trip	t:trip25 ;
+	p:trip	t:trip23 .
+
+p:i41	p:Name	"Thomas Pim Cope" ; 
+	p:trip	t:trip24 .
+
+
+p:i48	p:Name	"Alexis T. Cope" ; 
+	p:trip	t:trip26 .
+
+p:i81	p:Name	"Alfred Cope" ; 
+	p:trip	t:trip27 ;
+	p:trip	t:trip28 ;
+	p:trip	t:trip29 ;
+	p:trip	t:trip30 ;
+	p:trip	t:trip31 .
+
+p:i29	p:Name	"Annette Cope" ; 
+	p:trip	t:trip32 ;
+	p:trip	t:trip33 ;
+	p:trip	t:trip34 .
+
+p:i52	p:Name	"Joseph Simpson" ; 
+	p:trip	t:trip35 .
+
+p:i10	p:Name	"Clementine Cope" ; 
+	p:trip	t:trip36 ;
+	p:trip	t:trip37 ;
+	p:trip	t:trip38 ;
+	p:trip	t:trip39 .
+
+p:i132	p:Name	"Frances Drinker" ; 
+	p:trip	t:trip40 .
+
+p:i19	p:Name	"Mary Stokes" ; 
+	p:trip	t:trip41 .
+
+p:i488	p:Name	"Caroline Cope" ; 
+	p:trip	t:trip42 .
+
+p:i2	p:Name	"Thomas Pim Cope (Tom)" ; 
+	p:trip	t:trip43 .
+
+p:i176	p:Name	"Elizabeth Waln Cope" ; 
+	p:trip	t:trip44 .
+
+p:i78	p:Name	"Anna Cope Evans" ; 
+	p:trip	t:trip45 ;
+	p:trip	t:trip46 ;
+	p:trip	t:trip47 .
+
+p:i88	p:Name	"Margaret Cope" ; 
+	p:trip	t:trip48 .
+
+p:i134	p:Name	"Edward Evans" ; 
+	p:trip	t:trip49 .
+
+p:i28	p:Name	"Rachel Reeve Cope" ; 
+	p:trip	t:trip50 .
+
+p:i136	p:Name	"Harold Evans" ; 
+	p:trip	t:trip51 .
+
+p:i488	p:Name	"Caroline E. Cope" ; 
+	p:trip	t:trip52 .
+
+
+t:trip13
+	t:location	"The Reuissemont" ;
+	d:date_m	"September" ;
+	d:date_d	"12" ;
+	d:date_y	"1896"^^xsd:integer .
+
+t:trip14
+	t:location	"Catskills" ;
+	d:date_m	"August" ;
+	d:date_d	"31" ;
+	d:date_y	"1864"^^xsd:integer .
+
+t:trip15
+	t:location	"Washington DC" ;
+	d:date_m	"February" ;
+	d:date_y	"1873"^^xsd:integer .
+
+t:trip51
+	t:location	"Euro-trippedthrough6Europeancountries" ;
+	d:date_m	"August" ;
+	d:date_y	"1907"^^xsd:integer .
+
+t:trip52
+	t:location	"London" ;
+	d:date_m	"July" ;
+	d:date_y	"1910"^^xsd:integer .
+
+t:trip16
+	t:location	"BarHarbor" ;
+	d:date_m	"August" ;
+	d:date_y	"1873"^^xsd:integer .
+
+t:trip17
+	t:location	"ChalybeateSprings" ;
+	d:date_m	"August" ;
+	d:date_d	"5" ;
+	d:date_y	"1874"^^xsd:integer .
+
+t:trip21
+	t:location	"Lake Windermere" ;
+	d:date_m	"August" ;
+	d:date_y	"1873"^^xsd:integer .
+
+t:trip20
+	t:location	"London" ;
+	d:date_m	"July" ;
+	d:date_y	"1873"^^xsd:integer .
+
+t:trip23
+	t:location	"Mount Desert" ;
+	d:date_m	"September" ;
+	d:date_y	"1897"^^xsd:integer .
+
+t:trip22
+	t:location	 "Unknown" ;
+	d:date_m	 "June" ;
+	d:date_y	 "1881"^^xsd:integer .
+
+t:trip25
+	t:location	"Sulfur Springs" ;
+	d:date_m	"July" ;
+	d:date_y	"1874"^^xsd:integer .
+
+t:trip24
+	t:location	"Edinborough" ;
+	d:date_m	"August" ;
+	d:date_y	"1973"^^xsd:integer .
+
+t:trip41
+	t:location	"Avebury" ;
+	d:date_m	"June" ;
+	d:date_y	"1886"^^xsd:integer .
+
+t:trip40
+	t:location	"Boston" ;
+	d:date_m	"September" ;
+	d:date_y	"1883"^^xsd:integer .
+
+t:trip29
+	t:location	"Lugano" ;
+	d:date_m	"October" ;
+	d:date_y	"1875"^^xsd:integer .
+
+t:trip28
+	t:location	"Reichenbach" ;
+	d:date_m	"September" ;
+	d:date_y	"1875"^^xsd:integer .
+
+t:trip49
+	t:location	"TheHague" ;
+	d:date_m	"September" ;
+	d:date_y	"1901"^^xsd:integer .
+
+t:trip48
+	t:location	"Rome" ;
+	d:date_m	"March" ;
+	d:date_y	"1901"^^xsd:integer .
+
+t:trip36
+	t:location	"Cannes" ;
+	d:date_m	"February" ;
+	d:date_y	"1880"^^xsd:integer .
+
+t:trip47
+	t:location	"Liverpool" ;
+	d:date_m	"October" ;
+	d:date_y	"1891"^^xsd:integer .
+
+t:trip34
+	t:location	"Oban" ;
+	d:date_m	"June" ;
+	d:date_y	"1904"^^xsd:integer .
+
+t:trip46
+	t:location	"Venice" ;
+	d:date_m	"September" ;
+	d:date_y	"1891"^^xsd:integer .
+
+t:trip1
+	t:location	"Boston" ;
+	d:date_m	"September" ;
+	d:date_y	"1841"^^xsd:integer .
+
+t:trip45
+	t:location	"Augustine" ;
+	d:date_m	"April" ;
+	d:date_y	"1889"^^xsd:integer .
+
+t:trip44
+	t:location	"Wildmere" ;
+	d:date_m	"August" ;
+	d:date_y	"1888"^^xsd:integer .
+
+t:trip43
+	t:location	"RI" ;
+	d:date_y	"1888"^^xsd:integer ;
+	d:date_note	"Travels to Newport" .
+
+t:trip42
+	t:location	"London" ;
+	d:date_m	"August" ;
+	d:date_y	"1886"^^xsd:integer .
+
+t:trip18
+	t:location	"Newport" ;
+	d:date_m	"August" ;
+	d:date_y	"1879"^^xsd:integer .
+
+t:trip19
+	t:location	"WestPoint" ;
+	d:date_m	"June" ;
+	d:date_y	"1873"^^xsd:integer .
+
+t:trip50
+	t:location	"Franconia" ;
+	d:date_m	"August" ;
+	d:date_y	"1905"^^xsd:integer .
+
+t:trip27
+	t:location	"Frohburg" ;
+	d:date_m	"August" ;
+	d:date_y	"1875"^^xsd:integer .
+
+t:trip38
+	t:location	"London" ;
+	d:date_m	"August" ;
+	d:date_y	"1886"^^xsd:integer .
+
+t:trip39
+	t:location	"Courbance(?)" ;
+	d:date_m	"September" ;
+	d:date_y	"1886"^^xsd:integer .
+
+t:trip10
+	t:location	"Venice" .
+
+t:trip10
+	t:location	"Venice" ;
+	d:date_m	"May" ;
+	d:date_y	"1894"^^xsd:integer .
+
+t:trip37
+	t:location	"Rome" ;
+	d:date_m	"March" ;
+	d:date_y	"1880"^^xsd:integer .
+
+t:trip12
+	t:location	"Paris" ;
+	d:date_m	"August" ;
+	d:date_y	"1894"^^xsd:integer .
+
+t:trip35
+	t:location	"Ashbourne" ;
+	d:date_m	"June" ;
+	d:date_y	"1878"^^xsd:integer .
+
+t:trip32
+	t:location	"Florence" ;
+	d:date_m	"March" ;
+	d:date_y	"1878"^^xsd:integer .
+
+t:trip33
+	t:location	"Chemindela Tour" ;
+	d:date_m	"August" ;
+	d:date_y	"1880"^^xsd:integer .
+
+t:trip30
+	t:location	"Mentone/Menton" ;
+	d:date_m	"November" ;
+	d:date_y	"1875"^^xsd:integer .
+
+t:trip31
+	t:location	"Florence" ;
+	d:date_note	"April/May 1876  Traveling around Italy" ;
+	d:date_m	"May" ;
+	d:date_m	"April" ;
+	d:date_y	"1876"^^xsd:integer .
+t:trip6
+	t:location	"Liverpool" ;
+	d:date_m	"July" ;
+	d:date_d	"27" ;
+	d:date_y	"1867"^^xsd:integer .
+
+t:trip7
+	t:location	"London" ;
+	d:date_m	"September" ;
+	d:date_y	"1867"^^xsd:integer .
+
+t:trip4
+	t:location	"Lynchburg" ;
+	d:date_m	"February" ;
+	d:date_y	"1866"^^xsd:integer .
+
+t:trip5
+	t:location	"Farmville" ;
+	d:date_m	"March" ;
+	d:date_d	"1" ;
+	d:date_y	"1866"^^xsd:integer .
+
+t:trip2
+	t:location	"LakeWinnipisseogee" ;
+	d:date_m	"August" ;
+	d:date_y	"1857"^^xsd:integer .
+
+t:trip3
+	t:location	"Caldwell Lake George" ;
+	d:date_m	"September" ;
+	d:date_y	"1863"^^xsd:integer .
+
+t:trip0
+	t:location	"Charleston" ;
+	d:date_m	"March" ;
+	d:date_y	"1839"^^xsd:integer .
+
+t:trip11
+	t:location	"Camaldoli" ;
+	d:date_m	"June" ;
+	d:date_y	"1894"^^xsd:integer .
+
+t:trip26
+	t:location	"Sweet Springs" ;
+	d:date_m	"August" ;
+	d:date_d	"14" ;
+	d:date_y	"1874"^^xsd:integer .
+
+t:trip8
+	t:location	"Hopatcong" ;
+	d:date_m	"July" ;
+	d:date_d	"31" ;
+	d:date_y	"1869"^^xsd:integer .
+
+t:trip9
+	t:location	"Mohonk" ;
+	d:date_m	"July" ;
+	d:date_y	"1872"^^xsd:integer .

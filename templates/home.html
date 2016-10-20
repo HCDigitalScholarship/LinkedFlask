@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	<ul class="nav nav-tabs">
+	  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
+	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
+	  <li><a data-toggle="tab" href="#people">People</a></li>
+	  <li><a data-toggle="tab" href="#test">Test</a></li>
+	</ul>
+
+	<div class="tab-content">
+	  <div id="home" class="tab-pane fade in active">
+	    <h3>HOME</h3>
+
+<p class="lead"> This is Maddy Hodges SECOND user interface for Haverford's Quaker Linked Data Project.</p>
+             <p class="lead">Currently the project only has the data from the Cope Evans Project and there are plans to incorporate three other Quaker projects. Linked data is data that is structured in a way that it can be interlinked with other data through semantic queries. Luckily you wont have to learn how to write semantic queries to utilize the data. I have created a interface with which you can explore the data. The searches I have available at the moment are in the tabs above.</p>
+
+      <p>Maybe I'll use <a href="http://getbootstrap.com/examples/sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be.</p>
+
+
+	  </div>
+	  <div id="travels" class="tab-pane fade in">
+	    <h3>Travels</h3>
+
+		<center>
+		 <h1>Find common travels</h1>
+
+		<form action="http://165.82.13.162/cgi-bin/CEtest.cgi" method="get">
+
+	      		<p>Enter a year and click "search" to list peoples travels in that year. For a range of dates, use the full years i.e. 1870-1880.</p>
+	      		<p>
+				<input type="text" name="yr"/>
+				<input type="submit" value="search"/>
+	      		</p>
+
+        	</form>
+       	 		<h1> OR</h1>
+        	<form action="http://165.82.13.162/cgi-bin/CEtravbyperson.cgi" method="get">
+
+      			<p>Enter a persons name and click "search" to list a persons travels.</p>
+      			<p>
+        			<input type="text" name="name"/>
+        			<input type="submit" value="search"/>
+      			</p>
+        	</form>
+     		</center>
+	  </div>
+
+	  <div id="letters" class="tab-pane fade">
+	    <h3>letters</h3>
+
+
+	  <center>
+        	<h1>Search for a certain author or recipient</h1>
+        	<form action="http://165.82.13.162/cgi-bin/CEletters.cgi" method="get">
+	
+        	        <p>Find info about correspondences between people in the Cope Evans Project </p>
+                	<p>
+                        	<input type="text" name="name"/>
+                       		<input type="submit" value="search"/>
+                        	<br>
+                        	<input type="checkbox" name="option1" value="aut"> Wrote<br>
+                        	<input type="checkbox" name="option2" value="recip" checked> Recieved<br>
+                </p>
+
+       		 </form> 
+	</center>
+	
+	</div>
+
+          <div id="people" class="tab-pane fade">
+            <h3>People</h3>
+          	<center>
+			<h2 style = "text-align: center;">Search Form</h2>
+			<a href='/search'>click here to be redirected to the search form </a>
+		</center>
+          </div>
+         
+
+ 
+	</div>
+
+</div>
+{% endblock %}
