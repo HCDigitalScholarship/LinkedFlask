@@ -2,13 +2,16 @@ from flask import Flask
 app = Flask(__name__)
 import rdflib
 from flask import redirect, url_for, render_template, request, flash
-from forms import SearchForm
+from forms import SearchForm, LetterForm
 app.secret_key = 'development key'
 
 
 @app.route('/',methods = ['GET','POST'])
 def home():
 	return render_template('home.html')
+
+# the below function currently does nothing but hopefully the seach form will be on the home page and 
+#therefore it will be important
 def search():
         form = SearchForm()
         if request.method == 'POST':
@@ -62,27 +65,56 @@ def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p
 				 letreceived=letreceived,
 				 travels=travels )
 	
-<<<<<<< HEAD
-=======
+#<<<<<<< HEAD
+#=======
 @app.route('/travels/')
 def travel():
 	return render_template('travels.html')
 	
-@app.route('/letters/')
+@app.route('/letters/',methods = ['GET', 'POST'])
 def letters():
-	return render_template('letterswritten.html')
+	form = LetterForm()
+        if request.method == 'POST':
+                if form.validate() == False:
+                        flash('All fields are required.')
+                        return render_template('lettersearch.html', form = form)
+                else:
+			
+ 			return redirect(url_for('letterget',text=form.name.data,wrote=form.wrote.data,received=form.received.data))                       
+			#return redirect(url_for('temporary',text=form.name.data,names=None))
+        elif request.method == 'GET':
+                return render_template('lettersearch.html', form = form)
+
+
+@app.route('/letters/<text>')
+def letterget(text=None,wrote=None,received=None):
+	id_name = "p:" + name  #adds prefix for query
+	if wrote == 1:
+		letwrote = letterwritten(id_name)
+        else:
+		letwrote =None
+	if received == 1:
+		letreceived = letterreceived(id_name)
+	else:
+		letreceived =None
+	#TO BE FINISHED....
+	#NEEDS TO PUT THIS IN A TEMPLATE
+	return render_template('letterresult.html',letwrote,letreceived)
+
+
+#	return render_template('letterswritten.html')
 	
 
->>>>>>> 88e9e1afd934e2ca9900ffab78ab326a5fa9ad34
+#>>>>>>> 88e9e1afd934e2ca9900ffab78ab326a5fa9ad34
 graph = rdflib.Graph()
 graph.parse('CEpeople.ttl', format= 'turtle')
 graph.parse('CEchild.ttl', format= 'turtle')
 graph.parse('CEletters.ttl', format= 'turtle')
 graph.parse('CEtravls.ttl', format= 'turtle')
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
+#@app.route('/')
+#def hello_world():
+ #   return 'Hello, World!'
 
 
 def id2name(username):

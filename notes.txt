@@ -1,0 +1,21 @@
+here are just some notes for where to learn about stuff for the project:
+
+the form that we will use can be explained here:
+http://tutorialspoint.com/flask/flask_wtf.htm
+
+we will need to make a form for each type of search
+- travels
+-letters
+-people
+
+To determine what fields each of these forms will need see the ld_old/Linked_Data.html ( the old form) 
+or what is on the homepage currently. 
+
+NOTE: People is pretty much done. 
+NOTE: Letters involves a conditional validator-- either wrote or recieved must be validated ( also both is a possiblility)
+i think this will help: http://stackoverflow.com/questions/8463209/how-to-make-a-field-conditionally-optional-in-wtforms
+
+
+
+
+
