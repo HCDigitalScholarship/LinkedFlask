@@ -8,7 +8,15 @@ app.secret_key = 'development key'
 
 @app.route('/',methods = ['GET','POST'])
 def home():
-	return render_template('home.html')
+	form = SearchForm()
+	if request.method == 'POST':
+		if form.validate() == False:
+			flash('All fields are required.')
+			return render_template('home.html', form = form)
+		else:
+			return redirect(url_for('temporary',text=form.name.data,names=None))
+	elif request.method == 'GET':
+		return render_template('home.html', form = form)
 
 # the below function currently does nothing but hopefully the seach form will be on the home page and 
 #therefore it will be important

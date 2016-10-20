@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
-{% block content %}
-
-	<ul class="nav nav-tabs">
+{% block data %}
+<ul class="nav nav-tabs">
 	  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
 	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
 	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
@@ -13,7 +12,7 @@
 	  <div id="home" class="tab-pane fade in active">
 	    <h3>HOME</h3>
 
-<p class="lead"> This is Maddy Hodges SECOND user interface for Haverford's Quaker Linked Data Project.</p>
+<p class="lead"> This is Maddy Hodges first user interface for Haverford's Quaker Linked Data Project.</p>
              <p class="lead">Currently the project only has the data from the Cope Evans Project and there are plans to incorporate three other Quaker projects. Linked data is data that is structured in a way that it can be interlinked with other data through semantic queries. Luckily you wont have to learn how to write semantic queries to utilize the data. I have created a interface with which you can explore the data. The searches I have available at the moment are in the tabs above.</p>
 
       <p>Maybe I'll use <a href="http://getbootstrap.com/examples/sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be.</p>
@@ -48,7 +47,7 @@
 	  </div>
 
 	  <div id="letters" class="tab-pane fade">
-	    <h3>Letters</h3>
+	    <h3>letters</h3>
 
 
 	  <center>
@@ -71,38 +70,33 @@
 
           <div id="people" class="tab-pane fade">
             <h3>People</h3>
-
-			<!-- <a href='/search'>click here to be redirected to the search form </a> -->
-		
-      {% for message in form.name.errors %}
-         <div>{{ message }}</div>
-      {% endfor %}
-            
-     <!-- <form action = "http://127.0.0.1:5000/search" method = post> -->
-      <form action = "http://127.0.0.1:5000/" method = post>
-         <fieldset>
-            <legend>Search Form</legend>
-            <center>
-            {{ form.hidden_tag() }}
-            
-            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
-               {{ form.name.label }}<br>
-               {{ form.name }}
-               <br>
-               
-               <br>
-               {{ form.submit }}
-            </div>
-            
-         </fieldset>
-      </form>
-			
-		</center>
+          	<center>
+			<h1>Search for a certain person</h1>
+        			<form action="http://165.82.13.162/cgi-bin/CEperson.cgi" method="get">
+                		<p>Find info about a person in the Cope Evans Project</p>
+                		<p>
+                  			<input type="text" name="name"/>
+                  			<input type="submit" value="search"/>
+                		</p>
+       				 </form>
+        	</center>
+          </div>
+	 <div id="test" class="tab-pane fade">
+            <h3>test</h3>
+                <center>
+                        <h1>maddys test</h1>
+                                <form action="http://165.82.13.162/cgi-bin/dym.cgi" method="get">
+                                <p>wooooow</p>
+                                <p>
+                                        <input type="text" name="name"/>
+                                        <input type="submit" value="search"/>
+                                </p>
+                                 </form>
+                </center>
           </div>
          
 
  
 	</div>
 
-</div>
 {% endblock %}

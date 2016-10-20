@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block dym %}
+<h2>Did you mean...</h2>
+<!-- Has a search given, then finds related people and returns that -->
+<div>
+
+	{% for item in results %}
+	<p>{{ item[0] }}, {{ item[1] }}</p>
+	{% endfor %}
+</div>
+{% endblock %}
