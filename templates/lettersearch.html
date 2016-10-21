@@ -1,13 +1,10 @@
 {% extends "layout.html" %}
-{% block search %}
+{% block lettersearch %}
       <h2 style = "text-align: center;">Search Form</h2>
-
       {% for message in form.name.errors %}
-         <div>{{ message }}</div>
+         <div><b>{{ message }}</b></div>
       {% endfor %}
-
-
-      <form action = "http://127.0.0.1:5000/letters/" method = post>
+      <form action = "/letters/" method = post>
          <fieldset>
             <legend>Search Form</legend>
             {{ form.hidden_tag() }}

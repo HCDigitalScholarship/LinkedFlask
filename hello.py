@@ -34,9 +34,24 @@ def search():
                 return render_template('search.html', form = form)
 
 
-
-
-
+def letters():
+        letterform = LetterForm()
+        if request.method == 'POST':
+                if letterform.validate() == False:
+                        flash('All fields are required.')
+                        return render_template('lettersearch.html', form = letterform)
+                else:
+                        names = regexnames(letterform.name.data)
+                        if len(names) == 1: #then just go to that!
+                                st = names[0][0].split('/')[-1:][0]
+                                #print "!!!!", st
+                                return redirect(url_for('letterget',text=st))
+#                       for x in names: # changes url
+#                               x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
+                        return render_template('searchresults.html',names=names,searchtype='letter')      
+                        #return redirect(url_for('temporary',text=form.name.data,names=None))
+        elif request.method == 'GET':
+                return render_template('lettersearch.html', form = letterform)
 
 
 @app.route('/person/')
@@ -405,7 +420,7 @@ def search():
 		return render_template('search.html', form = form)
 
 
-@app.route('/search/<text>')
+@app.route('/person/search/<text>')
 def temporary(text=None,names=None):
         names = regexnames(text)
         print "this", names[0]
@@ -414,7 +429,7 @@ def temporary(text=None,names=None):
                 st = names[0][0].split('/')[-1:][0]
                 #print "!!!!", st
                 return redirect(url_for('hello',name=st))
-        return render_template('searchtest.html',names=names)
+        return render_template('searchresults.html',names=names)
 
 
 def regexnames(text):
@@ -422,11 +437,13 @@ def regexnames(text):
 PREFIX p: <http://127.0.0.1:5000/person/> 
 PREFIX fhkb: <http://www.example.com/genealogy.owl#> 
 
-SELECT ?url ?name 
+SELECT ?url ?name ?birth ?death
 WHERE {
   ?id p:labelname ?name .
   FILTER (REGEX(?name, "REPLACEME", "i")) .
-  ?url p:labelname ?name .
+  ?url p:labelname ?name ;
+	p:birth ?birth ;
+        p:death ?death .
 
 }
 """
