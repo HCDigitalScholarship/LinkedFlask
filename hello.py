@@ -90,13 +90,15 @@ def letters():
                 		st = names[0][0].split('/')[-1:][0]
                 		#print "!!!!", st
                 		return redirect(url_for('letterget',text=st))
-        		return render_template('searchtest.html',names=names)			
+#			for x in names: # changes url
+#				x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
+        		return render_template('searchtest.html',names=names,searchtype='letter')			
 			#return redirect(url_for('temporary',text=form.name.data,names=None))
         elif request.method == 'GET':
                 return render_template('lettersearch.html', form = form)
 
 
-@app.route('/letters/<text>')
+@app.route('/letters/person/<text>')
 def letterget(text=None,wrote=None,received=None):
 	id_name = "p:" + text  #adds prefix for query
 	#temporarly showing both wrote and recieved only
@@ -401,7 +403,6 @@ def search():
 			return redirect(url_for('temporary',text=form.name.data,names=None))
 	elif request.method == 'GET':
 		return render_template('search.html', form = form)
-
 
 
 @app.route('/search/<text>')
