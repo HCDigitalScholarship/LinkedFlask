@@ -2,6 +2,12 @@
 {% block content %}
 
 
+{% if name %}
+   <p class='lead'><b> Letters: {{name}}</b></p>
+{% else %}
+	<p class='lead'><b>ERROR</b></p>
+
+{% endif %}
 
 {% if letwrote %}
 
