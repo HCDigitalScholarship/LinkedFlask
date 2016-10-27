@@ -56,6 +56,7 @@ def search():
         elif request.method == 'GET':
                 return render_template('search.html', form = form)
 
+
 def letters():
         letterform = LetterForm()
         if request.method == 'POST':
@@ -440,7 +441,7 @@ def search():
 		return render_template('search.html', form = form)
 
 
-@app.route('/search/<text>')
+@app.route('/person/search/<text>')
 def temporary(text=None,names=None):
         names = regexnames(text)
         print "this", names[0]
@@ -449,7 +450,7 @@ def temporary(text=None,names=None):
                 st = names[0][0].split('/')[-1:][0]
                 #print "!!!!", st
                 return redirect(url_for('hello',name=st))
-        return render_template('searchtest.html',names=names)
+        return render_template('searchresults.html',names=names)
 
 
 def regexnames(text):
