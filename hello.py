@@ -47,7 +47,11 @@ def search():
                         return render_template('search.html', form = form)
                 else:
 #                       return temporary(form.name.data,None)
+
                         #Go to a results page
+
+                        #Go to a results page 
+
                         return redirect(url_for('temporary',text=form.name.data,names=None))
         elif request.method == 'GET':
                 return render_template('search.html', form = form)
@@ -104,8 +108,7 @@ def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p
 				 letreceived=letreceived,
 				 travels=travels )
 	
-#<<<<<<< HEAD
-#=======
+
 @app.route('/travels/')
 def travel():
 	return render_template('travels.html')
@@ -154,7 +157,6 @@ def letterget(text=None,wrote=None,received=None):
 #	return render_template('letterswritten.html')
 	
 
-#>>>>>>> 88e9e1afd934e2ca9900ffab78ab326a5fa9ad34
 graph = rdflib.Graph()
 graph.parse('CEpeople.ttl', format= 'turtle')
 graph.parse('CEchild.ttl', format= 'turtle')
