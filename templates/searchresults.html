@@ -1,11 +1,24 @@
 {% extends "layout.html" %}
 {% block content %}
 <title>Hello from the Flask Link Data App</title>
-<p> Here are some similar people</p>
 {% if names %}
+
+<p> Here are {{names|length}} similar people</p>
 	{% for name in names %}
-                <p><a href= "{{name[0]}}"> {{name[1]}}</a> {{name[3]}} - {{name[4]}}</p>
-        {% endfor %}
+		{% if name[3]  %}
+			{% if name[4] %}
+                		<p><a href= "{{name[0]}}"> {{name[1]}}</a> {{name[3]}} - {{name[4]}}</p>
+        		{% else %}
+				<p><a href= "{{name[0]}}"> {{name[1]}}</a> {{name[3]}} - None1</p>
+			{% endif %}
+		{% else  %}
+			{% if name[4] %}
+                        	<p><a href= "{{name[0]}}"> {{name[1]}}</a> None - {{name[4]}}</p>
+			{% else %}
+				<p><a href= "{{name[0]}}"> {{name[1]}}</a> None - None</p>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
 {% else %}
 	<p> darn, no results. Maybe try a different search </p>
 {% endif %}
