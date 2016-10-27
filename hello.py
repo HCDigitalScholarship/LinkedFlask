@@ -8,15 +8,34 @@ app.secret_key = 'development key'
 
 @app.route('/',methods = ['GET','POST'])
 def home():
-	form = SearchForm()
+	personform = SearchForm()
+	letterform = LetterForm()
 	if request.method == 'POST':
-		if form.validate() == False:
+		if letterform.validate() == True:
+			# if letters is filled out
+			names = regexnames(letterform.name.data)
+			if len(names) == 1: #then just go to that!
+				st = names[0][0].split('/')[-1:][0]
+				#print "!!!!", st
+				return redirect(url_for('letterget',text=st))
+				#for x in names: # changes url
+				#x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
+			return render_template('searchresults.html',names=names,searchtype='letter')      
+                        #return redirect(url_for('temporary',text=form.name.data,names=None))
+		elif letterform.validate() == False:
+			#if letters not filled out
 			flash('All fields are required.')
-			return render_template('home.html', form = form)
-		else:
-			return redirect(url_for('temporary',text=form.name.data,names=None))
+			return render_template('home.html', letterform = letterform, personform = personform)
+		elif personform.validate() == True:
+			#if person filled out
+			return redirect(url_for('temporary',text=personform.name.data,names=None))
+		elif personform.validate() == False:
+			#if person not filled out
+			flash('All fields are required.')
+			return render_template('home.html', personform = personform, letterform = letterform)
 	elif request.method == 'GET':
-		return render_template('home.html', form = form)
+			return render_template('home.html', personform = personform, letterform = letterform)
+
 
 # the below function currently does nothing but hopefully the seach form will be on the home page and 
 #therefore it will be important
@@ -27,18 +46,30 @@ def search():
                         flash('All fields are required.')
                         return render_template('search.html', form = form)
                 else:
-#                       return render_template('success.html')
-
 #                       return temporary(form.name.data,None)
-                        #this should also change the url...
+                        #Go to a results page
                         return redirect(url_for('temporary',text=form.name.data,names=None))
         elif request.method == 'GET':
                 return render_template('search.html', form = form)
 
-
-
-
-
+def letters():
+        letterform = LetterForm()
+        if request.method == 'POST':
+                if letterform.validate() == False:
+                        flash('All fields are required.')
+                        return render_template('lettersearch.html', form = letterform)
+                else:
+                        names = regexnames(letterform.name.data)
+                        if len(names) == 1: #then just go to that!
+                                st = names[0][0].split('/')[-1:][0]
+                                #print "!!!!", st
+                                return redirect(url_for('letterget',text=st))
+#                       for x in names: # changes url
+#                               x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
+                        return render_template('searchresults.html',names=names,searchtype='letter')      
+                        #return redirect(url_for('temporary',text=form.name.data,names=None))
+        elif request.method == 'GET':
+                return render_template('lettersearch.html', form = letterform)
 
 
 @app.route('/person/')
@@ -87,16 +118,26 @@ def letters():
                         flash('All fields are required.')
                         return render_template('lettersearch.html', form = form)
                 else:
-			
- 			return redirect(url_for('letterget',text=form.name.data,wrote=form.wrote.data,received=form.received.data))                       
+			names = regexnames(form.name.data)
+			if len(names) == 1: #then just go to that!
+                		st = names[0][0].split('/')[-1:][0]
+                		#print "!!!!", st
+                		return redirect(url_for('letterget',text=st))
+#			for x in names: # changes url
+#				x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
+        		return render_template('searchtest.html',names=names,searchtype='letter')			
 			#return redirect(url_for('temporary',text=form.name.data,names=None))
         elif request.method == 'GET':
                 return render_template('lettersearch.html', form = form)
 
 
-@app.route('/letters/<text>')
+@app.route('/letters/person/<text>')
 def letterget(text=None,wrote=None,received=None):
-	id_name = "p:" + name  #adds prefix for query
+	id_name = "p:" + text  #adds prefix for query
+	#temporarly showing both wrote and recieved only
+	name = id2name(id_name)[0]
+	wrote = 1
+	received = 1
 	if wrote == 1:
 		letwrote = letterwritten(id_name)
         else:
@@ -107,7 +148,7 @@ def letterget(text=None,wrote=None,received=None):
 		letreceived =None
 	#TO BE FINISHED....
 	#NEEDS TO PUT THIS IN A TEMPLATE
-	return render_template('letterresult.html',letwrote,letreceived)
+	return render_template('letterresult.html',name=name,letwrote=letwrote,letreceived=letreceived)
 
 
 #	return render_template('letterswritten.html')
@@ -172,8 +213,6 @@ def parents(username): #should handle the issue of Nonetype result
 
 
 def spouse(username): # THIS IS THE MOST DIFFICULT ONE SO I WILL DO IT LAST :^) 
-
-
 	queryspouse = """
 	prefix p: <http://127.0.0.1:5000/person/> 
 
@@ -210,7 +249,6 @@ def spouse(username): # THIS IS THE MOST DIFFICULT ONE SO I WILL DO IT LAST :^)
 
 
 def sib(username): #this will create an array of [[sib_1,url1],[sib_2,url_2],...] and be traversed in the template with a for-loop 
-
 	querysib = """
 PREFIX p: <http://127.0.0.1:5000/person/> 
 PREFIX fhkb: <http://www.example.com/genealogy.owl#> 
@@ -249,7 +287,6 @@ REPLACEME p:labelname ?name ;
 
 
 def children(username):
-
 	querychild = """
 prefix p: <http://127.0.0.1:5000/person/> 
 prefix fhkb: <http://www.example.com/genealogy.owl#> 
@@ -303,11 +340,7 @@ WHERE {
                 ans.append(row)
         return ans
 
-
-
-
 def letterreceived(username):
-
 	queryreceived = """
 prefix p: <http://127.0.0.1:5000/person/> 
 prefix t: <localhost:3030/ds/trip#> 
@@ -340,7 +373,6 @@ WHERE {
 
 
 def travelsbyid(username):
-
 	querytravel = """
 prefix p: <http://127.0.0.1:5000/person/> 
 prefix t: <localhost:3030/ds/trip#> 
@@ -357,10 +389,6 @@ WHERE
 
 
 """
-
-
-
-
         querytravel = querytravel.replace("REPLACEME",username)
         resulttravel = graph.query(querytravel)
 
@@ -410,9 +438,7 @@ def search():
 		return render_template('search.html', form = form)
 
 
-
 @app.route('/search/<text>')
-
 def temporary(text=None,names=None):
         names = regexnames(text)
         print "this", names[0]
@@ -425,16 +451,17 @@ def temporary(text=None,names=None):
 
 
 def regexnames(text):
-
         querynames= """
 PREFIX p: <http://127.0.0.1:5000/person/> 
 PREFIX fhkb: <http://www.example.com/genealogy.owl#> 
 
-SELECT ?url ?name 
+SELECT ?url ?name ?birth ?death
 WHERE {
   ?id p:labelname ?name .
   FILTER (REGEX(?name, "REPLACEME", "i")) .
-  ?url p:labelname ?name .
+  ?url p:labelname ?name ;
+	p:birth ?birth ;
+        p:death ?death .
 
 }
 """

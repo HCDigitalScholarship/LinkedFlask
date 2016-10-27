@@ -51,9 +51,9 @@
 	    <h3>Letters</h3>
 
 
-	  <center>
+	 <center>
         	<h1>Search for a certain author or recipient</h1>
-        	<form action="http://165.82.13.162/cgi-bin/CEletters.cgi" method="get">
+        <!-- 	<form action="http://165.82.13.162/cgi-bin/CEletters.cgi" method="get">
 	
         	        <p>Find info about correspondences between people in the Cope Evans Project </p>
                 	<p>
@@ -64,8 +64,38 @@
                         	<input type="checkbox" name="option2" value="recip" checked> Recieved<br>
                 </p>
 
-       		 </form> 
-	</center>
+       		 </form> -->
+       		          <h2 style = "text-align: center;">Search Form</h2>
+
+      {% for message in letterform.name.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+
+      <form action = "http://127.0.0.1:5000/" method = post>
+         <fieldset>
+            <legend>Search Form</legend>
+            {{ letterform.hidden_tag() }}
+
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ letterform.name.label }}<br>
+               {{ letterform.name }}
+               <br>
+
+		{{ letterform.wrote.label }} <br>
+		{{ letterform.wrote }}
+		<br>
+		{{ letterform.received.label }} <br>             
+                {{ letterform.received }}
+                <br>		
+
+               <br>
+               {{ letterform.submit }}
+            </div>
+
+         </fieldset>
+      </form>
+	</center> 
 	
 	</div>
 
@@ -74,7 +104,7 @@
 
 			<!-- <a href='/search'>click here to be redirected to the search form </a> -->
 		
-      {% for message in form.name.errors %}
+      {% for message in personform.name.errors %}
          <div>{{ message }}</div>
       {% endfor %}
             
@@ -83,15 +113,15 @@
          <fieldset>
             <legend>Search Form</legend>
             <center>
-            {{ form.hidden_tag() }}
+            {{ personform.hidden_tag() }}
             
             <div style = font-size:20px; font-weight:bold; margin-left:150px;>
-               {{ form.name.label }}<br>
-               {{ form.name }}
+               {{ personform.name.label }}<br>
+               {{ personform.name }}
                <br>
                
                <br>
-               {{ form.submit }}
+               {{ personform.submit }}
             </div>
             
          </fieldset>
