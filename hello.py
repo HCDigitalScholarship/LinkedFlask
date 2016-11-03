@@ -11,32 +11,32 @@ def home():
 	personform = SearchForm()
 	letterform = LetterForm()
 	if request.method == 'POST':
-		if letterform.validate() == True:
-			# if letters is filled out
+		if letterform.validate():# and not personform.validate():
+			# if letters is filled out and person isn't
+			print 'a'
 			names = regexnames(letterform.name.data)
-			if len(names) == 1: #then just go to that!
-				st = names[0][0].split('/')[-1:][0]
-				#print "!!!!", st
-				return redirect(url_for('letterget',text=st))
-				#for x in names: # changes url
-				#x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
+			if not names== None:
+				if len(names) == 1: #then just go to that!
+					st = names[0][0].split('/')[-1:][0]
+					#print "!!!!", st
+					return redirect(url_for('letterget',text=st))
+					#for x in names: # changes url
+					#x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
 			return render_template('searchresults.html',names=names,searchtype='letter')      
                         #return redirect(url_for('temporary',text=form.name.data,names=None))
-		elif letterform.validate() == False:
-			#if letters not filled out
-			flash('All fields are required.')
-			return render_template('home.html', letterform = letterform, personform = personform)
-		elif personform.validate() == True:
+		elif personform.validate():# and not letterform.validate():
 			#if person filled out
+			print 'c'
 			return redirect(url_for('temporary',text=personform.name.data,names=None))
-		elif personform.validate() == False:
+		elif not personform.validate() or not letterform.validate() :
 			#if person not filled out
 			flash('All fields are required.')
+			print 'd'
 			return render_template('home.html', personform = personform, letterform = letterform)
 	elif request.method == 'GET':
 			return render_template('home.html', personform = personform, letterform = letterform)
 
-
+"""
 # the below function currently does nothing but hopefully the seach form will be on the home page and 
 #therefore it will be important
 def search():
@@ -76,7 +76,7 @@ def letters():
         elif request.method == 'GET':
                 return render_template('lettersearch.html', form = letterform)
 
-
+"""
 @app.route('/person/')
 def person():
 	return render_template('person.html')
@@ -123,13 +123,14 @@ def letters():
                         return render_template('lettersearch.html', form = form)
                 else:
 			names = regexnames(form.name.data)
-			if len(names) == 1: #then just go to that!
-                		st = names[0][0].split('/')[-1:][0]
-                		#print "!!!!", st
-                		return redirect(url_for('letterget',text=st))
+			if not names == None:
+				if len(names) == 1: #then just go to that!
+					st = names[0][0].split('/')[-1:][0]
+					#print "!!!!", st
+					return redirect(url_for('letterget',text=st))
 #			for x in names: # changes url
 #				x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
-        		return render_template('searchtest.html',names=names,searchtype='letter')			
+        	return render_template('searchresults.html',names=names,searchtype='letter')
 			#return redirect(url_for('temporary',text=form.name.data,names=None))
         elif request.method == 'GET':
                 return render_template('lettersearch.html', form = form)
