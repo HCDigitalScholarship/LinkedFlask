@@ -11,28 +11,34 @@ def home():
 	personform = SearchForm()
 	letterform = LetterForm()
 	if request.method == 'POST':
-		if letterform.validate():# and not personform.validate():
-			# if letters is filled out and person isn't
-			print 'a'
-			names = regexnames(letterform.name.data)
-			if not names== None:
-				if len(names) == 1: #then just go to that!
-					st = names[0][0].split('/')[-1:][0]
-					#print "!!!!", st
-					return redirect(url_for('letterget',text=st))
-					#for x in names: # changes url
-					#x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
-			return render_template('searchresults.html',names=names,searchtype='letter')      
+		form_name = request.form['form-name']
+		if form_name == 'form2':
+			if letterform.validate():# and not personform.validate():
+				# if letters is filled out and person isn't
+				print 'a'
+				names = regexnames(letterform.name.data)
+				if not names== None:
+					if len(names) == 1: #then just go to that!
+						st = names[0][0].split('/')[-1:][0]
+						#print "!!!!", st
+						return redirect(url_for('letterget',text=st))
+						#for x in names: # changes url
+						#x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
+				#return render_template('searchresults.html',names=names,searchtype='letter') 
+				return redirect(url_for('temporary2',text=personform.name.data,names=None))   
                         #return redirect(url_for('temporary',text=form.name.data,names=None))
-		elif personform.validate():# and not letterform.validate():
-			#if person filled out
-			print 'c'
-			return redirect(url_for('temporary',text=personform.name.data,names=None))
-		elif not personform.validate() or not letterform.validate() :
-			#if person not filled out
-			flash('All fields are required.')
-			print 'd'
-			return render_template('home.html', personform = personform, letterform = letterform)
+		elif form_name == 'form1':
+			if personform.validate():# and not letterform.validate():
+				#if person filled out
+				print 'c'
+				return redirect(url_for('temporary',text=personform.name.data,names=None))
+
+		else:
+			if not personform.validate() or not letterform.validate() :
+				#if person not filled out
+				flash('All fields are required.')
+				print 'd'
+				return render_template('home.html', personform = personform, letterform = letterform)
 	elif request.method == 'GET':
 			return render_template('home.html', personform = personform, letterform = letterform)
 
@@ -441,6 +447,16 @@ def search():
 	elif request.method == 'GET':
 		return render_template('search.html', form = form)
 
+@app.route('/letters/person/search/<text>')
+def temporary2(text=None,names=None):
+        names = regexnames(text)
+        print "this", names[0]
+        #names = text
+        if len(names) == 1: #then just go to that!
+                st = names[0][0].split('/')[-1:][0]
+                #print "!!!!", st
+                return redirect(url_for('hello',name=st))
+        return render_template('searchresults.html',names=names, searchtype='letter')
 
 @app.route('/person/search/<text>')
 def temporary(text=None,names=None):
