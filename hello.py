@@ -10,6 +10,7 @@ app.secret_key = 'development key'
 def home():
 	personform = SearchForm()
 	letterform = LetterForm()
+	travelform = SearchForm()
 	if request.method == 'POST':
 		form_name = request.form['form-name']
 		if form_name == 'form2':
@@ -25,22 +26,35 @@ def home():
 						#for x in names: # changes url
 						#x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
 				#return render_template('searchresults.html',names=names,searchtype='letter') 
-				return redirect(url_for('temporary2',text=personform.name.data,names=None))   
+				return redirect(url_for('temporary2',text=letterform.name.data,names=None))   
                         #return redirect(url_for('temporary',text=form.name.data,names=None))
 		elif form_name == 'form1':
 			if personform.validate():# and not letterform.validate():
 				#if person filled out
 				print 'c'
 				return redirect(url_for('temporary',text=personform.name.data,names=None))
+		#for travel forms:
+		#elif form_name == 'form3':
+			#if personform.validate():
+				#return render_template('travels.html') #doesn't do anything yet
+		elif form_name == 'form3':
+			if travelform.validate():
+				names = regexnames(letterform.name.data)
+				if not names== None:
+					if len(names) == 1: #then just go to that!
+						st = names[0][0].split('/')[-1:][0]
+						#print "!!!!", st
+						return redirect(url_for('travelget',text=st))
+				return redirect(url_for('temporary3',text=travelform.name.data,names=None)) 
 
 		else:
-			if not personform.validate() or not letterform.validate() :
+			if not personform.validate() or not letterform.validate() or not travelform.validate():
 				#if person not filled out
 				flash('All fields are required.')
 				print 'd'
-				return render_template('home.html', personform = personform, letterform = letterform)
+				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform)
 	elif request.method == 'GET':
-			return render_template('home.html', personform = personform, letterform = letterform)
+			return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform)
 
 """
 # the below function currently does nothing but hopefully the seach form will be on the home page and 
@@ -161,8 +175,18 @@ def letterget(text=None,wrote=None,received=None):
 	#NEEDS TO PUT THIS IN A TEMPLATE
 	return render_template('letterresult.html',name=name,letwrote=letwrote,letreceived=letreceived)
 
+@app.route('/travels/person/<text>')
+def travelget(text=None,wrote=None,received=None):
+	id_name = "p:" + text  #adds prefix for query
+	#temporarly showing both wrote and recieved only
+	name = id2name(id_name)[0]
+	return render_template('travelresult.html',name=name)
+
+
 
 #	return render_template('letterswritten.html')
+
+
 	
 
 graph = rdflib.Graph()
@@ -447,16 +471,7 @@ def search():
 	elif request.method == 'GET':
 		return render_template('search.html', form = form)
 
-@app.route('/letters/person/search/<text>')
-def temporary2(text=None,names=None):
-        names = regexnames(text)
-        print "this", names[0]
-        #names = text
-        if len(names) == 1: #then just go to that!
-                st = names[0][0].split('/')[-1:][0]
-                #print "!!!!", st
-                return redirect(url_for('hello',name=st))
-        return render_template('searchresults.html',names=names, searchtype='letter')
+
 
 @app.route('/person/search/<text>')
 def temporary(text=None,names=None):
@@ -468,6 +483,28 @@ def temporary(text=None,names=None):
                 #print "!!!!", st
                 return redirect(url_for('hello',name=st))
         return render_template('searchresults.html',names=names)
+        
+@app.route('/letters/person/search/<text>')
+def temporary2(text=None,names=None):
+        names = regexnames(text)
+        print "this", names[0]
+        #names = text
+        if len(names) == 1: #then just go to that!
+                st = names[0][0].split('/')[-1:][0]
+                #print "!!!!", st
+                return redirect(url_for('letterget',name=st))
+        return render_template('searchresults.html',names=names, searchtype='letter')
+        
+@app.route('/travels/person/search/<text>')
+def temporary3(text=None,names=None):
+        names = regexnames(text)
+        print "this", names[0]
+        #names = text
+        if len(names) == 1: #then just go to that!
+                st = names[0][0].split('/')[-1:][0]
+                #print "!!!!", st
+                return redirect(url_for('travelget',name=st))
+        return render_template('searchresults.html',names=names, searchtype='travel')
 
 
 def regexnames(text):

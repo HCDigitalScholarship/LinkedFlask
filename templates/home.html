@@ -6,7 +6,7 @@
 	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
 	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
 	  <li><a data-toggle="tab" href="#people">People</a></li>
-	  <li><a data-toggle="tab" href="#test">Test</a></li>
+	  <li><a data-toggle="tab" href="#test" >Test</a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -33,17 +33,40 @@
 				<input type="text" name="yr"/>
 				<input type="submit" value="search"/>
 	      		</p>
-
+	      		
+			<input type="hidden" name="form-name" value="form4">
         	</form>
        	 		<h1> OR</h1>
-        	<form action="http://165.82.13.162/cgi-bin/CEtravbyperson.cgi" method="get">
+        	<!--<form action="http://165.82.13.162/cgi-bin/CEtravbyperson.cgi" method="get">
 
       			<p>Enter a persons name and click "search" to list a persons travels.</p>
       			<p>
         			<input type="text" name="name"/>
         			<input type="submit" value="search"/>
       			</p>
-        	</form>
+      		<input type="hidden" name="form-name" value="form4">
+        	</form> -->
+    {% for message in travelform.name.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+        <form action = "http://127.0.0.1:5000/" method = post>
+         <fieldset>
+            <legend>Search Form</legend>
+            <center>
+            {{ travelform.hidden_tag() }}
+            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ travelform.name.label }}<br>
+               {{ travelform.name }}
+               <br>
+               
+               <br>
+               {{ travelform.submit }}
+            </div>
+            
+         </fieldset>
+         <input type="hidden" name="form-name" value="form3">
+      </form>
      		</center>
 	  </div>
 
