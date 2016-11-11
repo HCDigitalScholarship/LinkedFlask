@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block travels %}
+
+<h1> Travels for {{ date }} </h1>
+<ul>
+	{% for trip in travels %}
+		<li> {{trip}} </li>
+	
+	{% endfor %}
+</ul>
+
+
+
+{% endblock %}

@@ -30,3 +30,7 @@ class LetterForm(Form):
 	wrote = BooleanField("Wrote")
 	received = BooleanField("Recieved",validators=[RequiredIf('wrote')])        
 	submit = SubmitField("Search")
+	
+class TravelForm(Form):
+	date = IntegerField("Date",[validators.Required("Please enter a name to search.")])
+	submit = SubmitField("Search")
