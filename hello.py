@@ -500,7 +500,7 @@ def temporary(text=None,names=None):
                 st = names[0][0].split('/')[-1:][0]
                 #print "!!!!", st
                 return redirect(url_for('hello',name=st))
-        return render_template('searchresults.html',names=names)
+        return render_template('searchresults.html',names=names, searchtype = 'person')
         
 @app.route('/letters/person/search/<text>')
 def temporary2(text=None,names=None):
@@ -509,7 +509,7 @@ def temporary2(text=None,names=None):
 		if len(names) == 1: #then just go to that!
 			st = names[0][0].split('/')[-1:][0]
 			#print "!!!!", st
-			return redirect(url_for('letterget',name=st))
+			return redirect(url_for('letterget',name=st))	
 	return render_template('searchresults.html',names=names, searchtype='letter')
         
 @app.route('/travels/person/search/<text>')
