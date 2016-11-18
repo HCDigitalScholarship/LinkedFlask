@@ -198,7 +198,7 @@ def singleletter(text = None, letter = None):
 	#if not infoletter(id_letter) == None:
 	letter = infoletter(id_letter)
 	#return render_template('singleletter.html', letter=letter)
-	return render_template('singleletter.html', letter=letter)
+	return render_template('singleletter.html',text=text ,letter=letter)
 
 @app.route('/travels/<text>')
 #Does not work yet: created 11/11/16, want it to display all travels from one year

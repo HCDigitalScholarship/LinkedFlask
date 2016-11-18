@@ -1,22 +1,20 @@
 {% extends "layout.html" %}
 {% block content %}
 <title>Hello from the Flask Link Data App</title>
-{% if letter %}    
-   <p class='lead'><b> Info: {{letter}}</b></p>
+{% if text %}    
+   <p class='lead'><b> Info: {{text}}</b></p>
    <ul class="list-group">
-   <!-- This first line taken from hello.html -->
-   <li class='list-group-item'> <p style='margin:0 0 0px;'> <a href={{letter[0]}}>{{letter[1]}}</a> to <a href={{letter[2]}}>{{letter[3]}}</a> </p><p style='font-size:smaller;margin:0 0 0px;'>Subject:{{letter[4]}} </p> </li>
-   <!-- for these I'm just guessing how it works, not sure if this is actually useful...-->
-   <li class='list-group-item'> Author:{{letter[0]}} </li>
-   <li class='list-group-item'> Recipient:{{letter[1]}} </li>
-   <li class='list-group-item'> Origin:{{letter[2]}} </li>
-   <li class='list-group-item'> Destination:{{letter[3]}} </li>
-   <li class='list-group-item'> Title:{{letter[4]}} </li> 
-   <li class='list-group-item'> Date:{{letter[5]}} </li>   
-   <li class='list-group-item'> Author's age:{{letter[6]}} </li>
-   <li class='list-group-item'> Identified people:{{letter[7]}} </li>
-   <li class='list-group-item'> Unidentified people:{{letter[8]}} </li>   
-   <li class='list-group-item'> Subject:{{letter[9]}} </li>
+   <!-- This first line taken from hello.html 
+   <li class='list-group-item'> <p style='margin:0 0 0px;'> <a href={{letter[1]}}>{{letter[0]}}</a> to <a href={{letter[2]}}>{{letter[3]}}</a> </p><p style='font-size:smaller;margin:0 0 0px;'>Subject:{{letter[4]}} </p> </li>
+--> 
+  <!-- for these I'm just guessing how it works, not sure if this is actually useful...-->
+   <li class='list-group-item'><a href={{letter[1]}}> Title:{{letter[0]}}</a> </li>
+   <li class='list-group-item'> Date:{{letter[2]}} </li>   
+   <li class='list-group-item'> Subject:{{letter[3]}} </li>
+   <li class='list-group-item'> <a href={{letter[4]}}>Creator:{{letter[5]}}</a> </li>
+   <li class='list-group-item'> <a href={{letter[7]}} > Recipient:{{letter[6]}}</a> </li>
+   <li class='list-group-item'> Origin:{{letter[9]}} </li>
+   <li class='list-group-item'> Destination:{{letter[8]}} </li>
    </ul>
    
 {% else %}
