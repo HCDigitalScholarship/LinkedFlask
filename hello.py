@@ -195,9 +195,9 @@ def travelget(text=None):
 #Doesn't work yet-- created 11/11/16 to be a page for an individual letter
 def singleletter(text = None, letter = None):
 	id_letter = "letter:" + text
-	if not id2name(id_letter) == None:
-		letter = id2name(id_letter)[0]#id2name is not the right thing to use here
-		return render_template('singleletter.html', letter=letter)
+	#if not infoletter(id_letter) == None:
+	letter = infoletter(id_letter)
+	#return render_template('singleletter.html', letter=letter)
 	return render_template('singleletter.html', letter=letter)
 
 @app.route('/travels/<text>')
@@ -216,6 +216,38 @@ graph.parse('CEtravls.ttl', format= 'turtle')
 #@app.route('/')
 #def hello_world():
  #   return 'Hello, World!'
+
+
+def infoletter(text):
+	query="""
+	PREFIX p: <http://127.0.0.1:5000/person/> 
+	PREFIX letter:<localhost:3030/ds/letter#>
+
+	SELECT ?Title ?RefUrl ?Date ?Subj ?C_url ?Creator ?Recipient ?R_url ?Destination ?Origin
+	WHERE {
+     		REPLACEME letter:Title ?Title ;
+     		letter:Reference_URL ?RefUrl ;             
+     		letter:Date ?Date ;
+     		letter:Subject ?Subj ;
+    		letter:Creator_ID ?C_url ;
+   		letter:Destination ?Destination ;
+   		letter:Place_Of_Origin ?Origin ;
+    		letter:Recipient_ID ?R_url .
+    		?C_url p:labelname ?Creator .
+     		?R_url p:labelname ?Recipient .
+}
+
+	"""
+	query = query.replace("REPLACEME",text)
+        result = graph.query(query)
+        print query
+	for row in result:
+        #        if row == None: then this is maybe not an item... maybe useful 
+                Title, RefUrl, Date, Subj, C_url, Creator, Recipient, R_url, Destination, Origin=  row
+        	return row
+
+
+
 
 
 def id2name(username):
