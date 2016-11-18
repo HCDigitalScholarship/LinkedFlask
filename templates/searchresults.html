@@ -3,23 +3,71 @@
 <title>Hello from the Flask Link Data App</title>
 {% if names %}
 
-<p> Here are {{names|length}} similar people</p>
-	{% for name in names %}
-		{% if name[3]  %}
-			{% if name[4] %}
+	{% if searchtype == 'person' %}
+	
+		<p> Here are {{names|length}} similar people</p>
+		{% for name in names %}
+			{% if name[3]  %}
+				{% if name[4] %}
                 		<p><a href= "{{name[0]}}"> {{name[1]}}</a> {{name[3]}} - {{name[4]}}</p>
         		{% else %}
 				<p><a href= "{{name[0]}}"> {{name[1]}}</a> {{name[3]}} - None1</p>
-			{% endif %}
-		{% else  %}
-			{% if name[4] %}
+				{% endif %}
+			{% else  %}
+				{% if name[4] %}
                         	<p><a href= "{{name[0]}}"> {{name[1]}}</a> None - {{name[4]}}</p>
-			{% else %}
+				{% else %}
 				<p><a href= "{{name[0]}}"> {{name[1]}}</a> None - None</p>
+				{% endif %}
 			{% endif %}
-		{% endif %}
-	{% endfor %}
+		{% endfor %}
+
+	{% elif searchtype == 'letter' %}
+		<!-- The links here should send you to url_for(letterget, text = person id without p:) -->
+		<!-- name[0] =  http://127.0.0.1:5000/person/i397  - how to get just id? cant just cut it out, since url could change-->
+
+		<p> Here are {{names|length}} similar people</p>
+		{% for name in names %}
+			{% if name[3]  %}
+				{% if name[4] %}
+                		<p><a href= "{{ name[0].split('/')[0] + '/' + name[0].split('/')[1] + '/'+ name[0].split('/')[2] +'/letters/person/' + name[0].split('/')[4] }}"> {{name[1]}}</a> {{name[3]}} - {{name[4]}}</p>
+        		{% else %}
+				<p><a href= "{{ name[0].split('/')[0] + '/' + name[0].split('/')[1] + '/'+ name[0].split('/')[2] +'/letters/person/' + name[0].split('/')[4] }}"> {{name[1]}}</a> {{name[3]}} - None1</p>
+				{% endif %}
+			{% else  %}
+				{% if name[4] %}
+                        	<p><a href= "{{ name[0].split('/')[0] + '/' + name[0].split('/')[1] + '/'+ name[0].split('/')[2] +'/letters/person/' + name[0].split('/')[4] }}"> {{name[1]}}</a> None - {{name[4]}}</p>
+				{% else %}
+				<p><a href= "{{ name[0].split('/')[0] + '/' + name[0].split('/')[1] + '/'+ name[0].split('/')[2] +'/letters/person/' + name[0].split('/')[4] }}"> {{name[1]}}</a> None - None</p>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+
+
+	{% elif searchtype == 'travel' %}
+	
+		<p> Here are {{names|length}} similar people</p>
+		{% for name in names %}
+			{% if name[3]  %}
+				{% if name[4] %}
+                		<p><a href= "{{ name[0].split('/')[0] + '/' + name[0].split('/')[1] + '/'+ name[0].split('/')[2] +'/travels/person/' + name[0].split('/')[4] }}"> {{name[1]}}</a> {{name[3]}} - {{name[4]}}</p>
+        		{% else %}
+				<p><a href= "{{ name[0].split('/')[0] + '/' + name[0].split('/')[1] + '/'+ name[0].split('/')[2] +'/travels/person/' + name[0].split('/')[4] }}"> {{name[1]}}</a> {{name[3]}} - None1</p>
+				{% endif %}
+			{% else  %}
+				{% if name[4] %}
+                        	<p><a href= "{{ name[0].split('/')[0] + '/' + name[0].split('/')[1] + '/'+ name[0].split('/')[2] +'/travels/person/' + name[0].split('/')[4] }}"> {{name[1]}}</a> None - {{name[4]}}</p>
+				{% else %}
+				<p><a href= "{{ name[0].split('/')[0] + '/' + name[0].split('/')[1] + '/'+ name[0].split('/')[2] +'/travels/person/' + name[0].split('/')[4] }}"> {{name[1]}}</a> None - None</p>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+
+	{% endif %}
+
 {% else %}
 	<p> darn, no results. Maybe try a different search </p>
 {% endif %}
+
+
 {% endblock %}
