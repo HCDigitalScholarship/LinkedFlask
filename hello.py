@@ -14,7 +14,7 @@ def home():
 		if letterform.validate():# and not personform.validate():
 			# if letters is filled out and person isn't
 			print 'a'
-			names = regexnames(letterform.name.data)
+			names = regexnames(text=letterform.name.data,searchtype="letters")
 			if not names== None:
 				if len(names) == 1: #then just go to that!
 					st = names[0][0].split('/')[-1:][0]
@@ -22,7 +22,7 @@ def home():
 					return redirect(url_for('letterget',text=st))
 					#for x in names: # changes url
 					#x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
-			return render_template('searchresults.html',names=names,searchtype='letter')      
+			return render_template('searchresults.html',names=names)      
                         #return redirect(url_for('temporary',text=form.name.data,names=None))
 		elif personform.validate():# and not letterform.validate():
 			#if person filled out
@@ -64,7 +64,7 @@ def letters():
                         flash('All fields are required.')
                         return render_template('lettersearch.html', form = letterform)
                 else:
-                        names = regexnames(letterform.name.data)
+                        names = regexnames(letterform.name.data,searchtype="letters")
                         if len(names) == 1: #then just go to that!
                                 st = names[0][0].split('/')[-1:][0]
                                 #print "!!!!", st
@@ -122,7 +122,7 @@ def letters():
                         flash('All fields are required.')
                         return render_template('lettersearch.html', form = form)
                 else:
-			names = regexnames(form.name.data)
+			names = regexnames(form.name.data,searchtype="letters")
 			if not names == None:
 				if len(names) == 1: #then just go to that!
 					st = names[0][0].split('/')[-1:][0]
@@ -444,7 +444,7 @@ def search():
 
 @app.route('/person/search/<text>')
 def temporary(text=None,names=None):
-        names = regexnames(text)
+        names = regexnames(text,searchtype="person")
         print "this", names[0]
         #names = text
         if len(names) == 1: #then just go to that!
@@ -454,31 +454,62 @@ def temporary(text=None,names=None):
         return render_template('searchresults.html',names=names)
 
 
-def regexnames(text):
-        querynames= """
-PREFIX p: <http://127.0.0.1:5000/person/> 
-PREFIX fhkb: <http://www.example.com/genealogy.owl#> 
+def regexnames(text=None,searchtype=None):
+	#searchtype ="testing"
+	if searchtype == "letters":
+		querynames="""
+	PREFIX p: <http://127.0.0.1:5000/person/>
+	PREFIX fhkb: <http://www.example.com/genealogy.owl#>
+
+	SELECT ?url2 ?name ?birth ?death
+	WHERE {
+  	?id p:labelname ?name .
+  	FILTER (REGEX(?name, "REPLACEME", "i")) .
+  	?url p:labelname ?name ;
+  	BIND( REPLACE(STR(?url), "person", "letter/person") AS ?url2) .
+  	?url  p:birth ?birth ;
+   	p:death ?death .
+
+	}	
+	"""
+		querynames = querynames.replace("REPLACEME",text)
+        	print querynames
+		resultnames = graph.query(querynames)
+		print resultnames
+        	if len(resultnames) == 0: #everything is blank
+                	return None
+        	ans = []
+        	for row in resultnames:
+        #        if row != None: #this might be unnecessary
+               		ans.append(row)
+        	return ans
+
+
+
+        else: # searchtype == "person":
+                querynames= """
+PREFIX p: <http://127.0.0.1:5000/person/>
+PREFIX fhkb: <http://www.example.com/genealogy.owl#>
 
 SELECT ?url ?name ?birth ?death
 WHERE {
   ?id p:labelname ?name .
   FILTER (REGEX(?name, "REPLACEME", "i")) .
   ?url p:labelname ?name ;
-	p:birth ?birth ;
+        p:birth ?birth ;
         p:death ?death .
-
 }
 """
-        querynames = querynames.replace("REPLACEME",text)
-        resultnames = graph.query(querynames)
-        if len(resultnames) == 0: #everything is blank
-                return None
-        ans = []
-        for row in resultnames:
-        #        if row != None: #this might be unnecessary 
-                ans.append(row)
-        return ans
 
+        	querynames = querynames.replace("REPLACEME",text)
+        	resultnames = graph.query(querynames)
+        	if len(resultnames) == 0: #everything is blank
+                	return None
+        	ans = []
+        	for row in resultnames:
+        #        if row != None: #this might be unnecessary
+                	ans.append(row)
+        	return ans
 
 
 
