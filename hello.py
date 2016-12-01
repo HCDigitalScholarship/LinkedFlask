@@ -36,12 +36,17 @@ def home():
 				#if person filled out
 				return redirect(url_for('temporary',text=personform.name.data,names=None))
 			else:
+				#return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
 				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
 
 		#for travel forms:
 		elif form_name == 'form4':
 			if travel2form.validate():
-				return redirect(url_for('travelyear', text = travel2form.date.data))
+				text = travel2form.date.data
+				if len(str(text)) == 4:
+					return redirect(url_for('travelyear', text = text))
+				else:
+					return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
 			else:
 				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
 
@@ -213,9 +218,10 @@ graph.parse('CEchild.ttl', format= 'turtle')
 graph.parse('CEletters.ttl', format= 'turtle')
 graph.parse('CEtravls.ttl', format= 'turtle')
 
-#@app.route('/')
-#def hello_world():
- #   return 'Hello, World!'
+#@app.route('/#people',methods = ['GET','POST'])
+#This doesn't work since it doesn't recognize the '#' and puts in a '%23' for some reason
+
+	
 
 
 def infoletter(text):
