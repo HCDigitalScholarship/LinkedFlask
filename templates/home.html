@@ -1,6 +1,31 @@
 {% extends "layout.html" %}
 {% block content %}
 
+{% if tab == "travels"%}
+	<ul class="nav nav-tabs">
+	  <li><a data-toggle="tab" href="#home">Home</a></li>
+	  <li class="active"><a data-toggle="tab" href="#travels">Travels</a></li>
+	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
+	  <li><a data-toggle="tab" href="#people">People</a></li>
+	  <li><a data-toggle="tab" href="#test" >Test</a></li>
+	</ul>
+{% elif tab == "people" %}
+	<ul class="nav nav-tabs">
+	  <li><a data-toggle="tab" href="#home">Home</a></li>
+	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
+	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
+	  <li class="active"><a data-toggle="tab" href="#people">People</a></li>
+	  <li><a data-toggle="tab" href="#test" >Test</a></li>
+	</ul>
+{% elif tab == "letters" %}
+	<ul class="nav nav-tabs">
+	  <li><a data-toggle="tab" href="#home">Home</a></li>
+	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
+	  <li class="active"><a data-toggle="tab" href="#letters">Letters</a></li>	
+	  <li"><a data-toggle="tab" href="#people">People</a></li>
+	  <li><a data-toggle="tab" href="#test" >Test</a></li>
+	</ul>
+{% else %}
 	<ul class="nav nav-tabs">
 	  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
 	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
@@ -8,9 +33,10 @@
 	  <li><a data-toggle="tab" href="#people">People</a></li>
 	  <li><a data-toggle="tab" href="#test" >Test</a></li>
 	</ul>
+{% endif %}
 
 	<div class="tab-content">
-	  <div id="home" class="tab-pane fade in active">
+	  <div id="home" class="{{ active[0] }}">
 	    <h3>HOME</h3>
 
 <p class="lead"> This is Maddy Hodges SECOND user interface for Haverford's Quaker Linked Data Project.</p>
@@ -20,7 +46,8 @@
 
 
 	  </div>
-	  <div id="travels" class="tab-pane fade in">
+	  <!--<div id="travels" class="tab-pane fade in">-->
+	  <div id="travels" class="{{ active[1] }}">
 	    <h3>Travels</h3>
 
 		<center>
@@ -94,7 +121,7 @@
      		</center>
 	  </div>
 
-	  <div id="letters" class="tab-pane fade">
+	  <div id="letters" class="{{ active[2] }}">
 	    <h3>Letters</h3>
 
 
@@ -148,7 +175,7 @@
 	
 	</div>
 
-          <div id="people" class="tab-pane fade">
+          <div id="people" class="{{ active[3] }}">
             <h3>People</h3>
 
 			<!-- <a href='/search'>click here to be redirected to the search form </a> -->

@@ -15,7 +15,7 @@ def home():
 	if request.method == 'POST':
 		form_name = request.form['form-name']
 		if form_name == 'form2':
-			if letterform.validate():# and not personform.validate():
+			if letterform.validate_on_submit():# and not personform.validate():
 				# if letters is filled out and person isn't
 				names = regexnames(letterform.name.data)
 				if not names== None:
@@ -29,7 +29,8 @@ def home():
 				return redirect(url_for('temporary2',text=letterform.name.data,names=None))   
                         #return redirect(url_for('temporary',text=form.name.data,names=None))
 			else:
-				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
+				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form, tab = 'letters', active = ["tab-pane fade in", "tab-pane fade in", "tab-pane fade in active", "tab-pane fade in"])
+			
 
 		elif form_name == 'form1':
 			if personform.validate():# and not letterform.validate():
@@ -37,7 +38,7 @@ def home():
 				return redirect(url_for('temporary',text=personform.name.data,names=None))
 			else:
 				#return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
-				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
+				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form, tab = 'people', active = ["tab-pane fade in", "tab-pane fade in", "tab-pane fade in", "tab-pane fade in active"])
 
 		#for travel forms:
 		elif form_name == 'form4':
@@ -46,9 +47,9 @@ def home():
 				if len(str(text)) == 4:
 					return redirect(url_for('travelyear', text = text))
 				else:
-					return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
+					return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form, tab = 'travels', active = ["tab-pane fade in", "tab-pane fade in active", "tab-pane fade in", "tab-pane fade in"])
 			else:
-				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
+				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form, tab = 'travels', active = ["tab-pane fade in", "tab-pane fade in active", "tab-pane fade in", "tab-pane fade in"])
 
 		elif form_name == 'form3':
 			if travelform.validate():
@@ -60,15 +61,15 @@ def home():
 						return redirect(url_for('travelget',text=st))
 				return redirect(url_for('temporary3',text=travelform.name.data,names=None)) 
 			else:
-				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
+				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form, tab = 'travels', active = ["tab-pane fade in", "tab-pane fade in active", "tab-pane fade in", "tab-pane fade in"])
 
 
 		else:
 			#if not personform.validate() or not letterform.validate() or not travelform.validate() or not travel2form.validate():
 				flash('All fields are required.')
-				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
+				return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form, tab = 'home', active = ["tab-pane fade in active", "tab-pane fade in", "tab-pane fade in", "tab-pane fade in"])
 	elif request.method == 'GET':
-			return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
+			return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form, tab = 'home', active = ["tab-pane fade in active", "tab-pane fade in", "tab-pane fade in", "tab-pane fade in"])
 
 """
 # the below function currently does nothing but hopefully the seach form will be on the home page and 
