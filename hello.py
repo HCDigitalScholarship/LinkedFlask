@@ -206,7 +206,7 @@ def singleletter(text = None, letter = None):
 	#return render_template('singleletter.html', letter=letter)
 	return render_template('singleletter.html',text=text ,letter=letter)
 
-@app.route('/travels/<text>')
+@app.route('/travels/<int:text>')
 #Does not work yet: created 11/11/16, want it to display all travels from one year
 def travelyear(text = None):
 	date = text
@@ -532,14 +532,13 @@ def search():
 
 @app.route('/person/search/<text>')
 def temporary(text=None,names=None):
-        names = regexnames(text,searchtype="person")
-        print "this", names[0]
-        #names = text
-        if len(names) == 1: #then just go to that!
-                st = names[0][0].split('/')[-1:][0]
+	names = regexnames(text,searchtype="person")
+	if not names == None:
+		if len(names) == 1: #then just go to that!
+			st = names[0][0].split('/')[-1:][0]
                 #print "!!!!", st
-                return redirect(url_for('hello',name=st))
-        return render_template('searchresults.html',names=names, searchtype = 'person')
+			return redirect(url_for('hello',name=st))
+	return render_template('searchresults.html',names=names, searchtype = 'person')
         
 @app.route('/letters/person/search/<text>')
 def temporary2(text=None,names=None):
@@ -548,7 +547,7 @@ def temporary2(text=None,names=None):
 		if len(names) == 1: #then just go to that!
 			st = names[0][0].split('/')[-1:][0]
 			#print "!!!!", st
-			return redirect(url_for('letterget',name=st))	
+			return redirect(url_for('letterget',text=st))	
 	return render_template('searchresults.html',names=names, searchtype='letter')
         
 @app.route('/travels/person/search/<text>')
