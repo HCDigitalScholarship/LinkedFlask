@@ -1,0 +1,21 @@
+# txt file of urls to keep track of  #
+
+#these work locally... maybe not when served from the github ...
+- /person/<name>
+-/letters/person/<name>
+-/letters/<letterid> i.e. hsc0025
+-/person/search/<text>
+-letters/person/search/<text>
+
+
+#to add
+
+-letters/subject/<text>
+-travels/...all_flavors
+
+
+
+
+
+
+

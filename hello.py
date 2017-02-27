@@ -151,7 +151,9 @@ def travelget(text=None):
 	id_name = "p:" + text  #adds prefix for query
 	#temporarly showing both wrote and recieved only
 	name = id2name(id_name)[0]
-	return render_template('travelresult.html',name=name)
+	travels = travelsbyid(id_name)
+	print travels
+	return render_template('travelresult.html',name=name,travels=travels)
 
 @app.route('/letters/<text>')
 #Doesn't work yet-- created 11/11/16 to be a page for an individual letter
@@ -445,7 +447,7 @@ WHERE
 """
         querytravel = querytravel.replace("REPLACEME",username)
         resulttravel = graph.query(querytravel)
-
+	print querytravel
         if len(resulttravel) == 0: #everything is blank
                 return None
 #               return resultsib #unkown len
