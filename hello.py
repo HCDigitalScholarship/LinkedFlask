@@ -65,47 +65,6 @@ def home():
 	elif request.method == 'GET':
 			return render_template('home.html', personform = personform, letterform = letterform, travelform = travelform, travel2form = travel2form)
 
-"""
-# the below function currently does nothing but hopefully the seach form will be on the home page and 
-#therefore it will be important
-def search():
-        form = SearchForm()
-        if request.method == 'POST':
-                if form.validate() == False:
-                        flash('All fields are required.')
-                        return render_template('search.html', form = form)
-                else:
-#                       return temporary(form.name.data,None)
-
-                        #Go to a results page
-
-                        #Go to a results page 
-
-                        return redirect(url_for('temporary',text=form.name.data,names=None))
-        elif request.method == 'GET':
-                return render_template('search.html', form = form)
-
-
-def letters():
-        letterform = LetterForm()
-        if request.method == 'POST':
-                if letterform.validate() == False:
-                        flash('All fields are required.')
-                        return render_template('lettersearch.html', form = letterform)
-                else:
-                        names = regexnames(letterform.name.data,searchtype="letters")
-                        if len(names) == 1: #then just go to that!
-                                st = names[0][0].split('/')[-1:][0]
-                                #print "!!!!", st
-                                return redirect(url_for('letterget',text=st))
-#                       for x in names: # changes url
-#                               x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
-                        return render_template('searchresults.html',names=names,searchtype='letter')      
-                        #return redirect(url_for('temporary',text=form.name.data,names=None))
-        elif request.method == 'GET':
-                return render_template('lettersearch.html', form = letterform)
-
-"""
 @app.route('/person/')
 def person():
 	return render_template('person.html')
@@ -114,7 +73,7 @@ def person():
 def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p1url=None, sb=None,child=None, letwrote=None, letreceived=None, travels=None):
 	id_name = "p:" + name  #adds prefix for query
 	row = id2name(id_name) # gets name and birth-death
-	name, birth, death = row 
+	name, death, birth = row 
 	parrow = parents(id_name) #gets parents names and links
     	par1, p1url, par2, p2url = parrow
 	sb = sib(id_name)
@@ -138,7 +97,6 @@ def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p
 				 letreceived=letreceived,
 				 travels=travels )
 	
-
 @app.route('/travels/')
 def travel():
 	return render_template('travels.html')
@@ -157,8 +115,6 @@ def letters():
 					st = names[0][0].split('/')[-1:][0]
 					#print "!!!!", st
 					return redirect(url_for('letterget',text=st))
-#			for x in names: # changes url
-#				x[0] = 'http://127.0.0.1:5000/letter/' + x[0].split('/')[-1:][0] 
         	return render_template('searchresults.html',names=names,searchtype='letter')
 			#return redirect(url_for('temporary',text=form.name.data,names=None))
         elif request.method == 'GET':
@@ -200,12 +156,19 @@ def singleletter(text = None, letter = None):
 	#return render_template('singleletter.html', letter=letter)
 	return render_template('singleletter.html',text=text ,letter=letter)
 
-@app.route('/travels/<text>')
+
+@app.route('/travels/year/<text>')
 #Does not work yet: created 11/11/16, want it to display all travels from one year
 def travelyear(text = None):
 	date = text
 	travels = []#just a filler for now
 	return render_template('travelyear.html', travels = travels, date = date)
+
+
+
+
+
+
 
 graph = rdflib.Graph()
 graph.parse('CEpeople.ttl', format= 'turtle')
@@ -527,6 +490,8 @@ def search():
 def temporary(text=None,names=None):
         names = regexnames(text,searchtype="person")
         print "this", names[0]
+	for z in names:
+		print z
         #names = text
         if len(names) == 1: #then just go to that!
                 st = names[0][0].split('/')[-1:][0]

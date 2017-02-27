@@ -9,15 +9,15 @@
 		{% for name in names %}
 			{% if name[3]  %}
 				{% if name[4] %}
-                		<p><a href= "{{name[0]}}"> {{name[1]}}</a> {{name[3]}} - {{name[4]}}</p>
+	                		<p><a href= "{{name[0]}}"> {{name[1]}}</a> {{name[3]}} - {{name[4]}}</p>
         		{% else %}
-				<p><a href= "{{name[0]}}"> {{name[1]}}</a> {{name[3]}} - None1</p>
+					<p><a href= "{{name[0]}}"> {{name[1]}}</a> {{name[3]}} - None1</p>
 				{% endif %}
 			{% else  %}
 				{% if name[4] %}
-                        	<p><a href= "{{name[0]}}"> {{name[1]}}</a> None - {{name[4]}}</p>
+                	        	<p><a href= "{{name[0]}}"> {{name[1]}}</a> None - {{name[4]}}</p>
 				{% else %}
-				<p><a href= "{{name[0]}}"> {{name[1]}}</a> None - None</p>
+					<p><a href= "{{name[0]}}"> {{name[1]}}</a> None - None</p>
 				{% endif %}
 			{% endif %}
 		{% endfor %}
