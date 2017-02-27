@@ -5,7 +5,6 @@
 	{%if letter[0]%}
    <p class='lead'><b> Info: {{text}}</b></p>
    <ul class="list-group">
-<<<<<<< HEAD
    <!-- This first line taken from hello.html 
    <li class='list-group-item'> <p style='margin:0 0 0px;'> <a href={{letter[1]}}>{{letter[0]}}</a> to <a href={{letter[2]}}>{{letter[3]}}</a> </p><p style='font-size:smaller;margin:0 0 0px;'>Subject:{{letter[4]}} </p> </li>
 --> 
@@ -16,15 +15,6 @@
    <li class='list-group-item'> Recipient:<a href={{letter[7]}} >{{letter[6]}}</a> </li>
    <li class='list-group-item'> Origin:{{letter[9]}} </li>
    <li class='list-group-item'> Destination:{{letter[8]}} </li>
-=======
-   <li class='list-group-item'> <b>Title:</b> <a href={{letter[1]}}> {{letter[0]}}</a> </li>
-   <li class='list-group-item'> <b>Date: </b>{{letter[2]}} </li>   
-   <li class='list-group-item'> <b>Subject: </b>{{letter[3]}} </li>
-   <li class='list-group-item'> <b>Creator: </b><a href={{letter[4]}}>{{letter[5]}}</a> </li>
-   <li class='list-group-item'> <b>Recipient: </b><a href={{letter[7]}} > {{letter[6]}}</a> </li>
-   <li class='list-group-item'> <b>Origin: </b>{{letter[9]}} </li>
-   <li class='list-group-item'> <b>Destination: </b>{{letter[8]}} </li>
->>>>>>> 7738042a2467239deeaa8256cd003f8aa92c995b
    </ul>
    {%else%}
    <p> There is no letter with id {{text}}! </p>
