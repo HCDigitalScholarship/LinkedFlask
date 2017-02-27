@@ -1,6 +1,31 @@
 {% extends "layout.html" %}
 {% block content %}
 
+{% if tab == "travels"%}
+	<ul class="nav nav-tabs">
+	  <li><a data-toggle="tab" href="#home">Home</a></li>
+	  <li class="active"><a data-toggle="tab" href="#travels">Travels</a></li>
+	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
+	  <li><a data-toggle="tab" href="#people">People</a></li>
+	  <li><a data-toggle="tab" href="#test" >Test</a></li>
+	</ul>
+{% elif tab == "people" %}
+	<ul class="nav nav-tabs">
+	  <li><a data-toggle="tab" href="#home">Home</a></li>
+	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
+	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
+	  <li class="active"><a data-toggle="tab" href="#people">People</a></li>
+	  <li><a data-toggle="tab" href="#test" >Test</a></li>
+	</ul>
+{% elif tab == "letters" %}
+	<ul class="nav nav-tabs">
+	  <li><a data-toggle="tab" href="#home">Home</a></li>
+	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
+	  <li class="active"><a data-toggle="tab" href="#letters">Letters</a></li>	
+	  <li"><a data-toggle="tab" href="#people">People</a></li>
+	  <li><a data-toggle="tab" href="#test" >Test</a></li>
+	</ul>
+{% else %}
 	<ul class="nav nav-tabs">
 	  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
 	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
@@ -8,9 +33,10 @@
 	  <li><a data-toggle="tab" href="#people">People</a></li>
 	  <li><a data-toggle="tab" href="#test" >Test</a></li>
 	</ul>
+{% endif %}
 
 	<div class="tab-content">
-	  <div id="home" class="tab-pane fade in active">
+	  <div id="home" class="{{ active[0] }}">
 	    <h3>HOME</h3>
 
 <p class="lead"> This is Maddy Hodges SECOND user interface for Haverford's Quaker Linked Data Project.</p>
@@ -20,11 +46,11 @@
 
 
 	  </div>
-	  <div id="travels" class="tab-pane fade in">
+	  <!--<div id="travels" class="tab-pane fade in">-->
+	  <div id="travels" class="{{ active[1] }}">
 	    <h3>Travels</h3>
 
 		<center>
-		 <h1>Find common travels</h1>
 <!--
 		<form action="http://165.82.13.162/cgi-bin/CEtest.cgi" method="get">
 
@@ -42,7 +68,7 @@
       {% endfor %}
         <form action = "http://127.0.0.1:5000/" method = post>
          <fieldset>
-            <legend>Search Form</legend>
+            <legend>Find common travels by searching a date or a name</legend>
             <center>
             {{ travel2form.hidden_tag() }}
             
@@ -53,6 +79,7 @@
                
                <br>
                {{ travel2form.submit }}
+               <br>
             </div>
             
          </fieldset>
@@ -60,8 +87,7 @@
       </form>
      		</center>
        
-        	
-       	 		<h1> OR</h1>
+
         	<!--<form action="http://165.82.13.162/cgi-bin/CEtravbyperson.cgi" method="get">
 
       			<p>Enter a persons name and click "search" to list a persons travels.</p>
@@ -76,11 +102,11 @@
       {% endfor %}
         <form action = "http://127.0.0.1:5000/" method = post>
          <fieldset>
-            <legend>Search Form</legend>
             <center>
             {{ travelform.hidden_tag() }}
             
             <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+            <br>
                {{ travelform.name.label }}<br>
                {{ travelform.name }}
                <br>
@@ -95,12 +121,11 @@
      		</center>
 	  </div>
 
-	  <div id="letters" class="tab-pane fade">
+	  <div id="letters" class="{{ active[2] }}">
 	    <h3>Letters</h3>
 
 
 	 <center>
-        	<h1>Search for a certain author or recipient</h1>
 
         <!-- 	<form action="http://165.82.13.162/cgi-bin/CEletters.cgi" method="get">
 	
@@ -113,8 +138,8 @@
                         	<input type="checkbox" name="option2" value="recip" checked> Recieved<br>
                 </p>
 
-       		 </form> -->
-       		          <h2 style = "text-align: center;">Search Form</h2>
+       		 </form> 
+       		          <h2 style = "text-align: center;">Search Form</h2>-->
 
       {% for message in letterform.name.errors %}
          <div>{{ message }}</div>
@@ -123,7 +148,7 @@
 
       <form action = "http://127.0.0.1:5000/" method = post>
          <fieldset>
-            <legend>Search Form</legend>
+            <legend>Search for a certain author or recipient</legend>
             {{ letterform.hidden_tag() }}
 
             <div style = font-size:20px; font-weight:bold; margin-left:150px;>
@@ -150,7 +175,7 @@
 	
 	</div>
 
-          <div id="people" class="tab-pane fade">
+          <div id="people" class="{{ active[3] }}">
             <h3>People</h3>
 
 			<!-- <a href='/search'>click here to be redirected to the search form </a> -->
@@ -162,8 +187,9 @@
      <!-- <form action = "http://127.0.0.1:5000/search" method = post> -->
       <form action = "http://127.0.0.1:5000/" method = post>
          <fieldset>
-            <legend>Search Form</legend>
-            <center>
+         	<center>
+            <legend>Search for a particular person</legend>
+            
             {{ personform.hidden_tag() }}
             
             <div style = font-size:20px; font-weight:bold; margin-left:150px;>

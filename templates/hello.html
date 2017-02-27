@@ -28,9 +28,10 @@
 
 {% if sb %}
 	<p><b>Siblings:</b>
-	{% for sibling in sb %}
-		<a href= "{{sibling[1]}}"> {{sibling[0]}}</a>,
+	{% for sibling in range(sb|length - 1) %}
+		<a href= "{{sb[sibling][1]}}"> {{sb[sibling][0]}}</a>,
 	{% endfor %}
+		<a href= "{{sb[-1][1]}}"> {{sb[-1][0]}}</a>
 	</p>
 {% else %}
 	<p> <b>Siblings: </b>unknown</p>
@@ -38,9 +39,11 @@
 
 {% if child %}
         <p><b>Children:</b>
-        {% for ch in child %}
-                <a href= "{{ch[0]}}"> {{ch[1]}}</a>,
-        {% endfor %}
+        	{% for ch in range(child|length - 1) %}
+                <a href= "{{child[ch][0]}}"> {{child[ch][1]}}</a>,
+        	{% endfor %}
+        	<a href= "{{child[-1][0]}}"> {{child[-1][1]}}</a>
+        	
 	</p>
 {% else %}
         <p> <b>Children: </b>unknown</p>
