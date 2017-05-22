@@ -1,10 +1,13 @@
 from flask import Flask
 app = Flask(__name__)
+from SPARQLWrapper import SPARQLWrapper, JSON
 import rdflib
 from flask import redirect, url_for, render_template, request, flash
 from forms import SearchForm, LetterForm, TravelForm
 app.secret_key = 'development key'
 
+
+graph = SPARQLWrapper("http://quakerexplorer.haverford.edu:8080/fuseki-server/LD/sparql")
 
 @app.route('/',methods = ['GET','POST'])
 def home():
@@ -79,16 +82,14 @@ def person():
 def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p1url=None, sb=None,child=None, letwrote=None, letreceived=None, travels=None):
 	id_name = "p:" + name  #adds prefix for query
 	row = id2name(id_name) # gets name and birth-death
-	name, death, birth = row 
+	name, birth, death = row 
 	parrow = parents(id_name) #gets parents names and links
-    	par1, p1url, par2, p2url = parrow
+   	par1, p1url, par2, p2url = parrow
 	sb = sib(id_name)
-	print "yahhooo"
-#	print sb
 	letwrote = letterwritten(id_name)
 	letreceived = letterreceived(id_name)
 	child = children(id_name)
-	travels = travelsbyid(id_name)
+#	travels = travelsbyid(id_name)
 	return render_template('hello.html',
 				 name=name,
 				 birth=birth,
@@ -175,14 +176,14 @@ def travelyear(text = None):
 
 
 
+#graph = SPARQLWrapper("http://quakerexplorer.haverford.edu:8080/fuseki-server/LD/sparql")
 
 
-
-graph = rdflib.Graph()
-graph.parse('CEpeople.ttl', format= 'turtle')
-graph.parse('CEchild.ttl', format= 'turtle')
-graph.parse('CEletters.ttl', format= 'turtle')
-graph.parse('CEtravls.ttl', format= 'turtle')
+#graph = rdflib.Graph()
+#graph.parse('CEpeople.ttl', format= 'turtle')
+#graph.parse('CEchild.ttl', format= 'turtle')
+#graph.parse('CEletters.ttl', format= 'turtle')
+#graph.parse('CEtravls.ttl', format= 'turtle')
 
 #@app.route('/#people',methods = ['GET','POST'])
 #This doesn't work since it doesn't recognize the '#' and puts in a '%23' for some reason
@@ -192,7 +193,7 @@ graph.parse('CEtravls.ttl', format= 'turtle')
 
 def infoletter(text):
 	query="""
-	PREFIX p: <http://127.0.0.1:5000/person/> 
+	PREFIX p: <http://quakerexplorer.haverford.edu/person/> 
 	PREFIX letter:<localhost:3030/ds/letter#>
 
 	SELECT ?Title ?RefUrl ?Date ?Subj ?C_url ?Creator ?Recipient ?R_url ?Destination ?Origin
@@ -211,11 +212,24 @@ def infoletter(text):
 
 	"""
 	query = query.replace("REPLACEME",text)
-        result = graph.query(query)
-        print query
-	for row in result:
+	graph.setQuery(query)  
+	graph.setReturnFormat(JSON)
+	result = graph.query().convert()#query)
+        #print query
+	for row in result["results"]["bindings"]:
         #        if row == None: then this is maybe not an item... maybe useful 
-                Title, RefUrl, Date, Subj, C_url, Creator, Recipient, R_url, Destination, Origin=  row
+#?Title ?RefUrl ?Date ?Subj ?C_url ?Creator ?Recipient ?R_url ?Destination ?Origin
+                Title= row["Title"]["value"]
+		RefUrl= row["RefUrl"]["value"]
+		Date = row["Date"]["value"]
+		Subj = row["Subj"]["value"]
+		C_url= row["C_url"]["value"] 
+		Creator= row["Creator"]["value"] 
+		Recipient= row["Recipient"]["value"]
+		R_url= row["R_url"]["value"] 
+		Destination= row["Destination"]["value"] 
+		Origin = row["Origin"]["value"]
+		row = [Title, RefUrl, Date, Subj, C_url, Creator, Recipient, R_url, Destination, Origin]
         	return row
 
 
@@ -225,7 +239,7 @@ def infoletter(text):
 def id2name(username):
     # show the user profile for that user
 	querynames = """
-	prefix p: <http://127.0.0.1:5000/person/> 
+	prefix p: <http://quakerexplorer.haverford.edu/person/> 
 	SELECT ?name ?birth ?death
 	WHERE {
   		REPLACEME p:labelname ?name ;
@@ -234,11 +248,15 @@ def id2name(username):
 	}	
 """
 	querynames = querynames.replace("REPLACEME",username)
-	resultnames = graph.query(querynames)
-	print querynames
-	for row in resultnames:
-		#print "row", row
-		name, birth, death=  row
+	graph.setQuery(querynames)
+	graph.setReturnFormat(JSON)
+	resultnames = graph.query().convert()#querynames)
+#	print querynames
+	for row in resultnames["results"]["bindings"]:
+		name=row["name"]["value"]
+                birth =row["birth"]["value"]
+                death =row["death"]["value"]
+                row = [name, birth, death]
 		#print name, birth, death
 		return row
 
@@ -246,7 +264,7 @@ def id2name(username):
 
 def parents(username): #should handle the issue of Nonetype result
 	queryparents = """
-	PREFIX p: <http://127.0.0.1:5000/person/>           
+	PREFIX p: <http://quakerexplorer.haverford.edu/person/>           
 	SELECT ?par1 ?p1 ?par2 ?p2
 	WHERE {
   		REPLACEME p:parent_1 ?p1 ;
@@ -256,21 +274,30 @@ def parents(username): #should handle the issue of Nonetype result
 	}
 """
 	queryparents = queryparents.replace("REPLACEME",username)
-	resultparents = graph.query(queryparents)
+	graph.setQuery(queryparents)
+	graph.setReturnFormat(JSON)
+	resultparents = graph.query().convert()#queryparents)
 	 # this will assume that everyone has 2 or none parents
 	print queryparents	
 	#print "len(resultparents)", len(resultparents)
-	if len(resultparents) == 0: #everything is blank
+	#NOTE: conditional below might not do what we want anymore 
+	if len(resultparents["results"]["bindings"]) == 0: #everything is blank
 		return [None,None,None,None]
-	for row in resultparents:
-		if row != None: #this might be unnecessary 
-			return row
+	for row in resultparents["results"]["bindings"]:
+	#	if row != None: #this might be unnecessary 
+			#?par1 ?p1 ?par2 ?p2
+		par1 = row["par1"]["value"]
+		p1 = row["p1"]["value"]
+		par2 = row["par2"]["value"]
+		p2 = row["p2"]["value"]
+		row = [ par1, p1,par2,p2]
+		return row
 		
 
 
 def spouse(username): # THIS IS THE MOST DIFFICULT ONE SO I WILL DO IT LAST :^) 
 	queryspouse = """
-	prefix p: <http://127.0.0.1:5000/person/> 
+	prefix p: <http://quakerexplorer.haverford.edu/person/> 
 
 	SELECT ?partners
 	WHERE
@@ -290,14 +317,17 @@ def spouse(username): # THIS IS THE MOST DIFFICULT ONE SO I WILL DO IT LAST :^)
 	"""
 	
 	queryparents = queryparents.replace("REPLACEME",username)
-        resultparents = graph.query(queryparents)
+	graph.setQuery(queryparents)
+	graph.setReturnFormat(JSON)
+        resultparents = graph.query().convert()#queryparents)
          # this will assume that everyone has 2 or none parents
 
         #print "len(resultparents)", len(resultparents)
-        if len(resultparents) == 0: #everything is blank
+        if len(resultparents["results"]["bindings"]) == 0: #everything is blank
                 return [None,None,None,None]
-        for row in resultparents:
+        for row in resultparents["results"]["bindings"]:
                 if row != None: #this might be unnecessary 
+
                         return row
 
 
@@ -306,7 +336,7 @@ def spouse(username): # THIS IS THE MOST DIFFICULT ONE SO I WILL DO IT LAST :^)
 
 def sib(username): #this will create an array of [[sib_1,url1],[sib_2,url_2],...] and be traversed in the template with a for-loop 
 	querysib = """
-PREFIX p: <http://127.0.0.1:5000/person/> 
+PREFIX p: <http://quakerexplorer.haverford.edu/person/> 
 PREFIX fhkb: <http://www.example.com/genealogy.owl#> 
 
 SELECT  ?c ?that 
@@ -324,15 +354,19 @@ REPLACEME p:labelname ?name ;
 """
 	print "testing"
 	querysib = querysib.replace("REPLACEME",username)
-        resultsib = graph.query(querysib)
+	graph.setQuery(querysib)
+	graph.setReturnFormat(JSON)
+        resultsib = graph.query().convert()#querysib)
 	print querysib
-        if len(resultsib) == 0: #everything is blank
+        if len(resultsib["results"]["bindings"]) == 0: #everything is blank
                 return None
       #  return len(resultsib)
         ans = []
-        for row in resultsib:
+        for row in resultsib["results"]["bindings"]:
+		name = row["c"]["value"] 
+		url = row["that"]["value"]
         #        if row != None: #this might be unnecessary 
-                ans.append(row)
+                ans.append([name,url])
         return ans	
 	#for row in resultsib:
          #       if row != None: #this might be unnecessary 
@@ -344,7 +378,7 @@ REPLACEME p:labelname ?name ;
 
 def children(username):
 	querychild = """
-prefix p: <http://127.0.0.1:5000/person/> 
+prefix p: <http://quakerexplorer.haverford.edu/person/> 
 prefix fhkb: <http://www.example.com/genealogy.owl#> 
 
  SELECT ?urlperson ?c 
@@ -355,26 +389,31 @@ WHERE {
 """
 
 	querychild = querychild.replace("REPLACEME",username)
-        resultchild = graph.query(querychild)
-        if len(resultchild) == 0: #everything is blank
+	graph.setQuery(querychild)
+	graph.setReturnFormat(JSON)
+        resultchild = graph.query().convert()#querychild)
+        if len(resultchild["results"]["bindings"]) == 0: #everything is blank
                 return None
 #       	return resultsib #unkown len
 	ans = []
-	for row in resultchild:
+#	for row in resultchild:
         #        if row != None: #this might be unnecessary 
-		ans.append(row)
+#		ans.append(row)
+#	return ans
+	for item in resultchild["results"]["bindings"]:
+        	name = item["c"]["value"]
+        	url = item["urlperson"]["value"]
+        	ans.append([url,name])
 	return ans
-
-
 
 def letterwritten(username):
 	querywrote = """
-prefix p: <http://127.0.0.1:5000/person/> 
+prefix p: <http://quakerexplorer.haverford.edu/person/> 
 prefix t: <localhost:3030/ds/trip#> 
 prefix d:<localhost:3030/ds/date#>
 prefix letter:<localhost:3030/ds/letter#>
 
-SELECT  ?url ?title ?urlrecip ?recipient ?subj
+SELECT  ?url ?title ?rt ?recipient ?subj
 WHERE {
 ?m letter:Creator_ID REPLACEME ;
       letter:Title ?title ;
@@ -385,25 +424,32 @@ WHERE {
 }
 """
 	querywrote = querywrote.replace("REPLACEME",username)
-        resultwrote = graph.query(querywrote)
+        graph.setQuery(querywrote)
+	graph.setReturnFormat(JSON)
+	resultwrote = graph.query().convert()#querywrote)
 
-        if len(resultwrote) == 0: #everything is blank
+        if len(resultwrote["results"]["bindings"]) == 0: #everything is blank
                 return None
 #               return resultsib #unkown len
         ans = []
-        for row in resultwrote:
+        for row in resultwrote["results"]["bindings"]:
+		url = row["url"]["value"]
+		title = row["title"]["value"]
+		urlrecip = row["rt"]["value"]
+		recipient = row["recipient"]["value"]
+		subj = row["subj"]["value"]
         #        if row != None: #this might be unnecessary 
-                ans.append(row)
+                ans.append([url, title, urlrecip, recipient, subj])
         return ans
 
 def letterreceived(username):
 	queryreceived = """
-prefix p: <http://127.0.0.1:5000/person/> 
+prefix p: <http://quakerexplorer.haverford.edu/person/> 
 prefix t: <localhost:3030/ds/trip#> 
 prefix d:<localhost:3030/ds/date#>
 prefix letter:<localhost:3030/ds/letter#>
 
-SELECT  ?url ?title ?urlrecip ?recipient ?subj
+SELECT  ?url ?title ?rt ?recipient ?subj
 WHERE {
 ?m letter:Recipient_ID REPLACEME ;
       letter:Title ?title ;
@@ -415,22 +461,29 @@ WHERE {
 """
 
         queryreceived = queryreceived.replace("REPLACEME",username)
-        resultreceived = graph.query(queryreceived)
+	graph.setQuery(queryreceived)
+        graph.setReturnFormat(JSON)
+	resultreceived = graph.query().convert()#queryreceived)
 
-        if len(resultreceived) == 0: #everything is blank
+        if len(resultreceived["results"]["bindings"]) == 0: #everything is blank
                 return None
 #               return resultsib #unkown len
         ans = []
-        for row in resultreceived:
+        for row in resultreceived["results"]["bindings"]:
         #        if row != None: #this might be unnecessary 
-                ans.append(row)
+		url = row["url"]["value"]
+	 	title = row["title"]["value"]
+		urlrecip = row["rt"]["value"]
+		recipient= row["recipient"]["value"]
+		subj = row["subj"]["value"]
+                ans.append([url, title, urlrecip, recipient, subj])
         return ans
 
 
 
 def travelsbyid(username):
 	querytravel = """
-prefix p: <http://127.0.0.1:5000/person/> 
+prefix p: <http://quakerexplorer.haverford.edu/person/> 
 prefix t: <localhost:3030/ds/trip#> 
 prefix d:<localhost:3030/ds/date#>
 
@@ -446,15 +499,20 @@ WHERE
 
 """
         querytravel = querytravel.replace("REPLACEME",username)
-        resulttravel = graph.query(querytravel)
+	graph.setQuery(querytravel)
+        graph.setReturnFormat(JSON)
+	resulttravel = graph.query().convert()#querytravel)
 	print querytravel
-        if len(resulttravel) == 0: #everything is blank
+        if len(resulttravel["results"]["bindings"]) == 0: #everything is blank
                 return None
 #               return resultsib #unkown len
         ans = []
-        for row in resulttravel:
+        for row in resulttravel["results"]["bindings"]:
         #        if row != None: #this might be unnecessary 
-                ans.append(row)
+		loc= row["loc"]["value"]
+		month = row["month"]["value"]
+		year = row["year"]["value"] 
+                ans.append([loc,month,year])
         return ans
 
 
@@ -529,7 +587,7 @@ def regexnames(text=None,searchtype=None):
 	#searchtype ="testing"
 	if searchtype == "letters":
 		querynames="""
-	PREFIX p: <http://127.0.0.1:5000/person/>
+	PREFIX p: <http://quakerexplorer.haverford.edu/person/>
 	PREFIX fhkb: <http://www.example.com/genealogy.owl#>
 
 	SELECT ?url2 ?name ?birth ?death
@@ -545,21 +603,27 @@ def regexnames(text=None,searchtype=None):
 	"""
 		querynames = querynames.replace("REPLACEME",text)
         	print querynames
-		resultnames = graph.query(querynames)
+		graph.setQuery(querynames)
+		graph.setReturnFormat(JSON)
+		resultnames = graph.query().convert()#querynames)
 		print resultnames
-        	if len(resultnames) == 0: #everything is blank
+        	if len(resultnames["results"]["bindings"]) == 0: #everything is blank
                 	return None
         	ans = []
-        	for row in resultnames:
+        	for row in resultnames["results"]["bindings"]:
         #        if row != None: #this might be unnecessary
-               		ans.append(row)
+			url2= row["url2"]["value"]
+			name = row["name"]["value"]
+		 	birth = row["birth"]["value"]
+			death = row["death"]["value"]
+               		ans.append([url2, name, birth, death])
         	return ans
 
 
 
         else: # searchtype == "person":
                 querynames= """
-PREFIX p: <http://127.0.0.1:5000/person/>
+PREFIX p: <http://quakerexplorer.haverford.edu/person/>
 PREFIX fhkb: <http://www.example.com/genealogy.owl#>
 
 SELECT ?url ?name ?birth ?death
@@ -573,17 +637,24 @@ WHERE {
 """
 
         	querynames = querynames.replace("REPLACEME",text)
-        	resultnames = graph.query(querynames)
-        	if len(resultnames) == 0: #everything is blank
+        	graph.setQuery(querynames)
+		graph.setReturnFormat(JSON)
+		resultnames = graph.query().convert()#querynames)
+        	if len(resultnames["results"]["bindings"]) == 0: #everything is blank
                 	return None
         	ans = []
-        	for row in resultnames:
+        	for row in resultnames["results"]["bindings"]:
         #        if row != None: #this might be unnecessary
-                	ans.append(row)
+                	url = row["url"]["value"]
+			name = row["name"]["value"]
+			birth = row["birth"]["value"]
+			death = row["death"]["value"]
+			ans.append([url, name, birth, death])
         	return ans
 
 
-
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
 
 
 
