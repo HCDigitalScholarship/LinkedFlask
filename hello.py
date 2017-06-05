@@ -1,6 +1,7 @@
 from flask import Flask
-app = Flask(__name__)
 from SPARQLWrapper import SPARQLWrapper, JSON
+app = Flask(__name__)
+application = app
 import rdflib
 from flask import redirect, url_for, render_template, request, flash
 from forms import SearchForm, LetterForm, TravelForm
