@@ -7,7 +7,6 @@
 	  <li class="active"><a data-toggle="tab" href="#travels">Travels</a></li>
 	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
 	  <li><a data-toggle="tab" href="#people">People</a></li>
-	  <li><a data-toggle="tab" href="#test" >Test</a></li>
 	</ul>
 {% elif tab == "people" %}
 	<ul class="nav nav-tabs">
@@ -15,7 +14,6 @@
 	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
 	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
 	  <li class="active"><a data-toggle="tab" href="#people">People</a></li>
-	  <li><a data-toggle="tab" href="#test" >Test</a></li>
 	</ul>
 {% elif tab == "letters" %}
 	<ul class="nav nav-tabs">
@@ -23,7 +21,6 @@
 	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
 	  <li class="active"><a data-toggle="tab" href="#letters">Letters</a></li>	
 	  <li"><a data-toggle="tab" href="#people">People</a></li>
-	  <li><a data-toggle="tab" href="#test" >Test</a></li>
 	</ul>
 {% else %}
 	<ul class="nav nav-tabs">
@@ -31,7 +28,6 @@
 	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
 	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
 	  <li><a data-toggle="tab" href="#people">People</a></li>
-	  <li><a data-toggle="tab" href="#test" >Test</a></li>
 	</ul>
 {% endif %}
 
@@ -39,10 +35,8 @@
 	  <div id="home" class="{{ active[0] }}">
 	    <h3>HOME</h3>
 
-<p class="lead"> This is Maddy Hodges SECOND user interface for Haverford's Quaker Linked Data Project.</p>
-             <p class="lead">Currently the project only has the data from the Cope Evans Project and there are plans to incorporate three other Quaker projects. Linked data is data that is structured in a way that it can be interlinked with other data through semantic queries. Luckily you wont have to learn how to write semantic queries to utilize the data. I have created a interface with which you can explore the data. The searches I have available at the moment are in the tabs above.</p>
+             <p class="lead">Welcome to the Quaker Networks Explorer! The QNE connects Quaker biographical data and historical materials from Haverford College Quaker and Special Collections. Use the tabs above to explore our growing set of Quaker data.</p>
 
-      <p>Maybe I'll use <a href="http://getbootstrap.com/examples/sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be.</p>
 
 
 	  </div>
@@ -66,7 +60,7 @@
     {% for message in travelform.name.errors %}
          <div>{{ message }}</div>
       {% endfor %}
-        <form action = "http://127.0.0.1:5000/" method = post>
+        <form action = "http://quakerexplorer.haverford.edu/" method = post>
          <fieldset>
             <legend>Find common travels by searching a date or a name</legend>
             <center>
@@ -100,7 +94,7 @@
     {% for message in travelform.name.errors %}
          <div>{{ message }}</div>
       {% endfor %}
-        <form action = "http://127.0.0.1:5000/" method = post>
+        <form action = "http://quakerexplorer.haverford.edu/" method = post>
          <fieldset>
             <center>
             {{ travelform.hidden_tag() }}
@@ -146,7 +140,7 @@
       {% endfor %}
 
 
-      <form action = "http://127.0.0.1:5000/" method = post>
+      <form action = "http://quakerexplorer.haverford.edu/" method = post>
          <fieldset>
             <legend>Search for a certain author or recipient</legend>
             {{ letterform.hidden_tag() }}
@@ -185,7 +179,7 @@
       {% endfor %}
             
      <!-- <form action = "http://127.0.0.1:5000/search" method = post> -->
-      <form action = "http://127.0.0.1:5000/" method = post>
+      <form action = "http://quakerexplorer.haverford.edu/" method = post>
          <fieldset>
          	<center>
             <legend>Search for a particular person</legend>
