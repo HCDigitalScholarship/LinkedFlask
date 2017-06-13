@@ -1,14 +1,14 @@
 from flask import Flask
-from SPARQLWrapper import SPARQLWrapper, JSON
 app = Flask(__name__)
-application = app
+#application = app
+from SPARQLWrapper import SPARQLWrapper, JSON
 import rdflib
 from flask import redirect, url_for, render_template, request, flash
 from forms import SearchForm, LetterForm, TravelForm
 app.secret_key = 'development key'
 
 
-graph = SPARQLWrapper("http://quakerexplorer.haverford.edu:8080/fuseki-server/LD/sparql")
+graph = SPARQLWrapper("http://quakerexplorer.haverford.edu:8080/fuseki-server/LD6/sparql")
 
 @app.route('/',methods = ['GET','POST'])
 def home():
@@ -90,6 +90,8 @@ def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p
 	letwrote = letterwritten(id_name)
 	letreceived = letterreceived(id_name)
 	child = children(id_name)
+	sp = spouse(id_name)
+	#name, partner = sp
 #	travels = travelsbyid(id_name)
 	return render_template('hello.html',
 				 name=name,
@@ -103,8 +105,10 @@ def hello(name=None, birth=None, death=None, par1=None, par2=None, p2url=None, p
 				 child=child,
 				 letwrote=letwrote,
 				 letreceived=letreceived,
-				 travels=travels )
-	
+				 travels=travels,
+	#			 name=name,
+	#			 partner=partner)
+			)	
 @app.route('/travels/')
 def travel():
 	return render_template('travels.html')
@@ -241,6 +245,7 @@ def id2name(username):
     # show the user profile for that user
 	querynames = """
 	prefix p: <http://quakerexplorer.haverford.edu/person/> 
+	prefix o: <http://quakerexplorer.haverford.edu/organizations/>
 	SELECT ?name ?birth ?death
 	WHERE {
   		REPLACEME p:labelname ?name ;
@@ -265,7 +270,8 @@ def id2name(username):
 
 def parents(username): #should handle the issue of Nonetype result
 	queryparents = """
-	PREFIX p: <http://quakerexplorer.haverford.edu/person/>           
+	prefix p: <http://quakerexplorer.haverford.edu/person/>           
+	prefix o: <http://quakerexplorer.haverford.edu/organizations/>
 	SELECT ?par1 ?p1 ?par2 ?p2
 	WHERE {
   		REPLACEME p:parent_1 ?p1 ;
@@ -300,36 +306,29 @@ def spouse(username): # THIS IS THE MOST DIFFICULT ONE SO I WILL DO IT LAST :^)
 	queryspouse = """
 	prefix p: <http://quakerexplorer.haverford.edu/person/> 
 
-	SELECT ?partners
+	SELECT ?name ?partner
 	WHERE
 	{
-	REPLACEME p:labelname ?name .
-	?x p:parent_1 ?m;
-   	p:parent_1 ?person_id;
-   	?person_id p:labelame ?person ;
-   	p:parent_2 ?partner_id;
-  	?partner_id p:labelname ?partners . 
-	?y p:parent_2 ?m;
-    	p:parent_2 ?person_id;
-    	?person_id p:labelname ?person ;
-    	p:parent_1 ?partner_id;
-    	?partner_id p:labelname ?partners . 
+	REPLACEME p:spouse ?name .
+	?name p:labelname ?partner .
 	}
 	"""
 	
-	queryparents = queryparents.replace("REPLACEME",username)
-	graph.setQuery(queryparents)
+	queryspouse = queryspouse.replace("REPLACEME",username)
+	graph.setQuery(queryspouse)
 	graph.setReturnFormat(JSON)
         resultparents = graph.query().convert()#queryparents)
          # this will assume that everyone has 2 or none parents
 
         #print "len(resultparents)", len(resultparents)
         if len(resultparents["results"]["bindings"]) == 0: #everything is blank
-                return [None,None,None,None]
+                return [None,None]
         for row in resultparents["results"]["bindings"]:
-                if row != None: #this might be unnecessary 
-
-                        return row
+#                if row != None: #this might be unnecessary 
+		name = row["name"]["value"]
+		partner = row["partner"]["value"]
+		row = [name,partner]
+		return row
 
 
 
@@ -339,6 +338,7 @@ def sib(username): #this will create an array of [[sib_1,url1],[sib_2,url_2],...
 	querysib = """
 PREFIX p: <http://quakerexplorer.haverford.edu/person/> 
 PREFIX fhkb: <http://www.example.com/genealogy.owl#> 
+prefix o: <http://quakerexplorer.haverford.edu/organizations/>
 
 SELECT  ?c ?that 
 WHERE
@@ -381,6 +381,7 @@ def children(username):
 	querychild = """
 prefix p: <http://quakerexplorer.haverford.edu/person/> 
 prefix fhkb: <http://www.example.com/genealogy.owl#> 
+prefix o: <http://quakerexplorer.haverford.edu/organizations/>
 
  SELECT ?urlperson ?c 
 WHERE { 
@@ -487,6 +488,7 @@ def travelsbyid(username):
 prefix p: <http://quakerexplorer.haverford.edu/person/> 
 prefix t: <localhost:3030/ds/trip#> 
 prefix d:<localhost:3030/ds/date#>
+prefix o:<http://quakerexplorer.haverford.edu/organizations/>
 
 SELECT ?loc ?month ?year 
 WHERE
@@ -626,6 +628,7 @@ def regexnames(text=None,searchtype=None):
                 querynames= """
 PREFIX p: <http://quakerexplorer.haverford.edu/person/>
 PREFIX fhkb: <http://www.example.com/genealogy.owl#>
+PREFIX o: <http://quakerexplorer.haverford.edu/organizations/>
 
 SELECT ?url ?name ?birth ?death
 WHERE {
