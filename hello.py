@@ -8,7 +8,7 @@ from forms import SearchForm, LetterForm, TravelForm
 app.secret_key = 'development key'
 
 
-graph = SPARQLWrapper("http://quakerexplorer.haverford.edu:8080/fuseki-server/LD6/sparql")
+graph = SPARQLWrapper("http://quakerexplorer.haverford.edu:8080/fuseki-server/droplet/sparql")
 
 @app.route('/',methods = ['GET','POST'])
 def home():
@@ -178,7 +178,9 @@ def travelyear(text = None):
 	travels = []#just a filler for now
 	return render_template('travelyear.html', travels = travels, date = date)
 
-
+@app.route('/person/<text>')
+def pe(text = None):
+	return url_for('hello', name=text)
 
 
 #graph = SPARQLWrapper("http://quakerexplorer.haverford.edu:8080/fuseki-server/LD/sparql")
@@ -194,7 +196,25 @@ def travelyear(text = None):
 #This doesn't work since it doesn't recognize the '#' and puts in a '%23' for some reason
 
 	
-
+def people():
+	querypeople="""
+	PREFIX p: <http://quakerexplorer.haverford.edu/person/>
+	
+	SELECT ?name
+	WHERE{
+	?name p:labelname ?p
+	}	
+	"""
+	graph.setQuery(querypeople)
+	graph.setReturnFormat(JSON)
+	result = graph.query().convert()
+	ans = []
+	for row in result["results"]["bindings"]:
+		people = row["name"]["value"]
+		ans.append([people])
+	for i in ans:
+		a = i[0].split('/')[-1]
+		url_for('hello', name=a)
 
 def infoletter(text):
 	query="""
@@ -259,13 +279,16 @@ def id2name(username):
 	resultnames = graph.query().convert()#querynames)
 #	print querynames
 	for row in resultnames["results"]["bindings"]:
-		name=row["name"]["value"]
-                birth =row["birth"]["value"]
-                death =row["death"]["value"]
-                row = [name, birth, death]
-		#print name, birth, death
-		return row
-
+                try:
+                        name = row["name"]["value"]
+                        birth = row["birth"]["value"]
+                        death = row["death"]["value"]
+                        row = [name,birth,death]
+                except KeyError, birth:
+                        row = [name]
+                except KeyError, death:
+                        row = [name,birth]
+                return row
 
 
 def parents(username): #should handle the issue of Nonetype result
@@ -279,9 +302,11 @@ def parents(username): #should handle the issue of Nonetype result
    		?p1 p:labelname ?par1 .
    		?p2 p:labelname ?par2 .
 	}
-"""
+	"""
 	queryparents = queryparents.replace("REPLACEME",username)
+	#queryparents1 = queryparents1.replace("REPLACEME", username)
 	graph.setQuery(queryparents)
+	#graph.setQuery(queryparents1)
 	graph.setReturnFormat(JSON)
 	resultparents = graph.query().convert()#queryparents)
 	 # this will assume that everyone has 2 or none parents
@@ -291,14 +316,28 @@ def parents(username): #should handle the issue of Nonetype result
 	if len(resultparents["results"]["bindings"]) == 0: #everything is blank
 		return [None,None,None,None]
 	for row in resultparents["results"]["bindings"]:
+        #       if row != None: #this might be unnecessary 
+                        #?par1 ?p1 ?par2 ?p2
+                try:
+                        par1 = row["par1"]["value"]
+                        p1 = row["p1"]["value"]
+                        par2 = row["par2"]["value"]
+                        p2 = row["p2"]["value"]
+                        row = [ par1, p1,par2,p2]
+                except KeyError, par2:
+                        row = [par1, p1]
+                except KeyError, par1:
+                        row = [par2, p2]
+                return row
+#	for row in resultparents["results"]["bindings"]:
 	#	if row != None: #this might be unnecessary 
 			#?par1 ?p1 ?par2 ?p2
-		par1 = row["par1"]["value"]
-		p1 = row["p1"]["value"]
-		par2 = row["par2"]["value"]
-		p2 = row["p2"]["value"]
-		row = [ par1, p1,par2,p2]
-		return row
+#		par1 = row["par1"]["value"]
+#		p1 = row["p1"]["value"]
+#		par2 = row["par2"]["value"]
+#		p2 = row["p2"]["value"]
+#		row = [ par1, p1,par2,p2]
+#		return row
 		
 
 
@@ -363,12 +402,26 @@ REPLACEME p:labelname ?name ;
                 return None
       #  return len(resultsib)
         ans = []
-        for row in resultsib["results"]["bindings"]:
-		name = row["c"]["value"] 
-		url = row["that"]["value"]
+	for row in resultsib["results"]["bindings"]:
+                try:
+                        name = row["c"]["value"]
+                        url = row["that"]["value"]
         #        if row != None: #this might be unnecessary 
-                ans.append([name,url])
-        return ans	
+                        ans.append([name,url])
+                except KeyError, name:
+                        try:
+                                s = row["s"]["value"]
+                                y = row["y"]["value"]
+                                ans.append([y,s])
+                        except KeyError, s:
+                                ans.append([])
+        return ans
+#        for row in resultsib["results"]["bindings"]:
+#		name = row["c"]["value"] 
+#		url = row["that"]["value"]
+        #        if row != None: #this might be unnecessary 
+#                ans.append([name,url])
+#        return ans	
 	#for row in resultsib:
          #       if row != None: #this might be unnecessary 
 	#		print "test", row
@@ -643,18 +696,36 @@ WHERE {
         	querynames = querynames.replace("REPLACEME",text)
         	graph.setQuery(querynames)
 		graph.setReturnFormat(JSON)
-		resultnames = graph.query().convert()#querynames)
-        	if len(resultnames["results"]["bindings"]) == 0: #everything is blank
+		result = graph.query().convert()#querynames)
+        	if len(result["results"]["bindings"]) == 0: #everything is blank
                 	return None
         	ans = []
-        	for row in resultnames["results"]["bindings"]:
+		for row in result["results"]["bindings"]:
         #        if row != None: #this might be unnecessary
-                	url = row["url"]["value"]
-			name = row["name"]["value"]
-			birth = row["birth"]["value"]
-			death = row["death"]["value"]
-			ans.append([url, name, birth, death])
-        	return ans
+                        try:
+                                url = row["url"]["value"]
+                                name = row["name"]["value"]
+                                birth = row["birth"]["value"]
+                                death = row["death"]["value"]
+                                ans.append([url, name, birth, death])
+                        except KeyError, birth:
+                                try:
+                                        death = row["death"]["value"]
+                                        ans.append([url, name, None, death])
+                                except KeyError, death:
+                                        ans.append([url, name, None, None])
+                        except KeyError, death:
+                                ans.append([url, name, birth, None])
+                return ans
+
+#        	for row in resultnames["results"]["bindings"]:
+        #        if row != None: #this might be unnecessary
+#                	url = row["url"]["value"]
+#			name = row["name"]["value"]
+#			birth = row["birth"]["value"]
+#			death = row["death"]["value"]
+#			ans.append([url, name, birth, death])
+ #       	return ans
 
 
 if __name__ == "__main__":
