@@ -1,4 +1,4 @@
-from flask_wtf import Form
+from flask_wtf import FlaskForm
 from wtforms import TextField, IntegerField, TextAreaField, SubmitField, RadioField, SelectField, BooleanField
 
 from wtforms import validators, ValidationError
@@ -20,17 +20,21 @@ class RequiredIf(Required):
             super(RequiredIf, self).__call__(form, field)
 
 
-class SearchForm(Form):
+class SearchForm(FlaskForm):
 	name = TextField("Name Of Person",[validators.Required("Please enter a name to search.")])
 	submit = SubmitField("Search")
 
 
-class LetterForm(Form):
+class LetterForm(FlaskForm):
 	name = TextField("Name Of Person",[validators.Required("Please enter a name to search.")])
 	wrote = BooleanField("Wrote")
 	received = BooleanField("Recieved",validators=[RequiredIf('wrote')])        
 	submit = SubmitField("Search")
 	
-class TravelForm(Form):
+class TravelForm(FlaskForm):
 	date = IntegerField("Date",[validators.Required("Please enter a name to search.")])
+	submit = SubmitField("Search")
+
+class OrgForm(FlaskForm):
+	name = TextField("Name Of Affiliation",[validators.Required("Please enter a name to search.")])
 	submit = SubmitField("Search")
