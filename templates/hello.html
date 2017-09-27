@@ -1,27 +1,31 @@
 {% extends "layout.html" %}
 {% block content %}
 <title>Hello from the Flask Link Data App</title>
-{% if name %}    
-   <p class='lead'><b> Info: {{name}}</b></p>
+{% if row[0]%}    
+   <p class='lead'><b> Info: {{row[0]}}</b></p>
 {% else %}
   <h1>Hello, World! There seems to be an issue here but, it is just the beginning and there will be plently of time to fix this :^) </h1>
 {% endif %}
-{% if birth %}
-	{% if death %}
-	<p> {{birth}} - {{death}}</p>
+{% if row[1] %}
+	{% if row[2] %}
+	<p> {{row[1]}} - {{row[2]}}</p>
 	{% else %}
-	<p> {{birth}}-unknown </p>
+	<p> {{row[1]}}-unknown </p>
 	{% endif %}
 {% else %}
-	{% if death %}
-        <p> unknown - {{death}}</p>
+	{% if row[2] %}
+        <p> unknown - {{row[2]}}</p>
         {% else %}
         <p> unknown-unknown </p>
         {% endif %}
 {% endif %}
 
-{% if par1 and par2 and p1url and p2url %}
-   <p> <b>Parents:</b> <a href="{{p1url}}">{{par1}}</a>, <a href="{{p2url}}">{{par2}}</a><p>
+{% if parrow[0] and parrow[1] and not parrow[2] and not parrow[3] %}
+  <p><b>Parents:</b><a href="{{parrow[1]}}">{{parrow[0]}}</a><p>
+{% elif parrow[2] and parrow[3] and not parrow[0] and not parrow[1] %}
+  <p><b>Parents:</b><a href="{{parrow[3]}}">{{parrow[2]}}</a><p>
+{% elif parrow[0] and parrow[1] and parrow[2] and parrow[3] %}
+   <p> <b>Parents:</b> <a href="{{parrow[1]}}">{{parrow[0]}}</a>, <a href="{{parrow[3]}}">{{parrow[2]}}</a><p>
 {% else %}
    <p> <b>Parents: </b>unknown</p>
 {% endif %}
@@ -29,7 +33,11 @@
 {% if sb %}
 	<p><b>Siblings:</b>
 	{% for sibling in range(sb|length - 1) %}
-		<a href= "{{sb[sibling][1]}}"> {{sb[sibling][0]}}</a>,
+		{% if sb[sibling] == [] %}
+			<p>Unknown</p>
+		{% else %}
+			<a href= "{{sb[sibling][1]}}"> {{sb[sibling][0]}}</a>,
+		{% endif %}
 	{% endfor %}
 		<a href= "{{sb[-1][1]}}"> {{sb[-1][0]}}</a>
 	</p>
@@ -49,7 +57,27 @@
         <p> <b>Children: </b>unknown</p>
 {% endif %}
 
+{% if orga %}
+	<p><b>Organizations:</b>
+		{% for o in range(orga|length - 1) %}
+                <a href= "{{orga[o][0]}}"> {{orga[o][1]}}</a>,
+                {% endfor %}
+                <a href= "{{orga[-1][0]}}"> {{orga[-1][1]}}</a>
+	</p>
+{% else %}
+        <p> <b>Organization: </b>unknown</p>
+{% endif %}
 
+{% if spouse %}
+	<p><b>Spouse: </b>
+		{% for sp in range(spouse|length - 1) %}
+		<a href= "{{spouse[sp][0]}}"> {{spouse[sp][1]}}</a>,
+                {% endfor %}
+                <a href= "{{spouse[-1][0]}}"> {{spouse[-1][1]}}</a>
+	</p>
+{% else %}
+	<p> <b>Spouse: </b>unknown</p>
+{% endif %}
 
 <!-- this should not be like this: should be in a separate template -->
 
@@ -60,6 +88,11 @@
 		<li class='list-group-item'> <p style='margin:0 0 0px;'> <a href={{letter[0]}}>{{letter[1]}}</a> to <a href={{letter[2]}}>{{letter[3]}}</a> </p><p style='font-size:smaller;margin:0 0 0px;'>Subject:{{letter[4]}} </p> </li>
 	{% endfor %}
 	</ul></div> </div> </div>
+{% elif letswrote %}
+	{% for letters in letswrote %}
+		<li class='list-group-item'> <p style='margin:0 0 0px;'> <a href="http://amphilsoc.org/collections/view?docId=ead/Mss.B.P31-ead.xml">Letter</a> to  <a href={{letters[2]}}>{{letters[0]}}</a> </p><p style='font-size:smaller;margin:0 0 0px;'>Date:{{letters[1]}} </p> </li>
+	{% endfor %}
+        </ul></div> </div> </div>
 {% else %} 
 	<li class='list-group-item'><p>None </p> </li>
 	</ul></div> </div> </div>
@@ -74,6 +107,11 @@
                 <li class='list-group-item'> <p style='margin:0 0 0px;'> <a href={{letter[0]}}>{{letter[1]}}</a> to <a href={{letter[2]}}>{{letter[3]}}</a> </p><p style='font-size:smaller;margin:0 0 0px;'>Subject:{{letter[4]}} </p> </li>
         {% endfor %}
         </ul></div> </div> </div>
+{% elif letsreceived %}
+	{% for letters in letsreceived %}
+		<li class='list-group-item'> <p style='margin:0 0 0px;'> <a href="http://amphilsoc.org/collections/view?docId=ead/Mss.B.P31-ead.xml">Letter</a> from  <a href={{letters[2]}}>{{letters[0]}}</a> </p><p style='font-size:smaller;margin:0 0 0px;'>Date:{{letters[1]}} </p> </li>
+	{% endfor %}
+	</ul></div> </div> </div>
 {% else %}
         <li class='list-group-item'><p>None </p> </li>
 	</ul></div> </div> </div>

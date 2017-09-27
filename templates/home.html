@@ -7,6 +7,7 @@
 	  <li class="active"><a data-toggle="tab" href="#travels">Travels</a></li>
 	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
 	  <li><a data-toggle="tab" href="#people">People</a></li>
+	  <li><a data-toggle="tab" href="#affiliations">Affiliations</a></li>
 	</ul>
 {% elif tab == "people" %}
 	<ul class="nav nav-tabs">
@@ -14,20 +15,31 @@
 	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
 	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
 	  <li class="active"><a data-toggle="tab" href="#people">People</a></li>
+	  <li><a data-toggle="tab" href="#affiliations">Affiliations</a></li>
 	</ul>
 {% elif tab == "letters" %}
 	<ul class="nav nav-tabs">
 	  <li><a data-toggle="tab" href="#home">Home</a></li>
 	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
 	  <li class="active"><a data-toggle="tab" href="#letters">Letters</a></li>	
-	  <li"><a data-toggle="tab" href="#people">People</a></li>
+	  <li><a data-toggle="tab" href="#people">People</a></li>
+	  <li><a data-toggle="tab" href="#affiliations">Affiliations</a></li>
 	</ul>
+{% elif tab == "affiliations" %}
+        <ul class="nav nav-tabs">
+          <li><a data-toggle="tab" href="#home">Home</a></li>
+          <li><a data-toggle="tab" href="#travels">Travels</a></li>
+	  <li><a data-toggle="tab" href="#letters">Letters</a></li>
+          <li><a data-toggle="tab" href="#people">People</a></li>
+	  <li class="active"><a data-toggle="tab" href="#affiliations">Affiliations</a></li>
+        </ul>
 {% else %}
 	<ul class="nav nav-tabs">
 	  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
 	  <li><a data-toggle="tab" href="#travels">Travels</a></li>
 	  <li><a data-toggle="tab" href="#letters">Letters</a></li>	
 	  <li><a data-toggle="tab" href="#people">People</a></li>
+	  <li><a data-toggle="tab" href="#affiliations">Affiliations</a></li>
 	</ul>
 {% endif %}
 
@@ -60,7 +72,7 @@
     {% for message in travelform.name.errors %}
          <div>{{ message }}</div>
       {% endfor %}
-        <form action = "http://quakerexplorer.haverford.edu/" method = post>
+        <form action = "http://104.236.113.68/" method = post>
          <fieldset>
             <legend>Find common travels by searching a date or a name</legend>
             <center>
@@ -94,7 +106,7 @@
     {% for message in travelform.name.errors %}
          <div>{{ message }}</div>
       {% endfor %}
-        <form action = "http://quakerexplorer.haverford.edu/" method = post>
+        <form action = "http://104.236.113.68/" method = post>
          <fieldset>
             <center>
             {{ travelform.hidden_tag() }}
@@ -140,7 +152,7 @@
       {% endfor %}
 
 
-      <form action = "http://quakerexplorer.haverford.edu/" method = post>
+      <form action = "http://104.236.113.68/" method = post>
          <fieldset>
             <legend>Search for a certain author or recipient</legend>
             {{ letterform.hidden_tag() }}
@@ -179,7 +191,7 @@
       {% endfor %}
             
      <!-- <form action = "http://127.0.0.1:5000/search" method = post> -->
-      <form action = "http://quakerexplorer.haverford.edu/" method = post>
+      <form action = "http://104.236.113.68/" method = post>
          <fieldset>
          	<center>
             <legend>Search for a particular person</legend>
@@ -201,9 +213,30 @@
 			
 		</center>
           </div>
-         
+        
+	<div id="affiliations" class="{{ active[4] }}">
+	  <h3>Affiliations</h3>
+	{% for message in orgform.name.errors %}
+		<div>{{ message }}</div>
+	{% endfor %}
+	<form action = "http://104.236.113.68/" method = post>
+	  <fieldset>
+                <center>
+            <legend>Search for a particular affiliation</legend>
+	   {{ orgform.hidden_tag() }}
+	  <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+	     {{ orgform.name.label }}<br>
+               {{ orgform.name }}
+               <br>
+ 	       <br>
+		{{ orgform.submit }}
+	 </div>
+	</fieldset>
+         <input type="hidden" name="form-name" value="form5">
+      </form>
 
- 
+                </center>
+          </div>
 	</div>
 
 </div>
